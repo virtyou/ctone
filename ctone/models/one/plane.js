@@ -1,0 +1,16 @@
+{
+    "metadata":{
+        "type":"Geometry",
+        "generator":"io_three",
+        "version":3,
+        "uvs":1,
+        "normals":1,
+        "faces":1,
+        "vertices":4
+    },
+    "name":"CubeGeometry",
+    "uvs":[[0,1,0,0,1,0,1,1]],
+    "normals":[-0,-1,0],
+    "faces":[41,0,2,3,1,0,1,2,3,0,0,0,0],
+    "vertices":[1,1,-0,-1,1,0,0.999999,-1,-0,-1,-1,1e-06]
+}
