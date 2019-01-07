@@ -1,7 +1,7 @@
-environments.kidroom = {
+environments.one.kidroom = {
     floor: {
-        texture: "/maps/graph_paper.jpg",
-        stripset: "/models/plane.js",
+        texture: "/maps/one/graph_paper.jpg",
+        stripset: "/models/one/plane.js",
         material: {
             color: 0xcccccc
         },
@@ -11,7 +11,7 @@ environments.kidroom = {
         scale: [2270, 2160, 1300]
     },
     wall: {
-        texture: "/maps/room1.jpg",
+        texture: "/maps/one/room1.jpg",
         dimensions: [111, 111, 111, 7, 5],
         material: {
             color: 0xcccccc

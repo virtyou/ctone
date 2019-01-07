@@ -1,4 +1,4 @@
-custom.earring = function(opts) {
+custom.one.earring = function(opts) {
 	//
 	// initialization
 	//
@@ -80,7 +80,7 @@ custom.earring = function(opts) {
 	//////// TREADMILL CONTINUES -->  --->  ------>
 	/////   PENDULUM 2_2:
 	pendulum2_2 = new THREE.Object3D();  // cube2_2 is skull instead of a cube
-	skullheadLoader.load( "/models/star.js", function(geometry){  //skullhead_s.js
+	skullheadLoader.load( "/models/one/star.js", function(geometry){  //skullhead_s.js
 		cube2_2 = new THREE.Mesh( geometry, skull_material );
 		cube2_2.position.set(0, 0, 0);
 		cube2_2.rotation.set(0, 0, 0);
@@ -93,7 +93,7 @@ custom.earring = function(opts) {
 	//////// TREADMILL CONTINUES -->  --->  ------>
 	/////   PENDULUM 2_3:
 	pendulum2_3 = new THREE.Object3D();  // cube2_3 is skull instead of a cube
-	skulljawLoader.load( "/models/skulljaw_s.js", function(geometry){   
+	skulljawLoader.load( "/models/one/skulljaw_s.js", function(geometry){   
 		cube2_3 = new THREE.Mesh( geometry, skull_material );
 		cube2_3.position.set(0, -1.65, 0);
 		cube2_3.rotation.set(0, 0, 0);
