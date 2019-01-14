@@ -8,6 +8,7 @@ templates.one.torso = {
             dress_stripset: "/models/one/dress3.js",
             dress_repeat: [0.9, 0.3],
             dress_color: 0x115566,
+            dress_matcat: "Basic",
             hair_stripset: "/models/one/hair_0.js",
             hair_color: 0x111122,
             hair_specular: 0x222233,
