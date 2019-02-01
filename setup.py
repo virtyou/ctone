@@ -16,7 +16,7 @@ setup(
     ],
     entry_points = '''
         [console_scripts]
-        ctone = ctone:conv
+        ctone = ctone:do
     ''',
     classifiers = [
         'Development Status :: 3 - Alpha',
