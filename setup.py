@@ -14,7 +14,10 @@ setup(
     zip_safe = False,
     install_requires = [
     ],
-    entry_points = '''''',
+    entry_points = '''
+        [console_scripts]
+        ctone = ctone:conv
+    ''',
     classifiers = [
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
