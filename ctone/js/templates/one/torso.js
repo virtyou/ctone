@@ -41,7 +41,7 @@ templates.one.torso = {
         },
         sassy: {
             texture: "/maps/one/head.jpg",
-            stripset: "/models/one/head_3.js",
+            stripset: "/models/one/fathead.js",
             color: 0xccbbdd,
             dress_texture: "/maps/one/icon.jpg",
             dress_stripset: "/models/one/dress4.js",
