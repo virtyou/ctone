@@ -44,7 +44,7 @@ templates.one.torso = {
             stripset: "/models/one/fathead.js",
             color: 0xccbbdd,
             dress_texture: "/maps/one/icon.jpg",
-            dress_stripset: "/models/one/dress4.js",
+            dress_stripset: "/models/one/shirtBones.js",
             dress_repeat: null,
             dress_color: 0xcccccc,
             hair_texture: "/maps/one/hairShrunk.png",
