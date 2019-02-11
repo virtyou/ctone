@@ -54,10 +54,10 @@ def bonemap(data, modname):
 	log("writing stripset: %s"%(modname,))
 	write(data, "%s.js"%(modname,), isjson=True)
 
-def conv(fname, morphs, modname, bonemap_mode):
-	log("converting %s to stripset and morphStack"%(fname,), important=True)
+def conv(fname, morphs, modname, bm):
+	log("converting %s to stripset and %s"%(fname, bm and "bonemap" or "morphStack"), important=True)
 	data = read(fname, isjson=True)
-	if bonemap_mode:
+	if bm:
 		bonemap(data, modname)
 	else:
 		morphTargets(data, morphs, modname)
