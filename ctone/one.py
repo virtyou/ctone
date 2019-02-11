@@ -8,9 +8,8 @@ MST = """
 %s.stack = %s;
 """
 
-def conv(fname, morphs, modname):
-	log("converting %s to stripset and morphStack"%(fname,), important=True)
-	data = read(fname, isjson=True)
+def morphTargets(data, morphs, modname):
+	log("generating morphStack", important=True)
 	base = data["vertices"]
 	log("found %s vertices"%(len(base),))
 	stack = {}
@@ -23,6 +22,45 @@ def conv(fname, morphs, modname):
 	log("writing morphStack: %s"%(morphs,))
 	write(MST%(morphs, dumps(base), morphs,
 		dumps(stack)), "%s.js"%(morphs.split(".")[-1],))
+
+def bonemap(data, modname):
+	log("generating bonemap", important=True)
+	bones = data["bones"]
+	bmap = {}
+	for i in range(len(bones)):
+		bone = bones[i]
+		log("assessing %s"%(bone['name'],), 1)
+		bpath = bone["name"].split("_")
+		sub = bmap
+		isarray = len(bpath[-1]) == 1
+		for part in bpath:
+			if isarray and part == bpath[-2] and part not in sub:
+				sub[part] = []
+			if part == bpath[-1]:
+				if isarray:
+					part = int(part)
+					if part < len(sub):
+						sub[part] = i
+					else:
+						while part > len(sub):
+							sub.append(0)
+						sub.append(i)
+				else:
+					sub[part] = i
+			elif part not in sub:
+				sub[part] = {}
+			sub = sub[part]
+	data["bonemap"] = bmap
+	log("writing stripset: %s"%(modname,))
+	write(data, "%s.js"%(modname,), isjson=True)
+
+def conv(fname, morphs, modname, bonemap_mode):
+	log("converting %s to stripset and morphStack"%(fname,), important=True)
+	data = read(fname, isjson=True)
+	if bonemap_mode:
+		bonemap(data, modname)
+	else:
+		morphTargets(data, morphs, modname)
 	log("goodbye", important=True)
 
 def do():
@@ -31,10 +69,12 @@ def do():
 		help="name of model file (default: model)")
 	parser.add_option("-m", "--morphs", dest="morphs", default="morphs.one.head",
 		help="full path of morph [base and stack] (default: morphs.one.head)")
+	parser.add_option("-b", "--bonemap", action="store_true", dest="bonemap", default=False,
+		help="generate a bonemap in the stripset; skip morphStack")
 	options, args = parser.parse_args()
 	if not len(args):
 		error("please provide an input file (json)")
-	conv(args[0], options.morphs, options.name)
+	conv(args[0], options.morphs, options.name, options.bonemap)
 
 if __name__ == "__main__":
 	do()
