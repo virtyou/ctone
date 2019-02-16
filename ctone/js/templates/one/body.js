@@ -1,4 +1,4 @@
-templates.one.torso = {
+templates.one.body = {
     variants: {
         defaults: {
             texture: "/maps/one/headBod1024bs2Lips2.jpg",
@@ -86,25 +86,25 @@ templates.one.torso = {
         }
     },
     random: function() {
-        return zero.base.torso(CT.data.choice(Object.values(templates.one.torso.variants)),
+        return zero.base.body(CT.data.choice(Object.values(templates.one.body.variants)),
             CT.data.random(2));
     },
     kid: function(opts) {
-        var varz = templates.one.torso.variants,
-            kid = zero.base.torso(CT.merge(opts, varz.kid, varz.sassy)),
+        var varz = templates.one.body.variants,
+            kid = zero.base.body(CT.merge(opts, varz.kid, varz.sassy)),
             head = kid.parts[2].parts[0].parts[0];
         head.parts.splice(3, 1); // remove default hair -- we're customizing!
-        head.parts.push(templates.one.torso.accessories.hat);
+        head.parts.push(templates.one.body.accessories.hat);
         return kid;
     },
     sassy: function(opts) {
-        var sassy = zero.base.torso(CT.merge(opts, templates.one.torso.variants.sassy)),
+        var sassy = zero.base.body(CT.merge(opts, templates.one.body.variants.sassy)),
             head = sassy.parts[2].parts[0].parts[0];
         head.parts.splice(3, 1); // remove default hair -- we're customizing!
-        head.parts.push(templates.one.torso.accessories.earring);
-        head.parts.push(templates.one.torso.accessories.pony);
+        head.parts.push(templates.one.body.accessories.earring);
+        head.parts.push(templates.one.body.accessories.pony);
         return sassy;
     }
 };
 
-zero.base.torso.defaults = templates.one.torso.variants.defaults;
+zero.base.body.defaults = templates.one.body.variants.defaults;
