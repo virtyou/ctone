@@ -288,6 +288,7 @@ def person(name, body_generator=body):
 def room(name):
     log("room: %s"%(name,), 1)
     r = Room()
+    r.name = name
     r.opts = { "environment": name, "lights": LIGHTS }
     r.owner = VARZ["owner"]
     r.put()
@@ -321,6 +322,7 @@ def seed():
     log("seeding database", important=True)
     sassy = person('sassy', parts)
     techno = room('one.techno')
+    scrolly = room('one.scrolly')
     pool = furnishing('pool')
     extras()
     log("goodbye", important=True)
