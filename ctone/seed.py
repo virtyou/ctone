@@ -188,6 +188,7 @@ people = ["sassy"]
 roomz = ["one.scrolly", "one.techno", "one.kidroom"]
 EDOM = "e.c"
 VARZ = {} # meh
+THINGZ = {}
 
 def user(name, email):
     log("user: %s, %s"%(name, email), 1)
@@ -242,14 +243,16 @@ def body(name): # from template
 
 def thing(obj):
     log("thing: %s"%(obj["name"],), 2)
-    t = Thing()
-    t.owner = VARZ["owner"]
-    for prop in ["texture", "stripset", "morphStack", "name", "custom", "kind"]:
-        if prop in obj:
-            setattr(t, prop, obj.pop(prop))
-    t.material = obj.pop("material", {})
-    t.opts = obj
-    t.put()
+    t = THINGZ.get(obj["name"])
+    if not t:
+        t = THINGZ[obj["name"]] = Thing()
+        t.owner = VARZ["owner"]
+        for prop in ["texture", "stripset", "morphStack", "name", "custom", "kind"]:
+            if prop in obj:
+                setattr(t, prop, obj.pop(prop))
+        t.material = obj.pop("material", {})
+        t.opts = obj
+        t.put()
     return t
 
 def part(obj, parent=None):
