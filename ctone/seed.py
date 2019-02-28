@@ -6,7 +6,7 @@ seeder script -- create initial stuff
 
 from cantools.util import log, error, read
 from model import db, CTUser, Person, Part, Asset, Room, Thing
-import templater
+import templater, copy
 
 defaults = {
     "morphStack": "one.head",
@@ -23,21 +23,19 @@ defaults = {
     "tongue_texture": None
 }
 assets = {
-    "sassy": {
-        "texture": "maps/one/head.jpg",
-        "stripset": "models/one/fathead.js",
-        "dress_texture": "maps/one/icon.jpg",
-        "dress_stripset": "models/one/torso.js",
-        "hair_texture": "maps/one/hairShrunk.png",
-        "hair_stripset": "models/one/hairDFULL5.js",
-        "eye_texture": "maps/one/eye_brown_basic.jpg",
-        "eye_stripset": "models/one/eyeCminusHole3.js",
-        "teeth_texture": "maps/one/teeth256s.jpg",
-        "teeth_stripset": "models/one/teeth_yan.js",
-        "teeth_top_texture": "maps/one/white.jpg",
-        "teeth_top_stripset": "models/one/teeth_top_yan.js",
-        "tongue_stripset": "models/one/tongue_yan.js"
-    }
+    "texture": "maps/one/head.jpg",
+    "stripset": "models/one/fathead.js",
+    "dress_texture": "maps/one/icon.jpg",
+    "dress_stripset": "models/one/torso.js",
+    "hair_texture": "maps/one/hairShrunk.png",
+    "hair_stripset": "models/one/hairDFULL5.js",
+    "eye_texture": "maps/one/eye_brown_basic.jpg",
+    "eye_stripset": "models/one/eyeCminusHole3.js",
+    "teeth_texture": "maps/one/teeth256s.jpg",
+    "teeth_stripset": "models/one/teeth_yan.js",
+    "teeth_top_texture": "maps/one/white.jpg",
+    "teeth_top_stripset": "models/one/teeth_top_yan.js",
+    "tongue_stripset": "models/one/tongue_yan.js"
 }
 responses = {
     "test": {
@@ -134,9 +132,6 @@ responses = {
         }
     }
 }
-voices = {
-    "sassy": "Joanna"
-}
 furnishings = {
     "pool": {
         "thing": "Pool",
@@ -145,17 +140,15 @@ furnishings = {
         "rotation": [-6.28/4, 0, 0]
     }
 }
-headgear = {
-    "sassy": [{
-        "name": "earring",
-        "kind": "headgear",
-        "custom": "js/custom/one/earring.js"
-    }, {
-        "name": "pony",
-        "kind": "hair",
-        "custom": "js/custom/one/pony.js"
-    }]
-}
+headgear = [{
+    "name": "earring",
+    "kind": "headgear",
+    "custom": "js/custom/one/earring.js"
+}, {
+    "name": "pony",
+    "kind": "hair",
+    "custom": "js/custom/one/pony.js"
+}]
 hairz = {
     "blip": {
         "texture": "maps/one/hair_alphaGimp3_2SMALL.png",
@@ -191,6 +184,8 @@ LIGHTS = [
         "position": [-1, 1, -0.3]
     }
 ]
+people = ["sassy"]
+EDOM = "e.c"
 VARZ = {} # meh
 
 def user(name, email):
@@ -208,7 +203,7 @@ def user(name, email):
 loaded_assets = {}
 
 def asset(name, path=None, variety=None):
-    path = path or assets[VARZ["name"]][name]
+    path = path or assets[name]
     log("asset: %s (%s)"%(name, path), 2)
     # this caching stuff only works if "name" is the same
     # otherwise, it won't reattach right
@@ -226,7 +221,7 @@ def asset(name, path=None, variety=None):
     return a.key
 
 def gear(name):
-    gz = headgear[name]
+    gz = copy.deepcopy(headgear)
     for g in gz:
         if g["custom"]:
             g["custom"] = read(g["custom"])
@@ -240,7 +235,7 @@ def body(name): # from template
     log("body (templated): %s"%(template,), 1)
     bod = Part()
     bod.template = template
-    bod.assets = map(asset, assets[name].keys())
+    bod.assets = map(asset, assets.keys())
     bod.put()
     return bod
 
@@ -270,16 +265,16 @@ def part(obj, parent=None):
 def parts(name):
     log("body (parts): %s"%(name,), 1)
     opts = defaults.copy()
-    for key in assets[name]:
+    for key in assets:
         opts[key] = asset(key)
     return part(templater.torso(opts, gear(name)))
 
 def person(name, body_generator=parts):
     log("person: %s"%(name,))
     p = Person()
-    p.owner = VARZ["owner"] = user(name, "%s@virtyou.org"%(name,)).key
+    p.owner = VARZ["owner"] = user(name, "%s@%s"%(name, EDOM)).key
     p.name = VARZ["name"] = name
-    p.voice = voices[name]
+    p.voice = "Joanna"
     p.responses = responses
     p.body = body_generator(name).key
     p.put()
@@ -320,13 +315,21 @@ def extras():
 
 def seed():
     log("seeding database", important=True)
-    sassy = person('sassy')
-    techno = room('one.techno')
-    scrolly = room('one.scrolly')
+    for peep in people:
+        person(peep)
+        room('one.scrolly')
     pool = furnishing('pool')
     extras()
     log("goodbye", important=True)
 
+def setPeople(peeps):
+    global people
+    people = peeps
+
 def setResponses(resps):
     global responses
     responses = resps
+
+def setDomain(dom):
+    global EDOM
+    EDOM = dom
