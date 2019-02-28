@@ -274,7 +274,7 @@ def parts(name):
         opts[key] = asset(key)
     return part(templater.torso(opts, gear(name)))
 
-def person(name, body_generator=body):
+def person(name, body_generator=parts):
     log("person: %s"%(name,))
     p = Person()
     p.owner = VARZ["owner"] = user(name, "%s@virtyou.org"%(name,)).key
@@ -320,7 +320,7 @@ def extras():
 
 def seed():
     log("seeding database", important=True)
-    sassy = person('sassy', parts)
+    sassy = person('sassy')
     techno = room('one.techno')
     scrolly = room('one.scrolly')
     pool = furnishing('pool')
