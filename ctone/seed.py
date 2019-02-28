@@ -19,8 +19,7 @@ defaults = {
     "teeth_top_color": 0xcccccc,
     "tongue_color": 0xcccccc,
     "eyeL_color": 0xffffff,
-    "eyeR_color": 0xffffff,
-    "tongue_texture": None
+    "eyeR_color": 0xffffff
 }
 assets = {
     "texture": "maps/one/head.jpg",
@@ -35,7 +34,8 @@ assets = {
     "teeth_stripset": "models/one/teeth_yan.js",
     "teeth_top_texture": "maps/one/white.jpg",
     "teeth_top_stripset": "models/one/teeth_top_yan.js",
-    "tongue_stripset": "models/one/tongue_yan.js"
+    "tongue_stripset": "models/one/tongue_yan.js",
+    "tongue_texture": "maps/one/teeth256s.jpg"
 }
 responses = {
     "test": {
@@ -217,8 +217,8 @@ def asset(name, path=None, variety=None):
         a.item = read(path)
         a.variety = variety or name.split("_")[-1]
         a.put()
-    elif name != a.name:
-        error("same blob, different name (%s is not %s) -- nope!"%(name, a.name))
+#    elif name != a.name:
+#        error("same blob, different name (%s is not %s) -- nope!"%(name, a.name))
     return a.key
 
 def gear(name):
