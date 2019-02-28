@@ -185,6 +185,7 @@ LIGHTS = [
     }
 ]
 people = ["sassy"]
+roomz = ["one.scrolly", "one.techno", "one.kidroom"]
 EDOM = "e.c"
 VARZ = {} # meh
 
@@ -315,9 +316,9 @@ def extras():
 
 def seed():
     log("seeding database", important=True)
-    for peep in people:
-        person(peep)
-        room('one.scrolly')
+    for n in range(len(people)):
+        person(people[n])
+        room(roomz[n])
     pool = furnishing('pool')
     extras()
     log("goodbye", important=True)
