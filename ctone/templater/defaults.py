@@ -1,4 +1,4 @@
-base = {
+BASE = {
     "morphStack": "one.head",
     "color": 0xccbbdd,
     "dress_repeat": None,
@@ -11,7 +11,7 @@ base = {
     "eyeL_color": 0xffffff,
     "eyeR_color": 0xffffff
 }
-assets = {
+ASSETS = {
     "texture": "maps/one/head.jpg",
     "stripset": "models/one/fathead.js",
     "dress_texture": "maps/one/icon.jpg",
@@ -27,7 +27,7 @@ assets = {
     "tongue_stripset": "models/one/tongue_yan.js",
     "tongue_texture": "maps/one/teeth256s.jpg"
 }
-responses = {
+RESPONSES = {
     "test": {
         "mood": {
             "mad": 0.5
@@ -122,7 +122,7 @@ responses = {
         }
     }
 }
-furnishings = {
+FURNISHINGS = {
     "pool": {
         "thing": "Pool",
         "scale": [1.2, 1.2, 2],
@@ -130,7 +130,7 @@ furnishings = {
         "rotation": [-6.28/4, 0, 0]
     }
 }
-headgear = [{
+HEADGEAR = [{
     "name": "earring",
     "kind": "headgear",
     "custom": "js/custom/one/earring.js"
@@ -139,7 +139,7 @@ headgear = [{
     "kind": "hair",
     "custom": "js/custom/one/pony.js"
 }]
-hairz = {
+HAIRZ = {
     "blip": {
         "texture": "maps/one/hair_alphaGimp3_2SMALL.png",
         "stripset": "models/one/hair2ALPHA_XX5.js"
