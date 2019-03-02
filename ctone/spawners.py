@@ -6,6 +6,10 @@ from templater import generators
 
 THINGZ = {}
 LOADED_ASSETS = {}
+for item in Thing.query().all():
+    THINGZ[item.name] = item
+for item in Asset.query().all():
+    LOADED_ASSETS[item.identifier or item.name] = item
 
 def asset(name, path=None, variety=None, owner=None):
     path = path or ASSETS[name]
@@ -19,6 +23,7 @@ def asset(name, path=None, variety=None, owner=None):
         a.owner = owner
         a.name = name
         a.item = read(path)
+        a.identifier = path
         a.variety = variety or name.split("_")[-1]
         a.put()
 #    elif name != a.name:
