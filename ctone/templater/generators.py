@@ -1,4 +1,4 @@
-def torso(opts, headgear=None):
+def body(opts, headgear=None):
     head = {
         "name": "head",
         "thing": "Head",
