@@ -1,5 +1,6 @@
 import copy
 from cantools.util import log, read
+from cantools import config
 from model import db, CTUser, Part, Thing, Person, Room, Asset
 from templater.defaults import ASSETS, BASE, HEADGEAR, LIGHTS
 from templater import generators
@@ -9,23 +10,37 @@ LOADED_ASSETS = {}
 for item in Thing.query().all():
     THINGZ[item.name] = item
 for item in Asset.query().all():
-    LOADED_ASSETS[item.identifier or item.name] = item
+    LOADED_ASSETS[item.item.urlsafe()] = LOADED_ASSETS[item.identifier or item.name] = item
 
-def asset(name, path=None, variety=None, owner=None):
+def exists(file_data):
+    log("checking file uniqueness", 4)
+    for f in [os.path.join(config.db.blob, p) for p in os.listdir(config.db.blob)]:
+        if os.path.isfile(f) and data == read(f):
+            return LOADED_ASSETS[f];
+#            return Asset.query(Asset.item == int(os.path.split(f)[-1])).get() # fix binary queries!
+    return False
+
+def asset(name, path=None, variety=None, owner=None, data=None):
     path = path or ASSETS[name]
     log("asset: %s (%s)"%(name, path), 2)
     # this caching stuff only works if "name" is the same
     # otherwise, it won't reattach right
-    a = LOADED_ASSETS.get(path)
+    a = path and LOADED_ASSETS.get(path)
     if not a:
+        data = data or read(path)
+        existing = exists(data)
+        if existing:
+            log("asset exists: %s"%(existing.name,), 3)
+            return existing.key
         log("asset not found! creating...", 3)
-        a = LOADED_ASSETS[path] = Asset()
+        a = Asset()
         a.owner = owner
         a.name = name
-        a.item = read(path)
+        a.item = data
         a.identifier = path
         a.variety = variety or name.split("_")[-1]
         a.put()
+        LOADED_ASSETS[path] = LOADED_ASSETS[a.item.urlsafe()] = a
 #    elif name != a.name:
 #        error("same blob, different name (%s is not %s) -- nope!"%(name, a.name))
     return a.key
