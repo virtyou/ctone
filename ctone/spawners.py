@@ -1,4 +1,4 @@
-import copy
+import copy, os
 from cantools.util import log, read
 from cantools import config
 from model import db, CTUser, Part, Thing, Person, Room, Asset
@@ -15,13 +15,13 @@ for item in Asset.query().all():
 def exists(file_data):
     log("checking file uniqueness", 4)
     for f in [os.path.join(config.db.blob, p) for p in os.listdir(config.db.blob)]:
-        if os.path.isfile(f) and data == read(f):
+        if os.path.isfile(f) and file_data == read(f):
             return LOADED_ASSETS[f];
 #            return Asset.query(Asset.item == int(os.path.split(f)[-1])).get() # fix binary queries!
     return False
 
 def asset(name, path=None, variety=None, owner=None, data=None):
-    path = path or ASSETS[name]
+    path = path or ASSETS.get(name)
     log("asset: %s (%s)"%(name, path), 2)
     # this caching stuff only works if "name" is the same
     # otherwise, it won't reattach right
