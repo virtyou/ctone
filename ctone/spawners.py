@@ -88,23 +88,28 @@ def body(name, owner_not_used=None): # from template -- depped-ish
 
 def thing(obj, owner):
     log("thing: %s"%(obj["name"],), 2)
+    t = Thing()
+    t.owner = owner
+    for prop in ["texture", "stripset", "morphStack", "name", "custom", "kind"]:
+        if prop in obj:
+            setattr(t, prop, obj.pop(prop))
+    t.material = obj.pop("material", {})
+    t.opts = obj
+    t.put()
+    return t
+
+def getThing(obj, owner):
+    log("getting thing: %s"%(obj["name"],), 2)
     t = THINGZ.get(obj["name"])
     if not t:
-        t = THINGZ[obj["name"]] = Thing()
-        t.owner = owner
-        for prop in ["texture", "stripset", "morphStack", "name", "custom", "kind"]:
-            if prop in obj:
-                setattr(t, prop, obj.pop(prop))
-        t.material = obj.pop("material", {})
-        t.opts = obj
-        t.put()
+        t = THINGZ[obj["name"]] = thing(obj, owner)
     return t
 
 def part(obj, owner, parent=None):
     log("part: %s"%(obj["name"],), 2)
     subz = obj.pop("parts", [])
     par = Part()
-    par.base = thing(obj, owner).key
+    par.base = getThing(obj, owner).key
     par.parent = parent
     par.put()
     for sub in subz:
