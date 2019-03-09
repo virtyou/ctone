@@ -1,9 +1,11 @@
-import copy, os
-from cantools.util import log, read
+import copy, os, json
+from datetime import datetime
+from cantools.util import rm, log, read, write, error
 from cantools import config
 from model import db, CTUser, Part, Thing, Person, Room, Asset
 from templater.defaults import ASSETS, BASE, HEADGEAR, LIGHTS
 from templater import generators
+from convert_obj_three import convert_ascii
 
 THINGZ = {}
 LOADED_ASSETS = {}
@@ -20,6 +22,26 @@ def exists(file_data):
 #            return Asset.query(Asset.item == int(os.path.split(f)[-1])).get() # fix binary queries!
     return False
 
+def convobj(data):
+    fname = str(datetime.now().microsecond)
+    write(data, fname)
+    convert_ascii(fname, "", "", fname)
+    data = read(fname)
+    rm(fname)
+    return data
+
+def stripset(data):
+    try:
+        json.loads(data)
+    except:
+        log("asset not json! converting...", 3)
+        try:
+            data = convobj(data)
+            json.loads(data)
+        except:
+            error("Stripset not convertible! Please use Three.js JSON or Wavefront OBJ.")
+    return data
+
 def asset(name, path=None, variety=None, owner=None, data=None):
     path = path or ASSETS.get(name)
     log("asset: %s (%s)"%(name, path), 2)
@@ -33,6 +55,8 @@ def asset(name, path=None, variety=None, owner=None, data=None):
             log("asset exists: %s"%(existing.name,), 3)
             return existing.key
         log("asset not found! creating...", 3)
+        if variety == "stripset":
+            data = stripset(data)
         a = Asset()
         a.owner = owner
         a.name = name
@@ -99,10 +123,11 @@ def thing(obj, owner):
     return t
 
 def getThing(obj, owner):
-    log("getting thing: %s"%(obj["name"],), 2)
-    t = THINGZ.get(obj["name"])
+    tname = obj["name"]
+    log("getting thing: %s"%(tname,), 2)
+    t = THINGZ.get(tname)
     if not t:
-        t = THINGZ[obj["name"]] = thing(obj, owner)
+        t = THINGZ[tname] = thing(obj, owner)
     return t
 
 def part(obj, owner, parent=None):
