@@ -79,11 +79,11 @@ def furnishing(name, owner, opts):
     f.put()
     return f
 
-def room(name, owner):
+def room(name, owner, environment=None):
     log("room: %s"%(name,), 1)
     r = Room()
     r.name = name
-    r.opts = { "environment": name, "lights": LIGHTS }
+    r.opts = { "environment": environment or name, "lights": LIGHTS }
     r.owner = owner
     r.put()
     return r
