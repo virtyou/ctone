@@ -83,8 +83,9 @@ def room(name, owner, environment=None):
     log("room: %s"%(name,), 1)
     r = Room()
     r.name = name
-    r.opts = { "environment": environment or name, "lights": LIGHTS }
     r.owner = owner
+    r.lights = LIGHTS
+    r.environment = environment or name
     r.put()
     return r
 
