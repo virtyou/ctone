@@ -1,5 +1,5 @@
 environments.one.box = {
 	matcat: "Phong",
-	boxGeometry: [240, 240, 240],
+	boxGeometry: [512, 512, 512],
 	material: { side: THREE.DoubleSide }
 };
