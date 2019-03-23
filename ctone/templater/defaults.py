@@ -174,3 +174,22 @@ LIGHTS = [
         "position": [-1, 1, -0.3]
     }
 ]
+GESTURES = {"jump":{"right":{"leg":{"hip":{"y":-0.34,"x":-0.93,"z":-0.78},"knee":{"x":1.07},"ankle":{"y":0,"x":0},"toe":{"x":0}},"arm":{"shoulder":{"y":0.27,"x":-1.19,"z":-1.02},"elbow":{"y":0,"x":-1.14},"wrist":{"x":0,"z":0}},"hand":{}},"left":{"leg":{"hip":{"y":0.6,"x":-2,"z":0.54},"knee":{"x":0.35},"ankle":{"y":0,"x":0},"toe":{"x":0}},"arm":{"shoulder":{"y":0,"x":-1.1,"z":0.25},"elbow":{"y":0,"x":-0.73},"wrist":{"x":0,"z":0}},"hand":{}}},"right":{"right":{"leg":{"hip":{"y":0,"x":0,"z":0},"knee":{"x":0.81},"ankle":{"y":0,"x":0},"toe":{"x":-0.5}},"arm":{"shoulder":{"y":0,"x":-0.42,"z":0},"elbow":{"y":0,"x":0},"wrist":{"x":0,"z":0}},"hand":{}},"left":{"leg":{"hip":{"y":0,"x":-1.05,"z":0},"knee":{"x":0.86},"ankle":{"y":0,"x":0},"toe":{"x":0.5}},"arm":{"shoulder":{"y":0,"x":0.45,"z":0},"elbow":{"y":0,"x":0},"wrist":{"x":0,"z":0}},"hand":{}}},"left":{"right":{"leg":{"hip":{"y":-0.1,"x":-0.93,"z":0},"knee":{"x":0.59},"ankle":{"y":0,"x":0},"toe":{"x":0.5}},"arm":{"shoulder":{"y":0,"x":0.69,"z":0},"elbow":{"y":0,"x":0},"wrist":{"x":0,"z":0}},"hand":{}},"left":{"leg":{"hip":{"y":0,"x":0,"z":0},"knee":{"x":0.88},"ankle":{"y":0,"x":0},"toe":{"x":-0.5}},"arm":{"shoulder":{"y":0,"x":-0.28,"z":0},"elbow":{"y":0,"x":0},"wrist":{"x":0,"z":0}},"hand":{}}}}
+DANCES = {"walk":{"steps":["right","left"]}}
+VIBES = {
+    "mad": {
+        "mad": 1
+    },
+    "happy": {
+        "happy": 1
+    },
+    "sad": {
+        "sad": 1
+    },
+    "suspicious": {
+        "suspicion": 1
+    },
+    "curious": {
+        "curiosity": 1
+    }
+}
