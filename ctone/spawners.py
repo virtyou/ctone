@@ -170,7 +170,7 @@ def person(name, owner=None, responses={}, voice="Joanna", admin=False, email_do
     p.responses = responses
     p.gestures = GESTURES
     p.dances = DANCES
-    p.vibes = VIBES
+    p.vibe = VIBES
     p.body = body_generator(name, p.owner).key
     p.put()
     return p
