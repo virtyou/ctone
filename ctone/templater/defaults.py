@@ -191,12 +191,5 @@ VIBES = {
     },
     "curious": {
         "curiosity": 1
-    },
-    "neutral": {
-        "happy": 0,
-        "sad": 0,
-        "mad": 0,
-        "suspicion": 0.5,
-        "curiosity": 0.5
     }
 }
