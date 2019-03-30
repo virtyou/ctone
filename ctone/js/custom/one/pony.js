@@ -282,10 +282,10 @@ custom.one.pony = function(opts) {
         //ponytail.skeleton.bones[4].rotation.y = pend4.rotation.y;
         ponytail.skeleton.bones[4].rotation.z = (pend4.rotation.z - pend3.rotation.z - pend2.rotation.z - pend1.rotation.z - pend0.rotation.z);
 
-        if(hairNew){
-            hairNew.morphTargetInfluences[1]= 2*(pend1.rotation.x);
-            hairNew.morphTargetInfluences[2]= 1;
-        }
+//        if(hairNew){
+  //          hairNew.morphTargetInfluences[1]= 2*(pend1.rotation.x);
+    //        hairNew.morphTargetInfluences[2]= 1;
+      //  }
 	};
 
 	//
