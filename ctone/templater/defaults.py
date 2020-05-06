@@ -1,4 +1,15 @@
-BASE = {
+BASE = {}
+ASSETS = {
+    "texture": "maps/one/shirt.jpg",
+    "stripset": "models/one/body.js",
+    "head_texture": "maps/one/head.jpg",
+    "head_stripset": "models/one/head.js",
+    "teeth_texture": "maps/one/teeth256s.jpg",
+    "teeth_stripset": "models/one/teeth_yan.js",
+    "eye_texture": "maps/one/eye_brown_basic.jpg",
+    "eye_stripset": "models/one/eyeCminusHole3.js"
+}
+BASE_OLD = {
     "morphStack": "one.head",
     "color": 0xccbbdd,
     "dress_repeat": None,
@@ -11,7 +22,7 @@ BASE = {
     "eyeL_color": 0xffffff,
     "eyeR_color": 0xffffff
 }
-ASSETS = {
+ASSETS_OLD = {
     "texture": "maps/one/head.jpg",
     "stripset": "models/one/fathead.js",
     "dress_texture": "maps/one/icon.jpg",
@@ -130,11 +141,12 @@ FURNISHINGS = {
         "rotation": [-6.28/4, 0, 0]
     }
 }
+#HEADGEAR = [{ # earring misplaced!!!?!?
+#    "name": "earring",
+#    "kind": "headgear",
+#    "custom": "js/custom/one/earring.js"
+#}, {
 HEADGEAR = [{
-    "name": "earring",
-    "kind": "headgear",
-    "custom": "js/custom/one/earring.js"
-}, {
     "name": "pony",
     "kind": "hair",
     "custom": "js/custom/one/pony.js"
