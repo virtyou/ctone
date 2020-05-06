@@ -159,7 +159,8 @@ def parts(name, owner):
     opts = BASE.copy()
     for key in ASSETS:
         opts[key] = asset(key)
-    return part(generators.body(opts, gear(name, owner)), owner)
+    return part(generators.body(opts), owner)
+#    return part(generators.body(opts, gear(name, owner)), owner)
 
 def person(name, owner=None, responses={}, voice="Joanna", admin=False, email_domain=None, body_generator=parts):
     log("person: %s"%(name,))
