@@ -1,4 +1,66 @@
-def body(opts, headgear=None):
+def body(opts): # disabled headgear for now...
+    return {
+        "name": "body",
+        "texture": opts["texture"],
+        "stripset": opts["stripset"],
+        "matcat": "Phong",
+        "meshcat": "SkinnedMesh",
+        "material": {
+            "skinning": True
+        },
+        "parts": [{
+            "name": "head",
+            "thing": "Head",
+            "matcat": "Phong",
+            "meshcat": "SkinnedMesh",
+            "texture": opts["head_texture"],
+            "stripset": opts["head_stripset"],
+            "material": {
+                "skinning": True
+            },
+            "parts": [{
+                "name": "eyeL",
+                "kind": "eye",
+                "bone": 5,
+                "texture": opts["eye_texture"],
+                "stripset": opts["eye_stripset"]
+            }, {
+                "name": "eyeR",
+                "kind": "eye",
+                "bone": 6,
+                "texture": opts["eye_texture"],
+                "stripset": opts["eye_stripset"]
+            }, {
+                "name": "teeth",
+                "kind": "facial",
+                "bone": 4,
+                "position": [0, -10, 2],
+                "texture": opts["teeth_texture"],
+                "stripset": opts["teeth_stripset"]
+            }, {
+                "name": "teeth_top",
+                "kind": "facial",
+                "bone": 4,
+                "position": [0, -10, 2],
+                "texture": opts["teeth_texture"],
+                "stripset": opts["teeth_stripset"]
+            }, {
+                "name": "tongue",
+                "kind": "facial",
+                "bone": 4,
+                "position": [0, -10, 2],
+                "texture": opts["teeth_texture"],
+                "stripset": opts["teeth_stripset"]
+            }, {
+                "name": "pony",
+                "kind": "hair",
+                "bone": 4,
+                "custom": "custom.one.pony"
+            }]
+        }]
+    }
+
+def body_old(opts, headgear=None):
     head = {
         "name": "head",
         "thing": "Head",

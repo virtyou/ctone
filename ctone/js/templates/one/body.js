@@ -1,6 +1,6 @@
 templates.one.body = {
-    variants: {
-        defaults: {
+    variants: { // TODO: rm old variants and funcs (first glean!)
+        defaults_old: {
             texture: "/maps/one/headBod1024bs2Lips2.jpg",
             stripset: "/models/one/head2.js",
             color: 0xcccccc,
@@ -58,6 +58,21 @@ templates.one.body = {
         kid: {
             texture: "/maps/one/head_UV2.jpg",
             stripset: "/models/one/baseReskinEyes.js"
+        },
+        defaults: {
+            texture: "/maps/one/shirt.jpg",
+            stripset: "/models/one/body.js",
+            head_texture: "/maps/one/head.jpg",
+            head_stripset: "/models/one/head.js",
+            teeth_texture: "/maps/one/teeth256s.jpg",
+            teeth_stripset: "/models/one/teeth_yan.js",
+            eye_texture: "/maps/one/eye_brown_basic.jpg",
+            eye_stripset: "/models/one/eyeCminusHole3.js"
+        },
+        basic: {
+            hair: {
+                custom: "custom.one.pony"
+            }
         }
     },
     accessories: {
@@ -78,13 +93,13 @@ templates.one.body = {
                 metal: false
             }
         },
-        earring: {
+        earring: { // earring mispositioned now...
             custom: custom.one.earring
         },
         pony: {
             custom: custom.one.pony
         }
-    },
+    }, // random, kid, sassy, and most variants probs broken ;)
     random: function() {
         return zero.base.body(CT.data.choice(Object.values(templates.one.body.variants)),
             CT.data.random(2));
@@ -104,6 +119,10 @@ templates.one.body = {
         head.parts.push(templates.one.body.accessories.earring);
         head.parts.push(templates.one.body.accessories.pony);
         return sassy;
+    },
+    basic: function(opts) { // use basic() (other stuff too old)
+        return zero.base.body(CT.merge(opts,
+            templates.one.body.variants.basic));
     }
 };
 
