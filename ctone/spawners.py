@@ -2,7 +2,7 @@ import copy, os, json
 from datetime import datetime
 from cantools.util import rm, log, read, write, error
 from cantools import config
-from model import db, CTUser, Part, Thing, Person, Room, Asset
+from model import db, Member, Part, Thing, Person, Room, Asset
 from templater.defaults import ASSETS, BASE, HEADGEAR, LIGHTS, GESTURES, DANCES, VIBES
 from templater import generators
 from convert_obj_three import convert_ascii
@@ -93,7 +93,7 @@ def room(name, owner, environment=None, cameras=[], opts={}, lights=LIGHTS):
 
 def user(name, email, admin=False, lastName="zero"):
     log("user: %s, %s"%(name, email), 1)
-    u = CTUser()
+    u = Member()
     u.active = True
     u.admin = admin
     u.email = email

@@ -1,6 +1,6 @@
 """
 seeder script -- create initial stuff
- - CTUserz, Partz (bodies - templated), Personz, Roomz, Thingz
+ - Memberz, Partz (bodies - templated), Personz, Roomz, Thingz
  - convert assets to Assetz (blobbed): texture, stripset
 """
 
