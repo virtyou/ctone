@@ -60,11 +60,11 @@ def asset(name=None, path=None, variety=None, owner=None, data=None):
         if variety == "stripset":
             data = stripset(data)
         a = Asset()
-        a.owner = owner
+        a.owners = [owner]
 #        a.name = name
-        a.name = path.split("/")[-1]
+        a.name = path and path.split("/")[-1] or name
         a.item = data
-        a.identifier = path
+        a.identifier = path or name
         if variety:
             a.variety = variety
         else:
@@ -89,7 +89,7 @@ def asset(name=None, path=None, variety=None, owner=None, data=None):
 def furnishing(name, owner, opts):
     log("furnishing: %s"%(name,), 1)
     f = Thing()
-    f.owner = owner
+    f.owners = [owner]
     f.kind = "furnishing"
     f.name = name
     f.opts = opts
@@ -101,7 +101,7 @@ def room(name, owner, environment=None, cameras=[], opts={}, lights=LIGHTS):
     r = Room()
     r.name = name
     r.opts = opts
-    r.owner = owner
+    r.owners = [owner]
     r.lights = lights
     r.cameras = cameras
     r.environment = environment or name
@@ -133,7 +133,7 @@ def body(name, owner_not_used=None): # from template -- depped-ish
 def thing(obj, owner):
     log("thing: %s"%(obj["name"],), 2)
     t = Thing()
-    t.owner = owner
+    t.owners = [owner]
     for prop in ["texture", "stripset", "morphStack", "name", "custom", "kind"]:
         if prop in obj:
             setattr(t, prop, obj.pop(prop))
@@ -182,14 +182,14 @@ def parts(name, owner):
 def person(name, owner=None, responses={}, voice="Joanna", admin=False, email_domain=None, body_generator=parts):
     log("person: %s"%(name,))
     p = Person()
-    p.owner = owner or user(name, "%s@%s"%(name, email_domain), admin).key
+    p.owners = [owner or user(name, "%s@%s"%(name, email_domain), admin).key]
     p.name = name
     p.voice = voice
     p.responses = responses
     p.gestures = GESTURES
     p.dances = DANCES
     p.vibe = VIBES
-    p.body = body_generator(name, p.owner).key
+    p.body = body_generator(name, p.owners[0]).key
     p.put()
     return p
 
