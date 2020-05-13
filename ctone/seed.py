@@ -34,9 +34,9 @@ def seed():
     log("seeding database", important=True)
     for n in range(len(PEOPLE)):
         p = person(PEOPLE[n], responses=RESPONSES, admin=True, email_domain=EDOM)
-        room(ROOMZ[n], p.owner)
-    pool = furnishing('pool', p.owner, FURNISHINGS["pool"])
-    extras(p.owner)
+        room(ROOMZ[n], p.owners[0])
+    pool = furnishing('pool', p.owners[0], FURNISHINGS["pool"])
+    extras(p.owners[0])
     log("goodbye", important=True)
 
 def setPeople(peeps):
