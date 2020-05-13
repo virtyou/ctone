@@ -42,7 +42,9 @@ def stripset(data):
             error("Stripset not convertible! Please use Three.js JSON or Wavefront OBJ.")
     return data
 
-def asset(name, path=None, variety=None, owner=None, data=None):
+kindz = ["body", "head", "hair", "teeth", "eye"]
+kmap = {"shirt": "body"}
+def asset(name=None, path=None, variety=None, owner=None, data=None):
     path = path or ASSETS.get(name)
     log("asset: %s (%s)"%(name, path), 2)
     # this caching stuff only works if "name" is the same
@@ -59,10 +61,25 @@ def asset(name, path=None, variety=None, owner=None, data=None):
             data = stripset(data)
         a = Asset()
         a.owner = owner
-        a.name = name
+#        a.name = name
+        a.name = path.split("/")[-1]
         a.item = data
         a.identifier = path
-        a.variety = variety or name.split("_")[-1]
+        if variety:
+            a.variety = variety
+        else:
+            a.variety = path.endswith("js") and "stripset" or "texture"
+        for k in kindz:
+            if k in path:
+                a.kind = k
+                continue
+        if not a.kind:
+            for k in kmap:
+                if k in path:
+                    a.kind = kmap[k]
+        if not a.kind:
+            error("what kind?? %s %s %s"%(name, path, variety))
+#        a.variety = variety or name.split("_")[-1]
         a.put()
         LOADED_ASSETS[path] = LOADED_ASSETS[a.item.urlsafe()] = a
 #    elif name != a.name:
