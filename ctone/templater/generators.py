@@ -223,6 +223,7 @@ def hair(opts):
     return {
         "name": opts.get("hair_name", "hair"),
         "kind": "hair",
+        "bone": 4,
         "texture": opts["hair_texture"],
         "stripset": opts["hair_stripset"],
         "position": opts.get("hair_position", [0, -9, 2.4]),
