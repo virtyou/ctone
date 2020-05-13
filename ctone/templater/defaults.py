@@ -151,23 +151,26 @@ HEADGEAR = [{
     "kind": "hair",
     "custom": "js/custom/one/pony.js"
 }]
+HEADSKINZ = [
+    "maps/one/head_UV2.jpg"
+]
 HAIRZ = {
     "blip": {
         "texture": "maps/one/hair_alphaGimp3_2SMALL.png",
         "stripset": "models/one/hair2ALPHA_XX5.js"
     },
     "blop": {
-        "texture": "maps/one/hair.png",
+        "texture": "maps/one/hair_alphaGimp3a.png",
         "stripset": "models/one/hair4mario.js",
         "position": [0, 0, 0]
     },
     "clip": {
-        "texture": "maps/one/hair.png",
+        "texture": "maps/one/hairC5dHat.png",
         "stripset": "models/one/hair4marioA.js",
         "position": [0, 0, 0]
     },
     "clop": {
-        "texture": "maps/one/hair.png",
+        "texture": "maps/one/hairShrunk.png",
         "stripset": "models/one/hair4marioB.js",
         "position": [0, 0, 0]
     }
