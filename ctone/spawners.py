@@ -42,7 +42,9 @@ def stripset(data):
             error("Stripset not convertible! Please use Three.js JSON or Wavefront OBJ.")
     return data
 
-def asset(name, path=None, variety=None, owner=None, data=None):
+kindz = ["body", "head", "hair", "teeth", "eye"]
+kmap = {"shirt": "body"}
+def asset(name=None, path=None, variety=None, owner=None, data=None):
     path = path or ASSETS.get(name)
     log("asset: %s (%s)"%(name, path), 2)
     # this caching stuff only works if "name" is the same
@@ -58,11 +60,26 @@ def asset(name, path=None, variety=None, owner=None, data=None):
         if variety == "stripset":
             data = stripset(data)
         a = Asset()
-        a.owner = owner
-        a.name = name
+        a.owners = [owner]
+#        a.name = name
+        a.name = path and path.split("/")[-1] or name
         a.item = data
-        a.identifier = path
-        a.variety = variety or name.split("_")[-1]
+        a.identifier = path or name
+        if variety:
+            a.variety = variety
+        else:
+            a.variety = path.endswith("js") and "stripset" or "texture"
+        for k in kindz:
+            if k in path:
+                a.kind = k
+                continue
+        if not a.kind:
+            for k in kmap:
+                if k in path:
+                    a.kind = kmap[k]
+        if not a.kind:
+            error("what kind?? %s %s %s"%(name, path, variety))
+#        a.variety = variety or name.split("_")[-1]
         a.put()
         LOADED_ASSETS[path] = LOADED_ASSETS[a.item.urlsafe()] = a
 #    elif name != a.name:
@@ -72,7 +89,7 @@ def asset(name, path=None, variety=None, owner=None, data=None):
 def furnishing(name, owner, opts):
     log("furnishing: %s"%(name,), 1)
     f = Thing()
-    f.owner = owner
+    f.owners = [owner]
     f.kind = "furnishing"
     f.name = name
     f.opts = opts
@@ -84,7 +101,7 @@ def room(name, owner, environment=None, cameras=[], opts={}, lights=LIGHTS):
     r = Room()
     r.name = name
     r.opts = opts
-    r.owner = owner
+    r.owners = [owner]
     r.lights = lights
     r.cameras = cameras
     r.environment = environment or name
@@ -116,7 +133,7 @@ def body(name, owner_not_used=None): # from template -- depped-ish
 def thing(obj, owner):
     log("thing: %s"%(obj["name"],), 2)
     t = Thing()
-    t.owner = owner
+    t.owners = [owner]
     for prop in ["texture", "stripset", "morphStack", "name", "custom", "kind"]:
         if prop in obj:
             setattr(t, prop, obj.pop(prop))
@@ -165,14 +182,14 @@ def parts(name, owner):
 def person(name, owner=None, responses={}, voice="Joanna", admin=False, email_domain=None, body_generator=parts):
     log("person: %s"%(name,))
     p = Person()
-    p.owner = owner or user(name, "%s@%s"%(name, email_domain), admin).key
+    p.owners = [owner or user(name, "%s@%s"%(name, email_domain), admin).key]
     p.name = name
     p.voice = voice
     p.responses = responses
     p.gestures = GESTURES
     p.dances = DANCES
     p.vibe = VIBES
-    p.body = body_generator(name, p.owner).key
+    p.body = body_generator(name, p.owners[0]).key
     p.put()
     return p
 

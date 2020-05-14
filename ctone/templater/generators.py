@@ -1,6 +1,7 @@
 def body(opts): # disabled headgear for now...
     return {
         "name": "body",
+        "kind": "body",
         "texture": opts["texture"],
         "stripset": opts["stripset"],
         "matcat": "Phong",
@@ -10,6 +11,7 @@ def body(opts): # disabled headgear for now...
         },
         "parts": [{
             "name": "head",
+            "kind": "head",
             "thing": "Head",
             "matcat": "Phong",
             "meshcat": "SkinnedMesh",
@@ -22,18 +24,21 @@ def body(opts): # disabled headgear for now...
                 "name": "eyeL",
                 "kind": "eye",
                 "bone": 5,
+                "matcat": "Phong",
                 "texture": opts["eye_texture"],
                 "stripset": opts["eye_stripset"]
             }, {
                 "name": "eyeR",
                 "kind": "eye",
                 "bone": 6,
+                "matcat": "Phong",
                 "texture": opts["eye_texture"],
                 "stripset": opts["eye_stripset"]
             }, {
                 "name": "teeth",
                 "kind": "facial",
                 "bone": 4,
+                "matcat": "Phong",
                 "position": [0, -10, 2],
                 "texture": opts["teeth_texture"],
                 "stripset": opts["teeth_stripset"]
@@ -41,6 +46,7 @@ def body(opts): # disabled headgear for now...
                 "name": "teeth_top",
                 "kind": "facial",
                 "bone": 4,
+                "matcat": "Phong",
                 "position": [0, -10, 2],
                 "texture": opts["teeth_texture"],
                 "stripset": opts["teeth_stripset"]
@@ -48,6 +54,7 @@ def body(opts): # disabled headgear for now...
                 "name": "tongue",
                 "kind": "facial",
                 "bone": 4,
+                "matcat": "Phong",
                 "position": [0, -10, 2],
                 "texture": opts["teeth_texture"],
                 "stripset": opts["teeth_stripset"]

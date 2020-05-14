@@ -7,7 +7,7 @@ seeder script -- create initial stuff
 from cantools.util import log
 from templater import generators
 from spawners import thing, person, asset, room, furnishing
-from templater.defaults import HAIRZ, FURNISHINGS, RESPONSES
+from templater.defaults import HAIRZ, HEADSKINZ, FURNISHINGS, RESPONSES
 
 PEOPLE = ["sassy"]
 ROOMZ = ["one.scrolly", "one.techno", "one.kidroom"]
@@ -16,6 +16,8 @@ VARZ = {} # meh
 
 def extras(owner):
     log("extras")
+    for tx in HEADSKINZ:
+        asset(path=tx, owner=owner)
     for name, obj in HAIRZ.items():
         t = obj["texture"]
         s = obj["stripset"]
@@ -32,9 +34,9 @@ def seed():
     log("seeding database", important=True)
     for n in range(len(PEOPLE)):
         p = person(PEOPLE[n], responses=RESPONSES, admin=True, email_domain=EDOM)
-        room(ROOMZ[n], p.owner)
-    pool = furnishing('pool', p.owner, FURNISHINGS["pool"])
-    extras(p.owner)
+        room(ROOMZ[n], p.owners[0])
+    pool = furnishing('pool', p.owners[0], FURNISHINGS["pool"])
+    extras(p.owners[0])
     log("goodbye", important=True)
 
 def setPeople(peeps):
