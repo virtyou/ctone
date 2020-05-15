@@ -234,7 +234,7 @@ def hair(opts):
         "texture": opts["hair_texture"],
         "stripset": opts["hair_stripset"],
         "position": opts.get("hair_position", [0, -9, 2.4]),
-        "repeat": [8, 1],
+        "repeat": opts.get("hair_repeat", [8, 1]),
         "material": {
             "color": opts.get("hair_color", 0x447788),
             "specular": opts.get("hair_specular", 0xaaaaff),

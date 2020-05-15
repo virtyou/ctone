@@ -28,6 +28,8 @@ def extras(owner):
         }
         if "position" in obj:
             opts["hair_position"] = obj["position"]
+        if "repeat" in obj:
+            opts["hair_repeat"] = obj["repeat"]
         thing(generators.hair(opts), owner)
 
 def seed():
