@@ -173,7 +173,7 @@ HAIRZ = {
         "texture": "maps/one/hairShrunk.png",
         "stripset": "models/one/hair4marioB.js",
         "position": [0, 0, 0],
-        "repeat" None
+        "repeat": None
     }
 }
 LIGHTS = [
