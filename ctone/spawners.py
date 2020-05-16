@@ -69,19 +69,20 @@ def asset(name=None, path=None, variety=None, owner=None, data=None):
             a.variety = variety
         else:
             a.variety = path.endswith("js") and "stripset" or "texture"
-        for k in kindz:
-            if k in path:
-                a.kind = k
-                continue
-        if not a.kind:
-            for k in kmap:
+        if path:
+            for k in kindz:
                 if k in path:
-                    a.kind = kmap[k]
-        if not a.kind:
-            error("what kind?? %s %s %s"%(name, path, variety))
+                    a.kind = k
+                    continue
+            if not a.kind:
+                for k in kmap:
+                    if k in path:
+                        a.kind = kmap[k]
+            if not a.kind:
+                error("what kind?? %s %s %s"%(name, path, variety))
 #        a.variety = variety or name.split("_")[-1]
         a.put()
-        LOADED_ASSETS[path] = LOADED_ASSETS[a.item.urlsafe()] = a
+        LOADED_ASSETS[a.identifier] = LOADED_ASSETS[a.item.urlsafe()] = a
 #    elif name != a.name:
 #        error("same blob, different name (%s is not %s) -- nope!"%(name, a.name))
     return a.key
