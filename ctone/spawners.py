@@ -44,7 +44,7 @@ def stripset(data):
 
 kindz = ["body", "head", "hair", "teeth", "teeth_top", "tongue", "eye"]
 kmap = {"shirt": "body"}
-def asset(name=None, path=None, variety=None, owner=None, data=None):
+def asset(name=None, path=None, variety=None, owner=None, data=None, kind=None):
     path = path or ASSETS.get(name)
     log("asset: %s (%s)"%(name, path), 2)
     # this caching stuff only works if "name" is the same
@@ -69,7 +69,9 @@ def asset(name=None, path=None, variety=None, owner=None, data=None):
             a.variety = variety
         else:
             a.variety = path.endswith("js") and "stripset" or "texture"
-        if path:
+        if kind:
+            a.kind = kind
+        elif path:
             for k in kindz:
                 if k in path:
                     a.kind = k
