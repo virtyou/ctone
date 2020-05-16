@@ -6,6 +6,8 @@ ASSETS = {
     "head_stripset": "models/one/head.js",
     "teeth_texture": "maps/one/teeth256s.jpg",
     "teeth_stripset": "models/one/teeth_yan.js",
+    "teeth_top_stripset": "models/one/teeth_top_yan.js",
+    "tongue_stripset": "models/one/tongue_yan.js",
     "eye_texture": "maps/one/eye_brown_basic.jpg",
     "eye_stripset": "models/one/eyeCminusHole3.js"
 }
