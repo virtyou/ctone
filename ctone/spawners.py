@@ -42,7 +42,7 @@ def stripset(data):
             error("Stripset not convertible! Please use Three.js JSON or Wavefront OBJ.")
     return data
 
-kindz = ["body", "head", "hair", "teeth", "eye"]
+kindz = ["body", "head", "hair", "teeth", "teeth_top", "tongue", "eye"]
 kmap = {"shirt": "body"}
 def asset(name=None, path=None, variety=None, owner=None, data=None):
     path = path or ASSETS.get(name)
