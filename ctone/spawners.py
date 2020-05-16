@@ -12,13 +12,20 @@ LOADED_ASSETS = {}
 for item in Thing.query().all():
     THINGZ[item.name] = item
 for item in Asset.query().all():
-    LOADED_ASSETS[item.item.urlsafe()] = LOADED_ASSETS[item.identifier or item.name] = item
+    LOADED_ASSETS[item.item.urlsafe()] = LOADED_ASSETS[item.identifier] = item
 
-def exists(file_data):
+def exists(file_data, exalt=None):
     log("checking file uniqueness", 4)
     for f in [os.path.join(config.db.blob, p) for p in os.listdir(config.db.blob)]:
         if os.path.isfile(f) and file_data == read(f):
-            return LOADED_ASSETS[f];
+            u = "/" + f;
+            e = LOADED_ASSETS.get(u)
+            if not e and exalt:
+                ez = filter(lambda x : x.path() == u,
+                    exalt.query().all())
+                if len(ez) == 1:
+                    return ez[0]
+            return e
 #            return Asset.query(Asset.item == int(os.path.split(f)[-1])).get() # fix binary queries!
     return False
 
@@ -44,7 +51,7 @@ def stripset(data):
 
 kindz = ["body", "head", "hair", "teeth", "teeth_top", "tongue", "eye"]
 kmap = {"shirt": "body"}
-def asset(name=None, path=None, variety=None, owner=None, data=None, kind=None):
+def asset(name=None, path=None, variety=None, owner=None, data=None, kind=None, exalt=None):
     path = path or ASSETS.get(name)
     log("asset: %s (%s)"%(name, path), 2)
     # this caching stuff only works if "name" is the same
@@ -52,7 +59,7 @@ def asset(name=None, path=None, variety=None, owner=None, data=None, kind=None):
     a = path and LOADED_ASSETS.get(path)
     if not a:
         data = data or read(path)
-        existing = exists(data)
+        existing = exists(data, exalt)
         if existing:
             log("asset exists: %s"%(existing.name,), 3)
             return existing.key
