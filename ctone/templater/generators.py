@@ -36,7 +36,7 @@ def body(opts): # disabled headgear for now...
                 "stripset": opts["eye_stripset"]
             }, {
                 "name": "teeth",
-                "kind": "facial",
+                "kind": "teeth",
                 "bone": 4,
                 "matcat": "Phong",
                 "position": [0, -10, 2],
@@ -44,20 +44,20 @@ def body(opts): # disabled headgear for now...
                 "stripset": opts["teeth_stripset"]
             }, {
                 "name": "teeth_top",
-                "kind": "facial",
+                "kind": "teeth_top",
                 "bone": 4,
                 "matcat": "Phong",
                 "position": [0, -10, 2],
                 "texture": opts["teeth_texture"],
-                "stripset": opts["teeth_stripset"]
+                "stripset": opts["teeth_top_stripset"]
             }, {
                 "name": "tongue",
-                "kind": "facial",
+                "kind": "tongue",
                 "bone": 4,
                 "matcat": "Phong",
                 "position": [0, -10, 2],
                 "texture": opts["teeth_texture"],
-                "stripset": opts["teeth_stripset"]
+                "stripset": opts["tongue_stripset"]
             }, {
                 "name": "pony",
                 "kind": "hair",
