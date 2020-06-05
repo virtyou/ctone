@@ -41,7 +41,13 @@ def body(opts): # disabled headgear for now...
                 "matcat": "Phong",
                 "position": [0, -10, 2],
                 "texture": opts["teeth_texture"],
-                "stripset": opts["teeth_stripset"]
+                "stripset": opts["teeth_stripset"],
+                "material": {
+                    "morphTargets": True
+                },
+                "mti": {
+                    "3": 1
+                }
             }, {
                 "name": "teeth_top",
                 "kind": "teeth_top",
@@ -57,7 +63,13 @@ def body(opts): # disabled headgear for now...
                 "matcat": "Phong",
                 "position": [0, -10, 2],
                 "texture": opts["teeth_texture"],
-                "stripset": opts["tongue_stripset"]
+                "stripset": opts["tongue_stripset"],
+                "material": {
+                    "morphTargets": True
+                },
+                "mti": {
+                    "2": 1
+                }
             }, {
                 "name": "pony",
                 "kind": "hair",
