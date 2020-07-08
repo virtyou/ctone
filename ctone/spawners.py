@@ -180,7 +180,7 @@ def parts(name, owner):
     log("body (parts): %s"%(name,), 1)
     opts = BASE.copy()
     for key in ASSETS:
-        opts[key] = asset(key)
+        opts[key] = asset(key, owner=owner)
     return part(generators.body(opts), owner)
 #    return part(generators.body(opts, gear(name, owner)), owner)
 
