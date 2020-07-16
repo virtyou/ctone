@@ -123,8 +123,8 @@ templates.one.body = {
         return sassy;
     },
     basic: function(opts) { // use basic() (other stuff too old)
-        return zero.base.body(CT.merge(opts,
-            templates.one.body.variants.basic));
+        var vz = templates.one.body.variants;
+        return zero.base.body(CT.merge(opts, vz.basic, vz.defaults));
     }
 };
 
