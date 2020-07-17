@@ -29,6 +29,25 @@ environments.one.techno = {
         },
         parts: [{
             repeat: [10, 1],
+            scale: [9, 3, .5],
+            position: [770, -43, -770]
+        }, {
+            repeat: [10, 1],
+            scale: [9, 3, .5],
+            position: [-470, -43, -1470],
+            rotation: [0, 6.28 / 4, 0]
+        }, {
+            repeat: [10, 1],
+            scale: [9, 2, .5],
+            position: [-570, -43, -770],
+            rotation: [0, 6.28 / 4, 0]
+        }, {
+            repeat: [10, 1],
+            scale: [9, 1, .5],
+            position: [-770, -43, 0],
+            rotation: [0, 6.28 / 4, 0]
+        }, {
+            repeat: [10, 1],
             scale: [8, .5, .5],
             position: [0, -43, 470]
         }, {
