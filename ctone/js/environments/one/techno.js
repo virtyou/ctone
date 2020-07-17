@@ -14,10 +14,17 @@ environments.one.techno = {
         },
         parts: [{
             stripset: "/models/one/plane.js",
-            position: [0, -77, -200],
+            position: [0, -77, -260],
             repeat: [1, 1],
-            rotation: [6.28/4, 0, 0], // ??
+            rotation: [6.28/4, 0, 0],
             scale: [2270, 2160, 1300]
+        }, {
+            stripset: "/models/one/plane.js",
+            position: [0, 170, -660],
+            repeat: [1, 1],
+            rotation: [6.28/4, 0, 0],
+            scale: [427, 216, 130],
+            material: { side: THREE.DoubleSide }
         }]
     },
     //wall: { ... }
@@ -30,7 +37,7 @@ environments.one.techno = {
         parts: [{
             repeat: [10, 1],
             scale: [9, 3, .5],
-            position: [770, -43, -770]
+            position: [900, -43, -770]
         }, {
             repeat: [10, 1],
             scale: [9, 3, .5],
