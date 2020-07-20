@@ -29,7 +29,7 @@ environments.one.techno = {
             material: { side: THREE.DoubleSide }
         }, {
             stripset: "/models/one/plane.js",
-            position: [0, 100, 660],
+            position: [0, 100, 700],
             repeat: [1, 1],
             rotation: [6.28/4, 0, 0],
             scale: [427, 216, 130],
