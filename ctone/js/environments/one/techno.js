@@ -16,22 +16,16 @@ environments.one.techno = {
             scroll: { axis: "x" },
             stripset: "/models/one/plane.js",
             position: [0, -77, -260],
-            repeat: [1, 1],
-            rotation: [6.28/4, 0, 0],
             scale: [2270, 2160, 1300]
         }, {
             scroll: true,
             stripset: "/models/one/plane.js",
             position: [0, 170, -660],
-            repeat: [1, 1],
-            rotation: [6.28/4, 0, 0],
             scale: [427, 216, 130],
             material: { side: THREE.DoubleSide }
         }, {
             stripset: "/models/one/plane.js",
             position: [0, 100, 700],
-            repeat: [1, 1],
-            rotation: [6.28/4, 0, 0],
             scale: [427, 216, 130],
             material: { side: THREE.DoubleSide }
         }]
