@@ -29,6 +29,12 @@ environments.one.techno = {
             scale: [427, 216, 130],
             material: { side: THREE.DoubleSide }
         }, {
+            shift: { axis: "x" },
+            stripset: "/models/one/plane.js",
+            position: [0, 100, 1200],
+            scale: [427, 216, 130],
+            material: { side: THREE.DoubleSide }
+        }, {
             shift: true,
             stripset: "/models/one/plane.js",
             position: [700, 100, 700],
