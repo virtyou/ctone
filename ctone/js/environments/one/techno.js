@@ -40,6 +40,18 @@ environments.one.techno = {
             position: [700, 100, 700],
             scale: [216, 427, 130],
             material: { side: THREE.DoubleSide }
+        }, {
+            shift: { axis: "y", mode: "recycle" },
+            stripset: "/models/one/plane.js",
+            position: [2220, 100, 2120],
+            scale: [216, 216, 130],
+            material: { side: THREE.DoubleSide }
+        }, {
+            shift: { axis: "y", mode: "recycle" },
+            stripset: "/models/one/plane.js",
+            position: [-2220, 100, 2120],
+            scale: [216, 216, 130],
+            material: { side: THREE.DoubleSide }
         }]
     },
     //wall: { ... }
