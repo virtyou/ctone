@@ -16,23 +16,41 @@ environments.one.techno = {
             scroll: { axis: "x" },
             stripset: "/models/one/plane.js",
             position: [0, -77, -260],
-            repeat: [1, 1],
-            rotation: [6.28/4, 0, 0],
             scale: [2270, 2160, 1300]
         }, {
             scroll: true,
             stripset: "/models/one/plane.js",
             position: [0, 170, -660],
-            repeat: [1, 1],
-            rotation: [6.28/4, 0, 0],
             scale: [427, 216, 130],
             material: { side: THREE.DoubleSide }
         }, {
             stripset: "/models/one/plane.js",
-            position: [0, 100, 660],
-            repeat: [1, 1],
-            rotation: [6.28/4, 0, 0],
+            position: [0, 100, 700],
             scale: [427, 216, 130],
+            material: { side: THREE.DoubleSide }
+        }, {
+            shift: { axis: "x" },
+            stripset: "/models/one/plane.js",
+            position: [0, 100, 1200],
+            scale: [427, 216, 130],
+            material: { side: THREE.DoubleSide }
+        }, {
+            shift: true,
+            stripset: "/models/one/plane.js",
+            position: [700, 100, 700],
+            scale: [216, 427, 130],
+            material: { side: THREE.DoubleSide }
+        }, {
+            shift: { axis: "y", mode: "recycle" },
+            stripset: "/models/one/plane.js",
+            position: [2220, 100, 2120],
+            scale: [216, 216, 130],
+            material: { side: THREE.DoubleSide }
+        }, {
+            shift: { axis: "y", mode: "recycle" },
+            stripset: "/models/one/plane.js",
+            position: [-2220, 100, 2120],
+            scale: [216, 216, 130],
             material: { side: THREE.DoubleSide }
         }]
     },
