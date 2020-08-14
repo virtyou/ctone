@@ -3,7 +3,7 @@ from datetime import datetime
 from cantools.util import rm, log, read, write, error
 from cantools import config
 from model import db, Member, Part, Thing, Person, Room, Asset
-from templater.defaults import ASSETS, BASE, HEADGEAR, LIGHTS, GESTURES, DANCES, VIBES
+from templater.defaults import ASSETS, BASE, HEADGEAR, LIGHTS, VIBES
 from templater import generators
 from convert_obj_three import convert_ascii
 
@@ -191,8 +191,6 @@ def person(name, owner=None, responses={}, voice="Joanna", admin=False, email_do
     p.name = name
     p.voice = voice
     p.responses = responses
-    p.gestures = GESTURES
-    p.dances = DANCES
     p.vibe = VIBES
     p.body = body_generator(name, p.owners[0]).key
     p.put()
