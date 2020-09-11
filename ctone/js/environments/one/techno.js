@@ -38,7 +38,7 @@ environments.one.techno = {
                 kind: "elight",
                 thing: "Fire",
                 rotation: [-1.57, 0, 0],
-                scale: [1 / 427, 1 / 130, 1 / 216]
+                scale: [4 / 427, 4 / 130, 4 / 216]
             }]
         }, {
             shift: { axis: "x" },
