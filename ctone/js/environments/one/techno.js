@@ -32,7 +32,14 @@ environments.one.techno = {
             stripset: "/models/one/plane.js",
             position: [0, 2000, 700],
             scale: [427, 216, 130],
-            material: { side: THREE.DoubleSide }
+            material: { side: THREE.DoubleSide },
+            parts: [{
+                name: "fire",
+                kind: "elight",
+                thing: "Fire",
+                rotation: [-1.57, 0, 0],
+                scale: [1 / 427, 1 / 130, 1 / 216]
+            }]
         }, {
             shift: { axis: "x" },
             stripset: "/models/one/plane.js",
