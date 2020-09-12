@@ -37,7 +37,8 @@ def seed():
     for n in range(len(PEOPLE)):
         p = person(PEOPLE[n], responses=RESPONSES, admin=True, email_domain=EDOM)
         room(ROOMZ[n], p.owners[0])
-    pool = furnishing('pool', p.owners[0], FURNISHINGS["pool"])
+    for k, v in FURNISHINGS.items():
+        furnishing(k, p.owners[0], v)
     extras(p.owners[0])
     log("goodbye", important=True)
 
