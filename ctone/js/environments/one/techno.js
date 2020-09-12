@@ -37,6 +37,7 @@ environments.one.techno = {
                 name: "fire",
                 kind: "elight",
                 thing: "Fire",
+                regTick: true,
                 rotation: [-1.57, 0, 0],
                 scale: [4 / 427, 4 / 130, 4 / 216]
             }]
