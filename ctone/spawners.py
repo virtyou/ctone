@@ -3,9 +3,9 @@ from datetime import datetime
 from cantools.util import rm, log, read, write, error
 from cantools import config
 from model import db, Member, Part, Thing, Person, Room, Asset
-from templater.defaults import ASSETS, BASE, HEADGEAR, LIGHTS, VIBES
-from templater import generators
-from convert_obj_three import convert_ascii
+from .templater.defaults import ASSETS, BASE, HEADGEAR, LIGHTS, VIBES
+from .templater import generators
+from .convert_obj_three import convert_ascii
 
 THINGZ = {}
 LOADED_ASSETS = {}

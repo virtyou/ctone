@@ -5,9 +5,9 @@ seeder script -- create initial stuff
 """
 
 from cantools.util import log
-from templater import generators
-from spawners import thing, person, asset, room, furnishing
-from templater.defaults import HAIRZ, HEADSKINZ, FURNISHINGS, RESPONSES
+from .templater import generators
+from .spawners import thing, person, asset, room, furnishing
+from .templater.defaults import HAIRZ, HEADSKINZ, FURNISHINGS, RESPONSES
 
 PEOPLE = ["sassy"]
 ROOMZ = ["one.scrolly", "one.techno", "one.kidroom"]
