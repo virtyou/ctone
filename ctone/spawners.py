@@ -3,9 +3,9 @@ from datetime import datetime
 from cantools.util import rm, log, read, write, error
 from cantools import config
 from model import db, Member, Part, Thing, Person, Room, Asset
-from templater.defaults import ASSETS, BASE, HEADGEAR, LIGHTS, VIBES
-from templater import generators
-from convert_obj_three import convert_ascii
+from .templater.defaults import ASSETS, BASE, HEADGEAR, LIGHTS, VIBES
+from .templater import generators
+from .convert_obj_three import convert_ascii
 
 THINGZ = {}
 LOADED_ASSETS = {}
@@ -17,7 +17,7 @@ for item in Asset.query().all():
 def exists(file_data, exalt=None):
     log("checking file uniqueness", 4)
     for f in [os.path.join(config.db.blob, p) for p in os.listdir(config.db.blob)]:
-        if os.path.isfile(f) and file_data == read(f):
+        if os.path.isfile(f) and file_data == read(f, binary=True):
             u = "/" + f;
             return LOADED_ASSETS.get(u) or filter(lambda x : x.path() == u,
                 exalt.query().all())[0]
@@ -34,6 +34,8 @@ def convobj(data):
 
 def stripset(data):
     try:
+        if type(data) == bytes:
+            data = data.decode()
         json.loads(data)
     except:
         log("asset not json! converting...", 3)
@@ -53,7 +55,7 @@ def asset(name=None, path=None, variety=None, owner=None, data=None, kind=None, 
     # otherwise, it won't reattach right
     a = path and LOADED_ASSETS.get(path)
     if not a:
-        data = data or read(path)
+        data = data or read(path, binary=True)
         existing = exists(data, exalt)
         if existing:
             log("asset exists: %s"%(existing.name,), 3)

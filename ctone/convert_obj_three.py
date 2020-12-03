@@ -154,7 +154,7 @@ COLORS = [0xeeeeee, 0xee0000, 0x00ee00, 0x0000ee, 0xeeee00, 0x00eeee, 0xee00ee]
 # #####################################################
 # Templates
 # #####################################################
-TEMPLATE_FILE_ASCII = u"""\
+TEMPLATE_FILE_ASCII = """\
 {
 
     "metadata" :
@@ -191,7 +191,7 @@ TEMPLATE_FILE_ASCII = u"""\
 }
 """
 
-TEMPLATE_FILE_BIN = u"""\
+TEMPLATE_FILE_BIN = """\
 {
 
     "metadata" :
@@ -284,7 +284,7 @@ def translate(vertices, t):
     """Translate array of vertices by vector t.
     """
 
-    for i in xrange(len(vertices)):
+    for i in range(len(vertices)):
         vertices[i][0] += t[0]
         vertices[i][1] += t[1]
         vertices[i][2] += t[2]
@@ -661,19 +661,19 @@ def generate_face(f, fc):
 
     # must clamp in case on polygons bigger than quads
 
-    for i in xrange(nVertices):
+    for i in range(nVertices):
         index = f['vertex'][i] - 1
         faceData.append(index)
 
     faceData.append( f['material'] )
 
     if hasFaceVertexUvs:
-        for i in xrange(nVertices):
+        for i in range(nVertices):
             index = f['uv'][i] - 1
             faceData.append(index)
 
     if hasFaceVertexNormals:
-        for i in xrange(nVertices):
+        for i in range(nVertices):
             index = f['normal'][i] - 1
             faceData.append(index)
 
@@ -762,7 +762,7 @@ def generate_morph_targets(morphfiles, n_vertices, infile):
         matches = glob.glob(mfilepattern)
         matches.sort()
 
-        indices = range(0, len(matches), FRAMESTEP)
+        indices = list(range(0, len(matches), FRAMESTEP))
         for i in indices:
             path = matches[i]
 
@@ -778,7 +778,7 @@ def generate_morph_targets(morphfiles, n_vertices, infile):
 
                 if n_vertices != n_morph_vertices:
 
-                    print "WARNING: skipping morph [%s] with different number of vertices [%d] than the original model [%d]" % (name, n_morph_vertices, n_vertices)
+                    print("WARNING: skipping morph [%s] with different number of vertices [%d] than the original model [%d]" % (name, n_morph_vertices, n_vertices))
 
                 else:
 
@@ -792,7 +792,7 @@ def generate_morph_targets(morphfiles, n_vertices, infile):
                         top(morphVertices)
 
                     morphVertexData.append((get_name(name), morphVertices))
-                    print "adding [%s] with %d vertices" % (name, n_morph_vertices)
+                    print("adding [%s] with %d vertices" % (name, n_morph_vertices))
 
     morphTargets = ""
     if len(morphVertexData):
@@ -820,11 +820,11 @@ def generate_morph_colors(colorfiles, n_vertices, n_faces):
 
             if n_vertices != n_morph_vertices:
 
-                print "WARNING: skipping morph color map [%s] with different number of vertices [%d] than the original model [%d]" % (name, n_morph_vertices, n_vertices)
+                print("WARNING: skipping morph color map [%s] with different number of vertices [%d] than the original model [%d]" % (name, n_morph_vertices, n_vertices))
 
             elif n_faces != n_morph_faces:
 
-                print "WARNING: skipping morph color map [%s] with different number of faces [%d] than the original model [%d]" % (name, n_morph_faces, n_faces)
+                print("WARNING: skipping morph color map [%s] with different number of faces [%d] than the original model [%d]" % (name, n_morph_faces, n_faces))
 
             else:
 
@@ -838,7 +838,7 @@ def generate_morph_colors(colorfiles, n_vertices, n_faces):
                     colorFaces = morphFaces
                     materialColors = morphMaterialColors
 
-                print "adding [%s] with %d face colors" % (name, len(morphFaceColors))
+                print("adding [%s] with %d face colors" % (name, len(morphFaceColors)))
 
     morphColors = ""
     if len(morphColorData):
@@ -954,7 +954,7 @@ def create_materials(materials, mtlfilename, basename):
 
         else:
 
-            print "Couldn't find [%s]" % fname
+            print("Couldn't find [%s]" % fname)
 
     return mtl
 
@@ -1030,7 +1030,7 @@ def convert_ascii(infile, morphfiles, colorfiles, outfile):
     """
 
     if not file_exists(infile):
-        print "Couldn't find [%s]" % infile
+        print("Couldn't find [%s]" % infile)
         return
 
     # parse OBJ / MTL files
@@ -1111,7 +1111,7 @@ def convert_ascii(infile, morphfiles, colorfiles, outfile):
     out.write(text)
     out.close()
 
-    print "%d vertices, %d faces, %d materials" % (len(vertices), len(faces), len(materials))
+    print("%d vertices, %d faces, %d materials" % (len(vertices), len(faces), len(materials)))
 
 
 # #############################################################################
@@ -1176,7 +1176,7 @@ def convert_binary(infile, outfile):
     """
 
     if not file_exists(infile):
-        print "Couldn't find [%s]" % infile
+        print("Couldn't find [%s]" % infile)
         return
 
     binfile = get_name(outfile) + ".bin"
@@ -1502,7 +1502,7 @@ def convert_binary(infile, outfile):
 # Helpers
 # #############################################################################
 def usage():
-    print "Usage: %s -i filename.obj -o filename.js [-m morphfiles*.obj] [-c morphcolors*.obj] [-a center|top|bottom] [-s flat|smooth] [-t binary|ascii] [-d invert|normal]" % os.path.basename(sys.argv[0])
+    print("Usage: %s -i filename.obj -o filename.js [-m morphfiles*.obj] [-c morphcolors*.obj] [-a center|top|bottom] [-s flat|smooth] [-t binary|ascii] [-d invert|normal]" % os.path.basename(sys.argv[0]))
 
 # #####################################################
 # Main
@@ -1568,13 +1568,13 @@ if __name__ == "__main__":
         usage()
         sys.exit(2)
 
-    print "Converting [%s] into [%s] ..." % (infile, outfile)
+    print("Converting [%s] into [%s] ..." % (infile, outfile))
 
     if morphfiles:
-        print "Morphs [%s]" % morphfiles
+        print("Morphs [%s]" % morphfiles)
 
     if colorfiles:
-        print "Colors [%s]" % colorfiles
+        print("Colors [%s]" % colorfiles)
 
     if TYPE == "ascii":
         convert_ascii(infile, morphfiles, colorfiles, outfile)
