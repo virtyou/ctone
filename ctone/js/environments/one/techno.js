@@ -1,4 +1,5 @@
 environments.one.techno = {
+    fog: true,
     shell: {
         texture: "/maps/one/bg7.jpg",
         dimensions: [111, 111, 111, 7, 5],
