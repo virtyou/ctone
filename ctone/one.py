@@ -1,6 +1,6 @@
 from json import dumps
 from optparse import OptionParser
-from cantools.util import log, read, write, error
+from cantools.util import log, cmd, output, read, write, error
 
 MST = """
 %s.base = %s;
@@ -63,18 +63,31 @@ def conv(fname, morphs, modname, bm):
 		morphTargets(data, morphs, modname)
 	log("goodbye", important=True)
 
+def vidstrip(fname): # TODO: power of 2 dimensions!
+	log("converting %s to video strip"%(fname,), important=True)
+	fcount = int(output("ffprobe -v error -select_streams v:0 -show_entries stream=nb_frames -of default=nokey=1:noprint_wrappers=1 %s"%(fname,)))
+	log("found %s frames"%(fcount,))
+	cmd('ffmpeg -i %s -frames 1 -vf "chromakey=0x70de77:0.1:0.2,scale=160:90,tile=%sx1" strip.png'%(fname, fcount))
+	log("converted video (%s) to image strip (strip.png)"%(fname,))
+	log("goodbye", important=True)
+
 def do():
-	parser = OptionParser("ctone input_file.json [--name=NAME] [--morphs=MORPHS]")
+	parser = OptionParser("ctone INPUT_FILE [--name=NAME] [--morphs=MORPHS]")
 	parser.add_option("-n", "--name", dest="name", default="model",
 		help="name of model file (default: model)")
 	parser.add_option("-m", "--morphs", dest="morphs", default="morphs.one.head",
 		help="full path of morph [base and stack] (default: morphs.one.head)")
 	parser.add_option("-b", "--bonemap", action="store_true", dest="bonemap", default=False,
 		help="generate a bonemap in the stripset; skip morphStack")
+	parser.add_option("-v", "--vidstrip", action="store_true", dest="vidstrip", default=False,
+		help="convert a short video clip into an image strip with transparency")
 	options, args = parser.parse_args()
 	if not len(args):
-		error("please provide an input file (json)")
-	conv(args[0], options.morphs, options.name, options.bonemap)
+		error("please provide an input file (json or video for -v)")
+	if options.vidstrip:
+		vidstrip(args[0])
+	else:
+		conv(args[0], options.morphs, options.name, options.bonemap)
 
 if __name__ == "__main__":
 	do()
