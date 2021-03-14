@@ -1,3 +1,4 @@
+import math
 from json import dumps
 from optparse import OptionParser
 from cantools.util import log, cmd, output, read, write, error
@@ -63,6 +64,9 @@ def conv(fname, morphs, modname, bm):
 		morphTargets(data, morphs, modname)
 	log("goodbye", important=True)
 
+WIDTH = 128
+HEIGHT = 64
+MAX = 128
 def vidstrip(fname, maxframes): # TODO: power of 2 dimensions!
 	log("converting %s to video strip"%(fname,), important=True)
 	if maxframes:
@@ -71,8 +75,12 @@ def vidstrip(fname, maxframes): # TODO: power of 2 dimensions!
 	else:
 		fcount = int(output("ffprobe -v error -select_streams v:0 -show_entries stream=nb_frames -of default=nokey=1:noprint_wrappers=1 %s"%(fname,)))
 		log("found %s frames"%(fcount,))
-	cmd('ffmpeg -i %s -frames 1 -vf "chromakey=0x70de77:0.1:0.2,scale=128:64,tile=%sx1" strip.png'%(fname, fcount))
-	log("converted video (%s) to image strip (strip.png - %sx64)"%(fname, fcount * 128))
+	w = min(fcount, MAX)
+	h = math.ceil(fcount / MAX)
+	cmd('ffmpeg -i %s -frames 1 -vf "chromakey=0x70de77:0.1:0.2,scale=%s:%s,tile=%sx%s" strip.png'%(fname,
+		WIDTH, HEIGHT, w, h))
+	log("converted video (%s) to %s frame image strip (strip.png - %sx%s)"%(fname,
+		fcount, w * WIDTH, h * HEIGHT))
 	log("goodbye", important=True)
 
 def do():
