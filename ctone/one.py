@@ -63,10 +63,14 @@ def conv(fname, morphs, modname, bm):
 		morphTargets(data, morphs, modname)
 	log("goodbye", important=True)
 
-def vidstrip(fname): # TODO: power of 2 dimensions!
+def vidstrip(fname, maxframes): # TODO: power of 2 dimensions!
 	log("converting %s to video strip"%(fname,), important=True)
-	fcount = int(output("ffprobe -v error -select_streams v:0 -show_entries stream=nb_frames -of default=nokey=1:noprint_wrappers=1 %s"%(fname,)))
-	log("found %s frames"%(fcount,))
+	if maxframes:
+		fcount = int(maxframes)
+		log("limiting output to %s frames"%(fcount,))
+	else:
+		fcount = int(output("ffprobe -v error -select_streams v:0 -show_entries stream=nb_frames -of default=nokey=1:noprint_wrappers=1 %s"%(fname,)))
+		log("found %s frames"%(fcount,))
 	cmd('ffmpeg -i %s -frames 1 -vf "chromakey=0x70de77:0.1:0.2,scale=160:90,tile=%sx1" strip.png'%(fname, fcount))
 	log("converted video (%s) to image strip (strip.png)"%(fname,))
 	log("goodbye", important=True)
@@ -81,11 +85,13 @@ def do():
 		help="generate a bonemap in the stripset; skip morphStack")
 	parser.add_option("-v", "--vidstrip", action="store_true", dest="vidstrip", default=False,
 		help="convert a short video clip into an image strip with transparency")
+	parser.add_option("-f", "--frames", dest="frames", default=None,
+		help="max frame count for --vidstrip mode (default: no limit))")
 	options, args = parser.parse_args()
 	if not len(args):
 		error("please provide an input file (json or video for -v)")
 	if options.vidstrip:
-		vidstrip(args[0])
+		vidstrip(args[0], options.frames)
 	else:
 		conv(args[0], options.morphs, options.name, options.bonemap)
 
