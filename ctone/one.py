@@ -77,10 +77,11 @@ def vidstrip(fname, maxframes): # TODO: power of 2 dimensions!
 		log("found %s frames"%(fcount,))
 	w = min(fcount, MAX)
 	h = math.ceil(fcount / MAX)
-	cmd('ffmpeg -i %s -frames 1 -vf "chromakey=0x70de77:0.1:0.2,scale=%s:%s,tile=%sx%s" strip.png'%(fname,
-		WIDTH, HEIGHT, w, h))
-	log("converted video (%s) to %s frame image strip (strip.png - %sx%s)"%(fname,
-		fcount, w * WIDTH, h * HEIGHT))
+	oname = fname.split(".")[0]
+	cmd('ffmpeg -i %s -frames 1 -vf "chromakey=0x70de77:0.1:0.2,scale=%s:%s,tile=%sx%s" %s.png'%(fname,
+		WIDTH, HEIGHT, w, h, oname))
+	log("converted video (%s) to %s frame image strip (%s.png - %sx%s)"%(fname,
+		fcount, oname, w * WIDTH, h * HEIGHT))
 	log("goodbye", important=True)
 
 def do():
