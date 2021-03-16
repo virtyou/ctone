@@ -76,9 +76,9 @@ def vidstrip(fname, maxframes): # TODO: power of 2 dimensions!
 		fcount = int(output("ffprobe -v error -select_streams v:0 -show_entries stream=nb_frames -of default=nokey=1:noprint_wrappers=1 %s"%(fname,)))
 		log("found %s frames"%(fcount,))
 	w = min(fcount, MAX)
-	h = math.ceil(fcount / MAX)
+	h = int(math.ceil(float(fcount) / MAX)) # ugh py2
 	oname = fname.split(".")[0]
-	cmd('ffmpeg -i %s -frames 1 -vf "chromakey=0x70de77:0.1:0.2,scale=%s:%s,tile=%sx%s" %s.png'%(fname,
+	cmd('ffmpeg -i %s -frames 1 -vf "chromakey=0x70de77:0.2:0,scale=%s:%s,tile=%sx%s" %s.png'%(fname,
 		WIDTH, HEIGHT, w, h, oname))
 	log("converted video (%s) to %s frame image strip (%s.png - %sx%s)"%(fname,
 		fcount, oname, w * WIDTH, h * HEIGHT))
