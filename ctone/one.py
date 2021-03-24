@@ -67,7 +67,7 @@ def conv(fname, morphs, modname, bm):
 WIDTH = 128
 HEIGHT = 64
 MAX = 128
-def vidstrip(fname, maxframes): # TODO: power of 2 dimensions!
+def vidstrip(fname, maxframes, color, threshold):
 	log("converting %s to video strip"%(fname,), important=True)
 	if maxframes:
 		fcount = int(maxframes)
@@ -78,8 +78,8 @@ def vidstrip(fname, maxframes): # TODO: power of 2 dimensions!
 	w = min(fcount, MAX)
 	h = int(math.ceil(float(fcount) / MAX)) # ugh py2
 	oname = fname.split(".")[0]
-	cmd('ffmpeg -i %s -frames 1 -vf "chromakey=0x70de77:0.2:0,scale=%s:%s,tile=%sx%s" %s.png'%(fname,
-		WIDTH, HEIGHT, w, h, oname))
+	cmd('ffmpeg -i %s -frames 1 -vf "chromakey=%s:%s:0,scale=%s:%s,tile=%sx%s" %s.png'%(fname,
+		color, threshold, WIDTH, HEIGHT, w, h, oname))
 	log("converted video (%s) to %s frame image strip (%s.png - %sx%s)"%(fname,
 		fcount, oname, w * WIDTH, h * HEIGHT))
 	log("goodbye", important=True)
@@ -96,11 +96,15 @@ def do():
 		help="convert a short video clip into an image strip with transparency")
 	parser.add_option("-f", "--frames", dest="frames", default=None,
 		help="max frame count for --vidstrip mode (default: no limit))")
+	parser.add_option("-c", "--color", dest="color", default="0x70de77",
+		help="background color for for --vidstrip mode (default: 0x70de77))")
+	parser.add_option("-t", "--threshold", dest="threshold", default="0.2",
+		help="color threshold for --vidstrip mode (default: 0.2))")
 	options, args = parser.parse_args()
 	if not len(args):
 		error("please provide an input file (json or video for -v)")
 	if options.vidstrip:
-		vidstrip(args[0], options.frames)
+		vidstrip(args[0], options.frames, options.color, options.threshold)
 	else:
 		conv(args[0], options.morphs, options.name, options.bonemap)
 
