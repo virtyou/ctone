@@ -32,7 +32,7 @@ environments.one.techno = {
             material: { side: THREE.DoubleSide }
         }, {
             stripset: "/models/one/plane.js",
-            position: [0, 2000, 700],
+            position: [1200, 300, 0],
             scale: [427, 216, 130],
             material: { side: THREE.DoubleSide },
             parts: [{
