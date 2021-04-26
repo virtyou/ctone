@@ -6,8 +6,8 @@ seeder script -- create initial stuff
 
 from cantools.util import log
 from .templater import generators
-from .spawners import thing, person, asset, room, furnishing
-from .templater.defaults import HAIRZ, HEADSKINZ, FURNISHINGS, RESPONSES
+from .spawners import thing, person, asset, room, furnishing, elemental
+from .templater.defaults import HAIRZ, HEADSKINZ, FURNISHINGS, ELEMENTALS, RESPONSES
 
 PEOPLE = ["sassy"]
 ROOMZ = ["one.scrolly", "one.techno", "one.kidroom"]
@@ -39,6 +39,8 @@ def seed():
         room(ROOMZ[n], p.owners[0])
     for k, v in FURNISHINGS.items():
         furnishing(k, p.owners[0], v)
+    for k, v in ELEMENTALS.items():
+        elemental(k, p.owners[0], v)
     extras(p.owners[0])
     log("goodbye", important=True)
 

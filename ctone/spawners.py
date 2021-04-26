@@ -103,6 +103,16 @@ def furnishing(name, owner, opts):
     f.put()
     return f
 
+def elemental(name, owner, opts):
+    log("elemental: %s"%(name,), 1)
+    f = Thing()
+    f.owners = [owner]
+    f.kind = "elemental"
+    f.name = name
+    f.opts = opts
+    f.put()
+    return f
+
 def room(name, owner, environment=None, cameras=[], opts={}, lights=LIGHTS):
     log("room: %s"%(name,), 1)
     r = Room()

@@ -135,7 +135,8 @@ RESPONSES = {
         }
     }
 }
-FURNISHINGS = {
+FURNISHINGS = {}
+ELEMENTALS = {
     "pool": {
         "thing": "Pool",
         "scale": [1.2, 1.2, 2],
