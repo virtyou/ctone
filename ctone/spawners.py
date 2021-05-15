@@ -19,8 +19,8 @@ def exists(file_data, exalt=None):
     for f in [os.path.join(config.db.blob, p) for p in os.listdir(config.db.blob)]:
         if os.path.isfile(f) and file_data == read(f, binary=True):
             u = "/" + f;
-            return LOADED_ASSETS.get(u) or list(filter(lambda x : x.path() == u,
-                exalt.query().all()))[0]
+            return LOADED_ASSETS.get(u) or len(list(filter(lambda x : x.path() == u,
+                exalt.query().all())))
 #            return Asset.query(Asset.item == int(os.path.split(f)[-1])).get() # fix binary queries!
     return False
 
