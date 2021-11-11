@@ -14,14 +14,15 @@ for item in Thing.query().all():
 for item in Asset.query().all():
     LOADED_ASSETS[item.item.urlsafe()] = LOADED_ASSETS[item.identifier] = item
 
-def exists(file_data, exalt=None):
+def exists(file_data, exalt=Asset):
     log("checking file uniqueness", 4)
     for f in [os.path.join(config.db.blob, p) for p in os.listdir(config.db.blob)]:
         if os.path.isfile(f) and file_data == read(f, binary=True):
             u = "/" + f;
-            return LOADED_ASSETS.get(u) or len(list(filter(lambda x : x.path() == u,
-                exalt.query().all())))
-#            return Asset.query(Asset.item == int(os.path.split(f)[-1])).get() # fix binary queries!
+#            return LOADED_ASSETS.get(u) or len(list(filter(lambda x : x.path() == u,
+#                exalt.query().all())))
+#            return Asset.query(Asset.item == int(os.path.split(f)[-1])).get() # fix binary queries!?
+            return LOADED_ASSETS.get(u) or exalt.query(exalt.item == int(os.path.split(f)[-1])).get()
     return False
 
 def convobj(data):
