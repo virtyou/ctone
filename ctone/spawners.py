@@ -16,13 +16,16 @@ for item in Asset.query().all():
 
 def exists(file_data, exalt=Asset):
     log("checking file uniqueness", 4)
+    return exalt.query(exalt.item == file_data).get() or exalt != Asset and Asset.query(Asset.item == file_data).get()
+
+    # below disabled..... above should probs be revised (may be slow...)
     for f in [os.path.join(config.db.blob, p) for p in os.listdir(config.db.blob)]:
         if os.path.isfile(f) and file_data == read(f, binary=True):
             u = "/" + f;
 #            return LOADED_ASSETS.get(u) or len(list(filter(lambda x : x.path() == u,
 #                exalt.query().all())))
 #            return Asset.query(Asset.item == int(os.path.split(f)[-1])).get() # fix binary queries!?
-            return LOADED_ASSETS.get(u) or exalt.query(exalt.item == int(os.path.split(f)[-1])).get()
+            return LOADED_ASSETS.get(u)
     return False
 
 def convobj(data):
