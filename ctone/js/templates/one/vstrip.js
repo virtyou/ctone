@@ -28,7 +28,7 @@ templates.one.vstrip = {
 		frames: 361
 	},
 	horse: {
-		texture: "/maps/one/vstrip/env/horse.png",
+		texture: "/maps/one/vstrip/horse.png",
 		frames: 566
 	}
 };
