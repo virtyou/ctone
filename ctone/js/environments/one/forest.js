@@ -5,7 +5,7 @@ environments.one.forest = {
 	outside: "/maps/one/sky-night.png",
 	lights: [{
 		variety: "ambient",
-		intensity: 0.3
+		intensity: 0.1
 	}, {
 		variety: "directional",
 		position: [0, 1, 0.1],
