@@ -10,6 +10,7 @@ syms = {
 	tdir: ["one"],
 	edir: ["one"],
 	"maps": ["one"],
-	"models": ["one"]
+	"models": ["one"],
+	"audio": ["one"]
 }
 requires = ["virtyou/ctzero"]
