@@ -5,6 +5,7 @@ var fb = {
 	ant: "creep",
 	spider: "creep",
 	centipede: "creep",
+	bird: 3,
 	bee: 1,
 	wasp: 1,
 	cat: 5,
