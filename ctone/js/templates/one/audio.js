@@ -17,6 +17,13 @@ var audioMap = templates.one.audio.amap = {
 		},
 		splash: {
 			collection: "pool"
+		},
+		wind: {
+			collection: "air"
+		},
+		whoosh: {
+			number: 2,
+			collection: "air"
 		}
 	},
 	fauna: {
