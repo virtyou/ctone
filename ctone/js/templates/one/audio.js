@@ -4,18 +4,27 @@ var audioMap = templates.one.audio.amap = {
 	wet: {
 		within: "within",
 		without: "without",
-		inout: "inout",
-		splash: 2
+		splash: "splash",
+		swim: 2
+	},
+	person: {
+		swim: {
+			number: 2,
+			collection: "wet"
+		},
+		splash: {
+			collection: "wet"
+		}
 	},
 	fauna: {
 		eel: {
 			number: 2,
-			name: "splash",
+			name: "swim",
 			collection: "wet"
 		},
 		fish: {
 			number: 2,
-			name: "splash",
+			name: "swim",
 			collection: "wet"
 		},
 		ant: "creep",
@@ -36,6 +45,7 @@ var audioMap = templates.one.audio.amap = {
 
 var assets = templates.one.audio.assets = { wet: {} };
 assets.fauna = zero.core.Fauna.audio = {};
+assets.person = zero.core.Person.audio = {};
 
 var audSet = function(collection, name, number, aset) {
 	for (var i = 1; i <= number; i++)
@@ -50,9 +60,9 @@ var setAud = function(collection, sound) {
 	else if (!isNaN(v))
 		audSet(collection, sound, v, aset);
 	else if (v.number)
-		audSet(v.collection, v.name, v.number, aset);
+		audSet(v.collection, v.name || sound, v.number, aset);
 	else
-		aset.push("/audio/one/" + v.collection + "/" + v.name + ".mp3");
+		aset.push("/audio/one/" + v.collection + "/" + (v.name || sound) + ".mp3");
 };
 
 for (var collection in audioMap)
