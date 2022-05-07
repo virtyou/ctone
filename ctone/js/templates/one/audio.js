@@ -7,6 +7,9 @@ var audioMap = templates.one.audio.amap = {
 		splash: "splash",
 		swim: 2
 	},
+	fire: {
+		crackle: "crackle"
+	},
 	person: {
 		swim: {
 			number: 2,
@@ -45,6 +48,7 @@ var audioMap = templates.one.audio.amap = {
 
 var assets = templates.one.audio.assets = {};
 assets.pool = zero.core.Pool.audio = {};
+assets.fire = zero.core.Fire.audio = {};
 assets.fauna = zero.core.Fauna.audio = {};
 assets.person = zero.core.Person.audio = {};
 
