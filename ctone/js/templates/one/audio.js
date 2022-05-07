@@ -1,7 +1,7 @@
 templates.one.audio = {};
 
 var audioMap = templates.one.audio.amap = {
-	wet: {
+	pool: {
 		within: "within",
 		without: "without",
 		splash: "splash",
@@ -10,22 +10,22 @@ var audioMap = templates.one.audio.amap = {
 	person: {
 		swim: {
 			number: 2,
-			collection: "wet"
+			collection: "pool"
 		},
 		splash: {
-			collection: "wet"
+			collection: "pool"
 		}
 	},
 	fauna: {
 		eel: {
 			number: 2,
 			name: "swim",
-			collection: "wet"
+			collection: "pool"
 		},
 		fish: {
 			number: 2,
 			name: "swim",
-			collection: "wet"
+			collection: "pool"
 		},
 		ant: "creep",
 		spider: "creep",
@@ -43,7 +43,8 @@ var audioMap = templates.one.audio.amap = {
 	}
 };
 
-var assets = templates.one.audio.assets = { wet: {} };
+var assets = templates.one.audio.assets = {};
+assets.pool = zero.core.Pool.audio = {};
 assets.fauna = zero.core.Fauna.audio = {};
 assets.person = zero.core.Person.audio = {};
 
