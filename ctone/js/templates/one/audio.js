@@ -16,6 +16,7 @@ var audioMap = templates.one.audio.amap = {
 		}
 	},
 	person: {
+		thud: "thud",
 		swim: {
 			number: 2,
 			collection: "pool"
