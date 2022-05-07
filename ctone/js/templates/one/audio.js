@@ -10,6 +10,11 @@ var audioMap = templates.one.audio.amap = {
 	fire: {
 		crackle: "crackle"
 	},
+	particles: {
+		rain: {
+			collection: "air"
+		}
+	},
 	person: {
 		swim: {
 			number: 2,
@@ -58,6 +63,7 @@ assets.pool = zero.core.Pool.audio = {};
 assets.fire = zero.core.Fire.audio = {};
 assets.fauna = zero.core.Fauna.audio = {};
 assets.person = zero.core.Person.audio = {};
+assets.particles = zero.core.Particles.audio = {};
 
 var audSet = function(collection, name, number, aset) {
 	for (var i = 1; i <= number; i++)
