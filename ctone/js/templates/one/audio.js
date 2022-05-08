@@ -18,6 +18,7 @@ var audioMap = templates.one.audio.amap = {
 	person: {
 		bump: "bump",
 		thud: "thud",
+		walk: "step",
 		swim: {
 			number: 2,
 			collection: "pool"
