@@ -60,7 +60,7 @@ environments.one.library = {
 			texture: "/maps/one/stonewall.jpg",
 			planeGeometry: true,
 			position: [-800, 100, 0],
-			scale: [24, 18, 1],
+			scale: [32, 18, 1],
 			rotation: [0, Math.PI / 2, 0]
 		}]
 	},
