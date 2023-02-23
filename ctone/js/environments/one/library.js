@@ -4,6 +4,14 @@ environments.one.library = {
 	floor: {
 		texture: "/maps/one/window.png",
 		parts: [{
+			texture: "/maps/one/stonewall.jpg",
+			planeGeometry: true,
+			position: [0, -800, 0],
+			scale: [16, 16, 1],
+			material: {
+				side: THREE.BackSide
+			}
+		}, {
 			planeGeometry: true,
 			position: [-100, -300, 0],
 			scale: [14, 16, 1],
