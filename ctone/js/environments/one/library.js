@@ -55,7 +55,7 @@ environments.one.library = {
 		}]
 	},
 	ramp: {
-		texture: "/maps/one/window.png", // TODO: stairs texture...
+		texture: "/maps/one/stonestairs.png",
 		parts: [{
 			planeGeometry: true,
 			position: [700, 0, 0],
