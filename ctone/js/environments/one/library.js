@@ -9,24 +9,24 @@ environments.one.library = {
 		texture: "/maps/one/window.png",
 		parts: [{
 			planeGeometry: true,
-			position: [-50, -300, 0],
-			scale: [15, 16, 1],
+			position: [-100, -300, 0],
+			scale: [14, 16, 1],
 			material: {
 				transparent: true,
 				side: THREE.DoubleSide
 			}
 		}, {
 			planeGeometry: true,
-			position: [-50, 300, 0],
-			scale: [15, 16, 1],
+			position: [-100, 300, 0],
+			scale: [14, 16, 1],
 			material: {
 				transparent: true,
 				side: THREE.DoubleSide
 			}
 		}, {
 			planeGeometry: true,
-			position: [-400, 600, 0],
-			scale: [8, 16, 1],
+			position: [-500, 600, 0],
+			scale: [6, 16, 1],
 			material: {
 				transparent: true,
 				side: THREE.DoubleSide
@@ -54,10 +54,29 @@ environments.one.library = {
 			}
 		}]
 	},
+	ramp: {
+		texture: "/maps/one/window.png", // TODO: stairs texture...
+		parts: [{
+			planeGeometry: true,
+			position: [700, 0, 0],
+			scale: [2, 16, 1],
+			rotation: [1.2, 0, 0],
+			material: {
+				transparent: true,
+				side: THREE.DoubleSide
+			}
+		}, {
+			planeGeometry: true,
+			position: [700, -600, 0],
+			scale: [2, 16, 1],
+			rotation: [1.2, 0, 0],
+			material: {
+				transparent: true,
+				side: THREE.DoubleSide
+			}
+		}]
+	},
 /*	obstacle: {
 
-	},
-	ramp: {
-
-	}*/
+	},*/
 };
