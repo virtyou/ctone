@@ -78,11 +78,14 @@ environments.one.library = {
 				side: THREE.DoubleSide
 			}
 		}]
-	},/*
+	},
 	obstacle: {
 		texture: "/maps/one/stonewall.jpg",
+		dimensions: [1600, 1600, 1600],
 		parts: [{
-
+			position: [0, 0, 1600],
+		}, {
+			position: [0, 0, -1600],
 		}]
-	}*/
+	}
 };
