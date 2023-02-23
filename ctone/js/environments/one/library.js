@@ -1,9 +1,5 @@
 environments.one.library = {
 	outside: "/maps/one/sky-night.png",
-//	shell: {
-//		texture: "/maps/one/window.png",
-//		dimensions: [100, 100, 100]
-//	}
 	boxGeometry: [1600, 1600, 1600],
 	floor: {
 		texture: "/maps/one/window.png",
@@ -42,16 +38,22 @@ environments.one.library = {
 		}]
 	},
 	wall: {
-		texture: "/maps/one/window.png",
 		parts: [{
+			texture: "/maps/one/window.png",
 			planeGeometry: true,
 			position: [800, -200, 0],
 			scale: [16, 12, 1],
 			rotation: [0, Math.PI / 2, 0],
 			material: {
 				transparent: true,
-				side: THREE.DoubleSide
+				side: THREE.BackSide
 			}
+		}, {
+			texture: "/maps/one/stonewall.jpg",
+			planeGeometry: true,
+			position: [-800, 100, 0],
+			scale: [24, 18, 1],
+			rotation: [0, Math.PI / 2, 0]
 		}]
 	},
 	ramp: {
@@ -66,6 +68,7 @@ environments.one.library = {
 				side: THREE.DoubleSide
 			}
 		}, {
+			scroll: { speed: -0.05 },
 			planeGeometry: true,
 			position: [700, -600, 0],
 			scale: [2, 16, 1],
@@ -75,8 +78,11 @@ environments.one.library = {
 				side: THREE.DoubleSide
 			}
 		}]
-	},
-/*	obstacle: {
+	},/*
+	obstacle: {
+		texture: "/maps/one/stonewall.jpg",
+		parts: [{
 
-	},*/
+		}]
+	}*/
 };
