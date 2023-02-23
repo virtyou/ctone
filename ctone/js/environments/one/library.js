@@ -34,7 +34,7 @@ environments.one.library = {
 		}, {
 			shift: { axis: "y", mode: "recycle", speed: 60 },
 			planeGeometry: true,
-			position: [0, 0, 120],
+			position: [-100, 0, 120],
 			material: {
 				transparent: true,
 				side: THREE.DoubleSide
