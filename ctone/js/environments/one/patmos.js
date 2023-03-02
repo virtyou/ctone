@@ -17,14 +17,17 @@ environments.one.patmos = {
 		texture: "/maps/one/stonestairs.png",
 		parts: [{
 			planeGeometry: true,
-			position: [0, 200, 200],
-			rotation: [-1.2, 0, 0],
+			position: [0, 250, 60],
+			rotation: [-2, 0, 0],
 			scale: [8, 8, 1],
 			material: {
 				transparent: true
 			}
 		}]
 	},
+//	wall: {
+
+//	},
 	obstacle: {
 		texture: "/maps/one/stonewall.jpg",
 		parts: [{
@@ -40,10 +43,10 @@ environments.one.patmos = {
 			position: [-600, 400, 200],
 			dimensions: [400, 800, 400]
 		}, {
-			position: [600, 400, 600],
+			position: [600, 400, 1400],
 			dimensions: [400, 800, 400]
 		}, {
-			position: [-600, 400, 600],
+			position: [-600, 400, 1400],
 			dimensions: [400, 800, 400]
 		}, {
 			position: [0, 900, 800],
