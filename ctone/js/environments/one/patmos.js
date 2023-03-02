@@ -31,8 +31,8 @@ environments.one.patmos = {
 	obstacle: {
 		texture: "/maps/one/stonewall.jpg",
 		parts: [{
-			position: [0, -400, 800],
-			dimensions: [1600, 800, 1600]
+			position: [0, -300, 800],
+			dimensions: [1600, 600, 1600]
 		}, {
 			position: [0, 200, 800],
 			dimensions: [800, 400, 800]
