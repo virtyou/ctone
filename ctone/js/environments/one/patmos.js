@@ -5,8 +5,8 @@ environments.one.patmos = {
 		parts: [{
 			planeGeometry: true,
 			vstrip: "templates.one.vstrip.water",
-			position: [0, 0, -400],
-			scale: [2, 1, 800],
+			position: [0, 0, -800],
+			scale: [2, 16, 1],
 			material: {
 				transparent: true,
 				side: THREE.BackSide
@@ -17,9 +17,9 @@ environments.one.patmos = {
 		texture: "/maps/one/stonestairs.png",
 		parts: [{
 			planeGeometry: true,
-			position: [0, 250, 60],
+			position: [0, 200, -40],
 			rotation: [-2, 0, 0],
-			scale: [8, 8, 1],
+			scale: [8, 10, 1],
 			material: {
 				transparent: true
 			}
