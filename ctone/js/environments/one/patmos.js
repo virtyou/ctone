@@ -5,10 +5,11 @@ environments.one.patmos = {
 		parts: [{
 			planeGeometry: true,
 			vstrip: "templates.one.vstrip.water",
-			position: [0, 200, -800],
-			scale: [2, 16, 1],
+			position: [0, 200, -700],
+			scale: [2, 14, 1],
 			material: {
 				transparent: true,
+				opacity: 0.5,
 				side: THREE.BackSide
 			}
 		}]
@@ -51,6 +52,13 @@ environments.one.patmos = {
 		}, {
 			position: [0, 900, 800],
 			dimensions: [1600, 200, 1600]
+		}, {
+			texture: "/maps/one/leaves.jpg",
+			position: [0, -300, -3000],
+			dimensions: [6400, 1000, 3200]
+		}, {
+			position: [0, 1200, -3000],
+			dimensions: [6000, 2000, 2800]
 		}]
 	}
 };
