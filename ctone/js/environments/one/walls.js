@@ -6,25 +6,25 @@ environments.one.walls = {
 		texture: "/maps/one/stonestairs.png",
 		parts: [{
 			planeGeometry: true,
-			position: [2800, 1200, 0],
-			rotation: [-2, 0, 0],
-			scale: [8, 200, 1],
-			material: {
-				transparent: true
-			}
-		}, {
-			planeGeometry: true,
-			position: [-2800, -400, 0],
+			position: [3000, 1200, 0],
 			rotation: [2, 0, 0],
-			scale: [8, 200, 1],
+			scale: [4, 200, 1],
 			material: {
 				transparent: true
 			}
 		}, {
 			planeGeometry: true,
-			position: [2800, -2000, 0],
+			position: [-3000, -400, 0],
 			rotation: [-2, 0, 0],
-			scale: [8, 200, 1],
+			scale: [4, 200, 1],
+			material: {
+				transparent: true
+			}
+		}, {
+			planeGeometry: true,
+			position: [3000, -2000, 0],
+			rotation: [-2, 0, 0],
+			scale: [4, 200, 1],
 			material: {
 				transparent: true
 			}
@@ -33,7 +33,8 @@ environments.one.walls = {
 	obstacle: {
 		texture: "/maps/one/stonewall.jpg",
 		parts: [{
-			dimensions: [4800, 6400, 4800]
+			position: [0, 400, 0],
+			dimensions: [4800, 5600, 4800]
 		}, {
 			position: [-400, 1600, 0],
 			dimensions: [5600, 800, 6400]
@@ -41,8 +42,11 @@ environments.one.walls = {
 			position: [400, 0, 0],
 			dimensions: [5600, 800, 6400]
 		}, {
-			position: [-400, -1600, 0],
+			position: [400, -1600, 0],
 			dimensions: [5600, 800, 6400]
+		}, {
+			position: [2800, -1500, 0],
+			dimensions: [800, 3400, 1600]
 		}]
 	}
 };
