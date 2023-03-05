@@ -26,9 +26,6 @@ environments.one.patmos = {
 			}
 		}]
 	},
-//	wall: {
-
-//	},
 	obstacle: {
 		texture: "/maps/one/stonewall.jpg",
 		parts: [{

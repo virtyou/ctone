@@ -21,9 +21,9 @@ environments.one.walls = {
 			scale: [4, 70, 1]
 		}, {
 			planeGeometry: true,
-			position: [-3000, -2000, 0],
-			rotation: [-1.815, 0, 0],
-			scale: [4, 70, 1]
+			position: [-3000, -2200, 0],
+			rotation: [-1.874, 0, 0],
+			scale: [4, 75, 1]
 		}]
 	},
 	obstacle: {
