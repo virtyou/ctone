@@ -49,6 +49,15 @@ environments.one.walls = {
 		}, {
 			position: [-2200, -1000, -2200],
 			dimensions: [800, 4400, 800]
+		}, {
+			position: [0, -3100, 0],
+			dimensions: [800, 200, 800]
+		}, {
+			position: [-2600, -1100, -3100],
+			dimensions: [200, 200, 200]
+		}, {
+			position: [2600, 500, 3100],
+			dimensions: [200, 200, 200]
 		}]
 	}
 };
