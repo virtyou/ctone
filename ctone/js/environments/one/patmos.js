@@ -5,7 +5,7 @@ environments.one.patmos = {
 		parts: [{
 			planeGeometry: true,
 			vstrip: "templates.one.vstrip.water",
-			position: [0, 200, -700],
+			position: [0, 240, -700],
 			scale: [2, 14, 1],
 			material: {
 				transparent: true,
