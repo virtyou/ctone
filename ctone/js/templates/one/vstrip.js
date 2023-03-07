@@ -23,6 +23,10 @@ templates.one.vstrip = {
 		texture: "/maps/one/vstrip/env/sparks.png",
 		frames: 450
 	},
+	blaze: {
+		texture: "/maps/one/vstrip/env/blaze.png",
+		frames: 500
+	},
 	water: {
 		texture: "/maps/one/vstrip/env/water.png",
 		frames: 361
