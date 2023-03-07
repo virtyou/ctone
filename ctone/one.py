@@ -78,8 +78,11 @@ def vidstrip(fname, maxframes, color, threshold):
 	w = min(fcount, MAX)
 	h = int(math.ceil(float(fcount) / MAX)) # ugh py2
 	oname = fname.split(".")[0]
-	cmd('ffmpeg -i %s -frames 1 -vf "chromakey=%s:%s:0,scale=%s:%s,tile=%sx%s" %s.png'%(fname,
-		color, threshold, WIDTH, HEIGHT, w, h, oname))
+	chrobit = ""
+	if color != "none":
+		chrobit = "chromakey=%s:%s:0,"%(color, threshold)
+	cmd('ffmpeg -i %s -frames 1 -vf "%sscale=%s:%s,tile=%sx%s" %s.png'%(fname,
+		chrobit, WIDTH, HEIGHT, w, h, oname))
 	log("converted video (%s) to %s frame image strip (%s.png - %sx%s)"%(fname,
 		fcount, oname, w * WIDTH, h * HEIGHT))
 	log("goodbye", important=True)
