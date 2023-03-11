@@ -10,6 +10,7 @@ environments.one.patmos = {
 			material: {
 				transparent: true,
 				opacity: 0.5,
+				alphaTest: 0.1,
 				side: THREE.BackSide
 			}
 		}]
