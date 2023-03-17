@@ -12,8 +12,8 @@ custom.one.pony = function(opts) {
 
     var hairNew;
     var ponytail;
-    var hairNewLoader = new THREE.JSONLoader(true);
-    var ponytailLoader = new THREE.JSONLoader(true);
+    var hairNewLoader = new THREE.JSONLoader();
+    var ponytailLoader = new THREE.JSONLoader();
 
     var hairGroup=new THREE.Object3D();
     var ponytailGroup=new THREE.Object3D();
@@ -69,8 +69,8 @@ custom.one.pony = function(opts) {
     //////////////////  HAIR LOADS BELOW /////////////
 
     //// LOAD PONYTAIL
-    var hairMap = THREE.ImageUtils.loadTexture( "/maps/one/hair_alphaGimp3a.png" ); // mime.jpg   //hair_alphaGimp1
-    var ponytailMaterial = new THREE.MeshPhongMaterial( { map: hairMap, color: 0x224466, morphTargets: false, skinning: true, transparent: true,  specular: 0xaaaaff, alphaTest: 0.6, reflectivity: 100, metal: false, shininess: 1} );
+    var hairMap = (new THREE.TextureLoader()).load( "/maps/one/hair_alphaGimp3a.png" ); // mime.jpg   //hair_alphaGimp1
+    var ponytailMaterial = new THREE.MeshPhongMaterial( { map: hairMap, color: 0x224466, morphTargets: false, skinning: true, transparent: true,  specular: 0xaaaaff, alphaTest: 0.6, reflectivity: 100, /*metal: false,*/ shininess: 1} );
     ponytailLoader.load( "/models/one/ponytail.js", function(geometry){   // models/headC  00visEnd3  TEST3.js TEST3A_VNECK.js
         ponytail = new THREE.SkinnedMesh( geometry, ponytailMaterial );
 //        ponytail.position.set(0, 0, 0);
@@ -84,8 +84,8 @@ custom.one.pony = function(opts) {
      } ); 
 
     /////  LOAD HEAD HAIR 
-    var hairMap = THREE.ImageUtils.loadTexture( "/maps/one/hairShrunk.png" ); // hair_alphaGimp3c.png
-    var hairNewMaterial = new THREE.MeshPhongMaterial( {map: hairMap, color: 0x447788, morphTargets: true, skinning: false, transparent: true, emissive: 0,  specular: 0xaaaaff, reflectivity: 100, metal: false, shininess: 1} );
+    var hairMap = (new THREE.TextureLoader()).load( "/maps/one/hairShrunk.png" ); // hair_alphaGimp3c.png
+    var hairNewMaterial = new THREE.MeshPhongMaterial( {map: hairMap, color: 0x447788, morphTargets: true, skinning: false, transparent: true, emissive: 0,  specular: 0xaaaaff, reflectivity: 100, /*metal: false,*/ shininess: 1} );
     hairNewLoader.load( "/models/one/hairDFULL5.js", function(geometry){   // hairNew5a2 ///models/headC  00visEnd3  TEST3.js TEST3A_VNECK.
         hairNew = new THREE.Mesh( geometry, hairNewMaterial );
         hairMap.wrapS = hairMap.wrapT = THREE.RepeatWrapping;
