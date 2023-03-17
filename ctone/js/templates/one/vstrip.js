@@ -14,12 +14,14 @@ templates.one.vstrip = {
 	flames: {
 		texture: "/maps/one/vstrip/env/flames.png",
 		frames: 300,
-		downscale: 2
+		downscale: 4,
+		fheight: 64 / 3
 	},
 	smoke: {
 		texture: "/maps/one/vstrip/env/smoke.png",
 		frames: 1320,
-		downscale: 4
+		downscale: 4,
+		fheight: 128 / 11
 	},
 	sparks: {
 		texture: "/maps/one/vstrip/env/sparks.png",
@@ -34,11 +36,14 @@ templates.one.vstrip = {
 	inferno: {
 		texture: "/maps/one/vstrip/env/inferno.png",
 		frames: 300,
-		downscale: 4
+		downscale: 4,
+		fheight: 32 / 3
 	},
 	water: {
 		texture: "/maps/one/vstrip/env/water.png",
-		frames: 361
+		frames: 361,
+		downscale: 2,
+		fheight: 64 / 3
 	},
 	horse: {
 		texture: "/maps/one/vstrip/horse.png",
