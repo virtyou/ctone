@@ -29,12 +29,12 @@ templates.one.vstrip = {
 	blaze: {
 		texture: "/maps/one/vstrip/env/blaze.png",
 		frames: 500,
-		downscale: 2
+		downscale: 4
 	},
 	inferno: {
 		texture: "/maps/one/vstrip/env/inferno.png",
 		frames: 300,
-		downscale: 2
+		downscale: 4
 	},
 	water: {
 		texture: "/maps/one/vstrip/env/water.png",
