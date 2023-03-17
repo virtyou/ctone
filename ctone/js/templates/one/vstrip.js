@@ -14,27 +14,27 @@ templates.one.vstrip = {
 	flames: {
 		texture: "/maps/one/vstrip/env/flames.png",
 		frames: 300,
-		halfsize: true
+		downscale: 2
 	},
 	smoke: {
 		texture: "/maps/one/vstrip/env/smoke.png",
 		frames: 1320,
-		halfsize: true
+		downscale: 4
 	},
 	sparks: {
 		texture: "/maps/one/vstrip/env/sparks.png",
 		frames: 450,
-		halfsize: true
+		downscale: 2
 	},
 	blaze: {
 		texture: "/maps/one/vstrip/env/blaze.png",
 		frames: 500,
-		halfsize: true
+		downscale: 2
 	},
 	inferno: {
 		texture: "/maps/one/vstrip/env/inferno.png",
 		frames: 300,
-		halfsize: true
+		downscale: 2
 	},
 	water: {
 		texture: "/maps/one/vstrip/env/water.png",
