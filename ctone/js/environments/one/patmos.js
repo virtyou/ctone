@@ -52,10 +52,10 @@ environments.one.patmos = {
 			dimensions: [1600, 200, 1600]
 		}, {
 			texture: "/maps/one/leaves.jpg",
-			position: [0, -300, -3000],
+			position: [0, -260, -3000],
 			dimensions: [6400, 1000, 3200]
 		}, {
-			position: [0, 1200, -3000],
+			position: [0, 1240, -3000],
 			dimensions: [6000, 2000, 2800]
 		}]
 	}
