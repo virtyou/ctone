@@ -92,6 +92,7 @@ def asset(name=None, path=None, variety=None, owner=None, data=None, kind=None, 
                 error("what kind?? %s %s %s"%(name, path, variety))
 #        a.variety = variety or name.split("_")[-1]
         a.put()
+        a.refine()
         LOADED_ASSETS[a.identifier] = LOADED_ASSETS[a.item.urlsafe()] = a
 #    elif name != a.name:
 #        error("same blob, different name (%s is not %s) -- nope!"%(name, a.name))
