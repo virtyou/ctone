@@ -15,11 +15,14 @@ var audioMap = templates.one.audio.amap = {
 			collection: "air"
 		}
 	},
+	ux: {
+		blipon: "blipon",
+		blipoff: "blipoff"
+	},
 	person: {
 		bump: "bump",
 		thud: "thud",
 		walk: "step",
-		bwip: "bwip",
 		swim: {
 			number: 2,
 			collection: "pool"
@@ -63,6 +66,7 @@ var audioMap = templates.one.audio.amap = {
 };
 
 var assets = templates.one.audio.assets = {};
+assets.ux = zero.core.audio.ux.audio = {};
 assets.pool = zero.core.Pool.audio = {};
 assets.fire = zero.core.Fire.audio = {};
 assets.fauna = zero.core.Fauna.audio = {};
