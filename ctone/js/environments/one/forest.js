@@ -1,6 +1,6 @@
 environments.one.forest = {
-//	fog: true,
-//	rain: true,
+	fog: true,
+	rain: true,
 	boxGeometry: [512, 512, 512],
 	outside: "/maps/one/sky-night.png",
 	lights: [{
