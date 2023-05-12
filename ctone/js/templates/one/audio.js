@@ -21,6 +21,7 @@ var audioMap = templates.one.audio.amap = {
 	},
 	person: {
 		bump: "bump",
+		splat: "splat",
 		thud: "thud",
 		walk: "step",
 		swim: {
