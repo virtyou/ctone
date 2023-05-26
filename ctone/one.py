@@ -67,8 +67,14 @@ def conv(fname, morphs, modname, bm):
 WIDTH = 128
 HEIGHT = 64
 MAX = 128
-def vidstrip(fname, maxframes, color, threshold):
+def vidstrip(fname, maxframes, color, threshold, downscale, crop):
 	log("converting %s to video strip"%(fname,), important=True)
+	oname = fname.split(".")[0]
+	if crop: # w:h:x:y
+		croppedname = "%s-cropped.mp4"%(oname,)
+		log("cropping %s to %s"%(fname, croppedname))
+		cmd('ffmpeg -i %s -filter:v "crop=%s" %s'%(fname, crop, croppedname))
+		fname = croppedname
 	if maxframes:
 		fcount = int(maxframes)
 		log("limiting output to %s frames"%(fcount,))
@@ -77,7 +83,6 @@ def vidstrip(fname, maxframes, color, threshold):
 		log("found %s frames"%(fcount,))
 	w = min(fcount, MAX)
 	h = int(math.ceil(float(fcount) / MAX)) # ugh py2
-	oname = fname.split(".")[0]
 	chrobit = ""
 	if color != "none":
 		chrobit = "chromakey=%s:%s:0,"%(color, threshold)
@@ -85,6 +90,10 @@ def vidstrip(fname, maxframes, color, threshold):
 		chrobit, WIDTH, HEIGHT, w, h, oname))
 	log("converted video (%s) to %s frame image strip (%s.png - %sx%s)"%(fname,
 		fcount, oname, w * WIDTH, h * HEIGHT))
+	if downscale != 1:
+		width = int(w * WIDTH / downscale)
+		log("downsizing spritesheet x%s to %s width"%(downscale, width))
+		cmd("convert -resize %sx %s.png %sx%s.png"%(width, oname, oname, downscale))
 	log("goodbye", important=True)
 
 def do():
@@ -103,11 +112,16 @@ def do():
 		help="background color for for --vidstrip mode (default: 0x70de77))")
 	parser.add_option("-t", "--threshold", dest="threshold", default="0.2",
 		help="color threshold for --vidstrip mode (default: 0.2))")
+	parser.add_option("-d", "--downscale", dest="downscale", default=1,
+		help="downscale for --vidstrip mode (default: 1))")
+	parser.add_option("-p", "--crop", dest="crop", default=None,
+		help="crop for --vidstrip mode (default: None))")
 	options, args = parser.parse_args()
 	if not len(args):
 		error("please provide an input file (json or video for -v)")
 	if options.vidstrip:
-		vidstrip(args[0], options.frames, options.color, options.threshold)
+		vidstrip(args[0], options.frames, options.color,
+			options.threshold, int(options.downscale), options.crop)
 	else:
 		conv(args[0], options.morphs, options.name, options.bonemap)
 
