@@ -48,5 +48,10 @@ templates.one.vstrip = {
 	horse: {
 		texture: "/maps/one/vstrip/horse.png",
 		frames: 566
+	},
+	portal: {
+		texture: "/maps/one/vstrip/portal.png",
+		frames: 180,
+		downscale: 2
 	}
 };
