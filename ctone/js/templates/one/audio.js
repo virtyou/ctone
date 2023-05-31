@@ -17,7 +17,8 @@ var audioMap = templates.one.audio.amap = {
 	},
 	ux: {
 		blipon: "blipon",
-		blipoff: "blipoff"
+		blipoff: "blipoff",
+		confetti: "confetti"
 	},
 	person: {
 		walk: "step",
