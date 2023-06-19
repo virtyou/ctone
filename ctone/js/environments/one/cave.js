@@ -7,31 +7,31 @@ environments.one.cave = {
 	},
 	stala: {
 		parts: [{
-			coneGeometry: 100,
+			coneGeometry: bsize,
 			position: [500, -1100, 500]
 		}, {
-			coneGeometry: 100,
+			coneGeometry: bsize,
 			position: [-500, -1100, 500]
 		}, {
-			coneGeometry: 100,
+			coneGeometry: bsize,
 			position: [500, -1100, -500]
 		}, {
-			coneGeometry: 100,
+			coneGeometry: bsize,
 			position: [-500, -1100, -500]
 		}, {
-			coneGeometry: 100,
+			coneGeometry: bsize,
 			rotation: [P, 0, 0],
 			position: [500, 1100, 500]
 		}, {
-			coneGeometry: 100,
+			coneGeometry: bsize,
 			rotation: [P, 0, 0],
 			position: [-500, 1100, 500]
 		}, {
-			coneGeometry: 100,
+			coneGeometry: bsize,
 			rotation: [P, 0, 0],
 			position: [500, 1100, -500]
 		}, {
-			coneGeometry: 100,
+			coneGeometry: bsize,
 			rotation: [P, 0, 0],
 			position: [-500, 1100, -500]
 		}]
