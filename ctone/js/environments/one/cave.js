@@ -7,15 +7,19 @@ environments.one.cave = {
 	},
 	stala: {
 		parts: [{
+			brittle: true,
 			coneGeometry: bsize,
 			position: [500, -1100, 500]
 		}, {
+			brittle: true,
 			coneGeometry: bsize,
 			position: [-500, -1100, 500]
 		}, {
+			brittle: true,
 			coneGeometry: bsize,
 			position: [500, -1100, -500]
 		}, {
+			brittle: true,
 			coneGeometry: bsize,
 			position: [-500, -1100, -500]
 		}, {
