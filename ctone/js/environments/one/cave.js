@@ -37,6 +37,11 @@ environments.one.cave = {
 			scale: [2, 5, 3]
 		}, {
 			coneGeometry: bsize,
+			position: [-1200, -700, -1200],
+			rotation: [P, 0, 0],
+			scale: [10, 5, 10]
+		}, {
+			coneGeometry: bsize,
 			rotation: [P, 0, 0],
 			position: [500, 1100, 500]
 		}, {
@@ -87,6 +92,11 @@ environments.one.cave = {
 			geoThetaLength: 1,
 			position: [-1000, -2300, -1000],
 			scale: [10, 20, 10]
+		}, {
+			sphereGeometry: bsize,
+			sphereSegs: 5,
+			position: [0, -350, -1000],
+			scale: [12, 1, 3]
 		}]
 	}
 };
