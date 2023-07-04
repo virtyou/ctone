@@ -5,6 +5,13 @@ environments.one.cave = {
 	shell: {
 		dimensions: [2400, 2400, 2400]
 	},
+	obstacle: {
+		texture: "/maps/one/rock.jpg",
+		parts: [{
+			position: [0, -150, 0],
+			dimensions: [1200, 100, 1200]
+		}]
+	},
 	stala: {
 		parts: [{
 //			brittle: true,
@@ -19,11 +26,11 @@ environments.one.cave = {
 			scale: [6, 7, 8]
 		}, {
 			coneGeometry: bsize,
-			position: [0, -700, 500],
+			position: [200, -700, 300],
 			scale: [4, 5, 3]
 		}, {
 			coneGeometry: bsize,
-			position: [0, -700, 500],
+			position: [200, -700, 300],
 			rotation: [P, 0, 0],
 			scale: [4, 5, 3]
 		}, {
@@ -44,6 +51,11 @@ environments.one.cave = {
 			coneGeometry: bsize,
 			rotation: [P, 0, 0],
 			position: [500, 1100, 500]
+		}, {
+			coneGeometry: bsize,
+			scale: [5, 5, 5],
+			rotation: [P, 0, 0],
+			position: [1200, 700, 1200]
 		}, {
 			coneGeometry: bsize,
 			rotation: [P, 0, 0],
