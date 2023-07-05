@@ -5,11 +5,28 @@ environments.one.cave = {
 	shell: {
 		dimensions: [2400, 2400, 2400]
 	},
+	wall: {
+		texture: "/maps/one/web1.png",
+		parts: [{
+			flammable: true,
+			planeGeometry: true,
+			position: [1000, -1000, -150],
+			rotation: [0, Math.PI / 2, 0],
+			scale: [8, 6, 1],
+			material: {
+				transparent: true,
+				side: THREE.BackSide
+			}
+		}]
+	},
 	obstacle: {
 		texture: "/maps/one/rock.jpg",
 		parts: [{
 			position: [0, -150, 0],
 			dimensions: [1200, 100, 1200]
+		}, {
+			position: [1000, -1150, -150],
+			dimensions: [500, 100, 500]
 		}]
 	},
 	stala: {
