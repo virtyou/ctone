@@ -56,7 +56,7 @@ environments.one.cave = {
 			scale: [2, 5, 3]
 		}, {
 			coneGeometry: bsize,
-			position: [-1200, -700, 0],
+			position: [-1200, -500, 0],
 			rotation: [P, 0, 0],
 			scale: [2, 5, 3]
 		}, {
