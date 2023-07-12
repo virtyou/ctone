@@ -84,6 +84,22 @@ environments.one.cave = {
 			coneGeometry: bsize,
 			rotation: [P, 0, 0],
 			position: [-500, 1100, -500]
+		}, {
+			coneGeometry: bsize,
+			position: [-700, -1150, 300],
+			rotation: [P, 0, 0]
+		}, {
+			coneGeometry: bsize,
+			position: [-400, -1150, 0],
+			rotation: [P, 0, 0]
+		}, {
+			coneGeometry: bsize,
+			position: [-100, -1150, -300],
+			rotation: [P, 0, 0]
+		}, {
+			coneGeometry: bsize,
+			position: [400, -1150, -100],
+			rotation: [P, 0, 0]
 		}]
 	},
 	boulder: {
