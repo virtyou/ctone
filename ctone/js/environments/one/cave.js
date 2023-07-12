@@ -31,7 +31,6 @@ environments.one.cave = {
 	},
 	stala: {
 		parts: [{
-//			brittle: true,
 			coneGeometry: bsize,
 			position: [1000, -1100, 500],
 			rotation: [P, 0, 0],
@@ -126,6 +125,12 @@ environments.one.cave = {
 			sphereSegs: 5,
 			position: [0, -350, -1000],
 			scale: [12, 1, 3]
+		}, {
+			brittle: true,
+			texture: "/maps/one/rock6.jpg",
+			sphereGeometry: bsize,
+			sphereSegs: 4,
+			position: [0, -850, 1100]
 		}]
 	}
 };
