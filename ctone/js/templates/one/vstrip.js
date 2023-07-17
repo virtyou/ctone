@@ -11,6 +11,11 @@ templates.one.vstrip = {
 		texture: "/maps/one/vstrip/vr.png",
 		frames: 502
 	},
+	glow: {
+		texture: "/maps/one/vstrip/env/glow.png",
+		frames: 180,
+		downscale: 4
+	},
 	flames: {
 		texture: "/maps/one/vstrip/env/flames.png",
 		frames: 300,
