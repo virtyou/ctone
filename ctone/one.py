@@ -67,7 +67,7 @@ def conv(fname, morphs, modname, bm):
 WIDTH = 128
 HEIGHT = 64
 MAX = 128
-def vidstrip(fname, maxframes, color, threshold, downscale, crop):
+def vidstrip(fname, maxframes, color, threshold, downscale, crop, invert):
 	log("converting %s to video strip"%(fname,), important=True)
 	oname = fname.split(".")[0]
 	if crop: # w:h:x:y
@@ -75,6 +75,11 @@ def vidstrip(fname, maxframes, color, threshold, downscale, crop):
 		log("cropping %s to %s"%(fname, croppedname))
 		cmd('ffmpeg -i %s -filter:v "crop=%s" %s'%(fname, crop, croppedname))
 		fname = croppedname
+	if invert:
+		invertedname = "%s-inverted.mp4"%(oname,)
+		log("inverting (via vflip) %s to %s"%(fname, invertedname))
+		cmd('ffmpeg -i %s -vf "vflip" %s'%(fname, invertedname))
+		fname = invertedname
 	if maxframes:
 		fcount = int(maxframes)
 		log("limiting output to %s frames"%(fcount,))
@@ -116,12 +121,14 @@ def do():
 		help="downscale for --vidstrip mode (default: 1))")
 	parser.add_option("-p", "--crop", dest="crop", default=None,
 		help="crop for --vidstrip mode (default: None))")
+	parser.add_option("-i", "--invert", action="store_true", dest="invert", default=False,
+		help="vertically invert for --vidstrip mode (default: None))")
 	options, args = parser.parse_args()
 	if not len(args):
 		error("please provide an input file (json or video for -v)")
 	if options.vidstrip:
-		vidstrip(args[0], options.frames, options.color,
-			options.threshold, int(options.downscale), options.crop)
+		vidstrip(args[0], options.frames, options.color, options.threshold,
+			int(options.downscale), options.crop, options.invert)
 	else:
 		conv(args[0], options.morphs, options.name, options.bonemap)
 
