@@ -26,7 +26,7 @@ templates.one.vstrip = {
 	sparks: {
 		texture: "/maps/one/vstrip/env/sparks.png",
 		frames: 450,
-		downscale: 2
+		downscale: 4
 	},
 	blaze: {
 		texture: "/maps/one/vstrip/env/blaze.png",
