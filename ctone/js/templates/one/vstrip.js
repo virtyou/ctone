@@ -5,7 +5,8 @@ templates.one.vstrip = {
 	},
 	chickens: {
 		texture: "/maps/one/vstrip/chickens.png",
-		frames: 1003
+		frames: 1003,
+		downscale: 2
 	},
 	vr: {
 		texture: "/maps/one/vstrip/vr.png",
