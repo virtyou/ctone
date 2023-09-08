@@ -16,6 +16,8 @@ var audioMap = templates.one.audio.amap = {
 		}
 	},
 	ux: {
+		tada: "tada",
+		smash: "smash",
 		blipon: "blipon",
 		blipoff: "blipoff",
 		confetti: "confetti"
