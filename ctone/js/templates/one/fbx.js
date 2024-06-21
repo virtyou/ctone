@@ -1,4 +1,4 @@
-var zbf = zero.base.fauna, ftz = templates.one.fbx = {
+var zbf = zero.base.fauna, zcf = zero.core.Fauna, ftz = templates.one.fbx = {
 	dragon: { // source: see readme.txt
 		loader: "FBXLoader",
 		scale: [0.04, 0.04, 0.04],
@@ -11,9 +11,10 @@ var zbf = zero.base.fauna, ftz = templates.one.fbx = {
 	}
 };
 
-zbf.dragon = ftz.dragon;
 zbf.guy = ftz.guy;
-zero.core.Fauna.sets.monsters = {
+zbf.dragon = ftz.dragon;
+zcf.hunters.dragon = ["guy"];
+zcf.sets.monsters = {
 	dragon: 1,
-	guy: 3
+	guy: 8
 };
