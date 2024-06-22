@@ -56,6 +56,7 @@ var audioMap = templates.one.audio.amap = {
 		},
 		ant: "creep",
 		spider: "creep",
+		arachnid: "creep",
 		centipede: "creep",
 		bird: 3,
 		bee: 1,
@@ -66,7 +67,9 @@ var audioMap = templates.one.audio.amap = {
 		dog: 3,
 		horse: 4,
 		pig: 6,
-		sheep: 4
+		sheep: 4,
+		wolf: 2,
+		dragon: 4
 	}
 };
 
