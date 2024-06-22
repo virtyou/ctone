@@ -1,20 +1,42 @@
-var zbf = zero.base.fauna, zcf = zero.core.Fauna, ftz = templates.one.fbx = {
-	dragon: { // source: see readme.txt
-		loader: "FBXLoader",
+var m, zbf = zero.base.fauna, zcf = zero.core.Fauna, ftz = templates.one.fbx = {
+	dragon: { // source: https://free3d.com/3d-model/black-dragon-rigged-and-game-ready-92023.html
 		scale: [0.04, 0.04, 0.04],
-		stripset: "/models/one/fbx/dragon/dragon.fbx"
+		stripset: "/models/one/fbx/dragon/Dragon_Baked_Actions_fbx_7.4_binary.fbx"
 	},
 	guy: { // source: https://gist.github.com/bellbind/f78746c37f31742596cc2f67326ad595
-		loader: "FBXLoader",
 		scale: [2, 2, 2],
 		stripset: "/models/one/fbx/guy/guy.fbx"
+	},
+	wolf: { // source: https://free3d.com/3d-model/wolf-rigged-and-game-ready-42808.html
+		speed: 40,
+		backwards: true,
+		scale: [1, -1, 1],
+		stripset: "/models/one/fbx/wolf/Wolf.fbx"
+	},
+	spider: { // source: https://free3d.com/3d-model/spider-animated-low-poly-and-game-ready-87147.html
+		anims: {
+			walk: 0,
+			die: 1,
+			hurt: 2,
+			attack: 3
+		},
+		speed: 30,
+		timeScale: -1,
+		backwards: true,
+		stripset: "/models/one/fbx/spider/Spider.fbx"
 	}
 };
+for (m in ftz) {
+	zbf[m] = ftz[m];
+	ftz[m].loader = "FBXLoader";
+}
 
-zbf.guy = ftz.guy;
-zbf.dragon = ftz.dragon;
-zcf.hunters.dragon = ["guy"];
+zcf.hunters.dragon = ["spider", "wolf", "guy"];
+zcf.hunters.spider = ["wolf", "guy"];
+zcf.hunters.wolf = ["guy"];
 zcf.sets.monsters = {
 	dragon: 1,
-	guy: 8
+	spider: 3,
+	wolf: 2,
+	guy: 6
 };
