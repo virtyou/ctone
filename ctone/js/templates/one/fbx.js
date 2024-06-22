@@ -13,7 +13,7 @@ var m, zbf = zero.base.fauna, zcf = zero.core.Fauna, ftz = templates.one.fbx = {
 		scale: [1, -1, 1],
 		stripset: "/models/one/fbx/wolf/Wolf.fbx"
 	},
-	spider: { // source: https://free3d.com/3d-model/spider-animated-low-poly-and-game-ready-87147.html
+	arachnid: { // source: https://free3d.com/3d-model/spider-animated-low-poly-and-game-ready-87147.html
 		anims: {
 			walk: 0,
 			die: 1,
@@ -23,7 +23,7 @@ var m, zbf = zero.base.fauna, zcf = zero.core.Fauna, ftz = templates.one.fbx = {
 		speed: 30,
 		timeScale: -1,
 		backwards: true,
-		stripset: "/models/one/fbx/spider/Spider.fbx"
+		stripset: "/models/one/fbx/arachnid/Spider.fbx"
 	}
 };
 for (m in ftz) {
@@ -31,12 +31,12 @@ for (m in ftz) {
 	ftz[m].loader = "FBXLoader";
 }
 
-zcf.hunters.dragon = ["spider", "wolf", "guy"];
-zcf.hunters.spider = ["wolf", "guy"];
+zcf.hunters.dragon = ["arachnid", "wolf", "guy"];
+zcf.hunters.arachnid = ["wolf", "guy"];
 zcf.hunters.wolf = ["guy"];
 zcf.sets.monsters = {
+	arachnid: 3,
 	dragon: 1,
-	spider: 3,
 	wolf: 2,
 	guy: 6
 };
