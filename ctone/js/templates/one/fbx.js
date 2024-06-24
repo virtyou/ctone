@@ -24,12 +24,14 @@ var m, zbf = zero.base.fauna, zcf = zero.core.Fauna, ftz = templates.one.fbx = {
 		timeScale: -1,
 		backwards: true,
 		stripset: "/models/one/fbx/arachnid/Spider.fbx"
+	},
+	castle: {
+		scale: [80, 80, 80],
+		stripset: "/models/one/fbx/castle/castle.fbx"
 	}
 };
-for (m in ftz) {
-	zbf[m] = ftz[m];
+for (m in ftz)
 	ftz[m].loader = "FBXLoader";
-}
 
 zcf.hunters.dragon = ["arachnid", "wolf", "guy"];
 zcf.hunters.arachnid = ["wolf", "guy"];
@@ -40,3 +42,5 @@ zcf.sets.monsters = {
 	wolf: 2,
 	guy: 6
 };
+for (m in zcf.sets.monsters)
+	zbf[m] = ftz[m];
