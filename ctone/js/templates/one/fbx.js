@@ -16,8 +16,7 @@ var m, zbf = zero.base.fauna, zcf = zero.core.Fauna, ftz = templates.one.fbx = {
 	arachnid: { // source: https://free3d.com/3d-model/spider-animated-low-poly-and-game-ready-87147.html
 		anims: {
 			walk: 0,
-			die: 1,
-			hurt: 2,
+			hurt: 1,
 			attack: 3
 		},
 		speed: 50,
