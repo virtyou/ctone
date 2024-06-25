@@ -8,6 +8,7 @@ environments.one.gates = {
 		stripset: "/models/one/fbx/castle/castle.fbx",
 		onbuild: function(shelly) {
 			shelly.thring.children[2].material.side = THREE.DoubleSide;
+			[7, 6, 5, 4, 1, 0].forEach(i => shelly.thring.remove(shelly.thring.children[i]));
 		}
 	}
 };
