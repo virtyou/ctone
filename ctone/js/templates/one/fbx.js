@@ -1,7 +1,12 @@
 var m, zbf = zero.base.fauna, zcf = zero.core.Fauna, ftz = templates.one.fbx = {
 	dragon: { // source: https://free3d.com/3d-model/black-dragon-rigged-and-game-ready-92023.html
 		scale: [0.04, 0.04, 0.04],
-		stripset: "/models/one/fbx/dragon/Dragon_Baked_Actions_fbx_7.4_binary.fbx"
+		stripset: "/models/one/fbx/dragon/Dragon_Baked_Actions_fbx_7.4_binary.fbx",
+		anims: {
+			walk: 0,
+			attack: 1,
+			hurt: 2
+		}
 	},
 	guy: { // source: https://gist.github.com/bellbind/f78746c37f31742596cc2f67326ad595
 		scale: [2, 2, 2],
