@@ -22,9 +22,20 @@ environments.one.beneath = {
 				side: THREE.DoubleSide
 			}
 		}, {
+			texture: "/maps/one/web1.png",
 			planeGeometry: true,
-			scale: [10, 8, 1],
-			position: [-700, -800, 800]
+			flammable: true,
+			scale: [2, 2, 1],
+			rotation: [0, P2, 0],
+			position: [-1000, -900, -1100],
+			material: {
+				transparent: true,
+				side: THREE.DoubleSide
+			}
+		}, {
+			planeGeometry: true,
+			scale: [8, 8, 1],
+			position: [-600, -800, 800]
 		}, {
 			planeGeometry: true,
 			scale: [10, 8, 1],
@@ -39,6 +50,11 @@ environments.one.beneath = {
 			scale: [18, 4, 1],
 			position: [199, -1000, -100],
 			rotation: [0, P2, 0]
+		}, {
+			planeGeometry: true,
+			scale: [18, 8, 1],
+			position: [-1000, -800, -100],
+			rotation: [0, P2, 0]
 		}]
 	},
 	floor: {
@@ -52,13 +68,13 @@ environments.one.beneath = {
 			position: [500, -1000, -1100]
 		}, {
 			planeGeometry: true,
-			scale: [10, 20, 1],
-			position: [-700, -1000, -200]
+			scale: [8, 20, 1],
+			position: [-600, -1000, -200]
 		}, {
 			texture: "/maps/one/stonewall.jpg",
 			planeGeometry: true,
-			scale: [24, 4, 1],
-			position: [0, -400, 1000],
+			scale: [22, 4, 1],
+			position: [100, -400, 1000],
 			material: {
 				side: THREE.DoubleSide
 			}
@@ -91,11 +107,17 @@ environments.one.beneath = {
 			position: [0, 350, 0],
 			dimensions: [1000, 100, 1000]
 		}, {
-			position: [-350, -200, -350],
-			dimensions: [300, 1000, 300]
+			position: [-350, -175, -350],
+			dimensions: [300, 950, 300]
 		}, {
 			position: [-700, -700, -700],
 			dimensions: [1000, 100, 1000]
+		}, {
+			position: [-1100, 0, -1100],
+			dimensions: [200, 1300, 200]
+		}, {
+			position: [-1050, 100, 100],
+			dimensions: [100, 1000, 2200]
 		}]
 	},
 	stala: {
@@ -105,9 +127,10 @@ environments.one.beneath = {
 			rotation: [P, 0, 0],
 			position: [-200, -900, 800]
 		}, {
-			coneGeometry: 600,
+			coneGeometry: 300,
+			scale: [1, 1, 0.5],
 			rotation: [P, 0, 0],
-			position: [-1200, 600, -1200]
+			position: [-400, 900, -1200]
 		}, {
 			coneGeometry: 600,
 			rotation: [P, 0, 0],
@@ -132,6 +155,16 @@ environments.one.beneath = {
 			scale: [2, 0.2, 2],
 			rotation: [P, 0, 0],
 			position: [1200, 1080, -1200]
+		}]
+	},
+	boulder: {
+		texture: "/maps/one/rock3.jpg",
+		parts: [{
+			brittle: true,
+			sphereSegs: 4,
+			sphereGeometry: 100,
+			position: [-1050, 700, -900],
+			rotation: [0, Math.PI / 4, 0]
 		}]
 	}
 };
