@@ -18,13 +18,13 @@ environments.one.beneath = {
 			position: [700, -800, 800]
 		}, {
 			planeGeometry: true,
-			scale: [18, 8, 1],
-			position: [-200, -800, -100],
+			scale: [18, 4, 1],
+			position: [-200, -1000, -100],
 			rotation: [0, Math.PI / 2, 0]
 		}, {
 			planeGeometry: true,
-			scale: [18, 8, 1],
-			position: [200, -800, -100],
+			scale: [18, 4, 1],
+			position: [199, -1000, -100],
 			rotation: [0, Math.PI / 2, 0]
 		}]
 	},
@@ -41,6 +41,13 @@ environments.one.beneath = {
 			planeGeometry: true,
 			scale: [10, 20, 1],
 			position: [-700, -1000, -200]
+		}, {
+			planeGeometry: true,
+			scale: [24, 4, 1],
+			position: [0, -400, 1000],
+			material: {
+				side: THREE.DoubleSide
+			}
 		}]
 	},
 	ramp: {
@@ -61,6 +68,9 @@ environments.one.beneath = {
 		parts: [{
 			position: [700, -300, -1000],
 			dimensions: [1000, 1200, 400]
+		}, {
+			position: [0, -600, -200],
+			dimensions: [400, 400, 2000]
 		}]
 	}
 };
