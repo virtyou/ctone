@@ -55,5 +55,12 @@ environments.one.beneath = {
 			rotation: [2.1, 0, 0],
 			position: [500, -1100, -830]
 		}]
+	},
+	obstacle: {
+		texture: "/maps/one/stonewall.jpg",
+		parts: [{
+			position: [700, -300, -1000],
+			dimensions: [1000, 1200, 400]
+		}]
 	}
 };
