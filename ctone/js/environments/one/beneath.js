@@ -1,4 +1,4 @@
-var P = Math.PI, P2 = P / 2;
+var P = Math.PI, P2 = P / 2, P4 = P2 / 2;
 
 environments.one.beneath = {
 	texture: "/maps/one/rock3.jpg",
@@ -60,7 +60,7 @@ environments.one.beneath = {
 	floor: {
 		texture: "/maps/one/rock.jpg",
 		material: {
-			side: THREE.BackSide
+			side: THREE.DoubleSide
 		},
 		parts: [{
 			planeGeometry: true,
@@ -74,23 +74,29 @@ environments.one.beneath = {
 			texture: "/maps/one/stonewall.jpg",
 			planeGeometry: true,
 			scale: [22, 4, 1],
-			position: [100, -400, 1000],
-			material: {
-				side: THREE.DoubleSide
-			}
+			position: [100, -400, 1000]
 		}]
 	},
 	ramp: {
 		texture: "/maps/one/stonewall.jpg",
 		material: {
-			transparent: true,
-			side: THREE.BackSide
+			side: THREE.DoubleSide
 		},
 		parts: [{
 			planeGeometry: true,
 			scale: [14, 4, 1],
 			rotation: [2.1, 0, 0],
 			position: [500, -1100, -830]
+		}, {
+			planeGeometry: true,
+			scale: [1, 11, 1],
+			rotation: [2.1, 0, 0],
+			position: [-1050, -925, 275]
+		}, {
+			planeGeometry: true,
+			scale: [1, 12, 1],
+			rotation: [-2.2, 0, 0],
+			position: [-1150, -290, -450]
 		}]
 	},
 	obstacle: {
@@ -118,6 +124,9 @@ environments.one.beneath = {
 		}, {
 			position: [-1050, 100, 100],
 			dimensions: [100, 1000, 2200]
+		}, {
+			position: [-600, 200, 300],
+			dimensions: [800, 200, 400]
 		}]
 	},
 	stala: {
@@ -139,7 +148,7 @@ environments.one.beneath = {
 			coneGeometry: 600,
 			scale: [2, 0.2, 2],
 			rotation: [P, 0, 0],
-			position: [-1200, 180, 1200]
+			position: [-1200, -20, 1200]
 		}, {
 			coneGeometry: 600,
 			scale: [3, 0.2, 1.5],
@@ -164,7 +173,7 @@ environments.one.beneath = {
 			sphereSegs: 4,
 			sphereGeometry: 100,
 			position: [-1050, 700, -900],
-			rotation: [0, Math.PI / 4, 0]
+			rotation: [0, P4, 0]
 		}]
 	}
 };
