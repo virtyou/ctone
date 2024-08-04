@@ -127,6 +127,9 @@ environments.one.beneath = {
 		}, {
 			position: [-600, 200, 300],
 			dimensions: [800, 200, 400]
+		}, {
+			position: [700, -1150, 0],
+			dimensions: [200, 100, 200]
 		}]
 	},
 	stala: {
@@ -156,9 +159,9 @@ environments.one.beneath = {
 			position: [-1200, 1080, 1200]
 		}, {
 			coneGeometry: 600,
-			scale: [2, 0.5, 1],
+			scale: [2, 0.3, 1],
 			rotation: [P, 0, 0],
-			position: [1200, 0, 0]
+			position: [1200, 120, 0]
 		}, {
 			coneGeometry: 600,
 			scale: [2, 0.2, 2],
