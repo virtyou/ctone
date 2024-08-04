@@ -69,8 +69,17 @@ environments.one.beneath = {
 			position: [700, -300, -1000],
 			dimensions: [1000, 1200, 400]
 		}, {
+			climby: true,
 			position: [0, -600, -200],
 			dimensions: [400, 400, 2000]
+		}]
+	},
+	stala: {
+		texture: "/maps/one/rock2.jpg",
+		parts: [{
+			coneGeometry: 100,
+			rotation: [Math.PI, 0, 0],
+			position: [-200, -900, 800]
 		}]
 	}
 };
