@@ -55,6 +55,7 @@ environments.one.beneath = {
 			scale: [10, 20, 1],
 			position: [-700, -1000, -200]
 		}, {
+			texture: "/maps/one/stonewall.jpg",
 			planeGeometry: true,
 			scale: [24, 4, 1],
 			position: [0, -400, 1000],
