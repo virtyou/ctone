@@ -54,5 +54,7 @@ zcf.sets.monsters = {
 	wolf: 2,
 	guy: 6
 };
-for (m in zcf.sets.monsters)
+for (m in zcf.sets.monsters) {
 	zbf[m] = ftz[m];
+	zcf.kinds.push(m);
+}
