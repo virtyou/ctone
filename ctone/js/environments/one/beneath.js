@@ -87,8 +87,8 @@ environments.one.beneath = {
 			position: [0, -600, -200],
 			dimensions: [400, 400, 2000]
 		}, {
-			position: [0, 400, 0],
-			dimensions: [1000, 200, 1000]
+			position: [0, 350, 0],
+			dimensions: [1000, 100, 1000]
 		}, {
 			position: [-350, -200, -350],
 			dimensions: [300, 1000, 300]
