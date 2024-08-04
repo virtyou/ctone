@@ -1,3 +1,5 @@
+var P = Math.PI, P2 = P / 2;
+
 environments.one.beneath = {
 	texture: "/maps/one/rock3.jpg",
 	shell: {
@@ -9,6 +11,17 @@ environments.one.beneath = {
 			side: THREE.DoubleSide
 		},
 		parts: [{
+			texture: "/maps/one/web1.png",
+			planeGeometry: true,
+			flammable: true,
+			scale: [2, 2, 1],
+			rotation: [0, P2, 0],
+			position: [-200, -900, -1100],
+			material: {
+				transparent: true,
+				side: THREE.DoubleSide
+			}
+		}, {
 			planeGeometry: true,
 			scale: [10, 8, 1],
 			position: [-700, -800, 800]
@@ -20,12 +33,12 @@ environments.one.beneath = {
 			planeGeometry: true,
 			scale: [18, 4, 1],
 			position: [-200, -1000, -100],
-			rotation: [0, Math.PI / 2, 0]
+			rotation: [0, P2, 0]
 		}, {
 			planeGeometry: true,
 			scale: [18, 4, 1],
 			position: [199, -1000, -100],
-			rotation: [0, Math.PI / 2, 0]
+			rotation: [0, P2, 0]
 		}]
 	},
 	floor: {
@@ -66,6 +79,7 @@ environments.one.beneath = {
 	obstacle: {
 		texture: "/maps/one/stonewall.jpg",
 		parts: [{
+			climby: true,
 			position: [700, -300, -1000],
 			dimensions: [1000, 1200, 400]
 		}, {
@@ -78,7 +92,7 @@ environments.one.beneath = {
 		texture: "/maps/one/rock2.jpg",
 		parts: [{
 			coneGeometry: 100,
-			rotation: [Math.PI, 0, 0],
+			rotation: [P, 0, 0],
 			position: [-200, -900, 800]
 		}]
 	}
