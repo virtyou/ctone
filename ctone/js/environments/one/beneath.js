@@ -118,9 +118,19 @@ environments.one.beneath = {
 			position: [-1200, 180, 1200]
 		}, {
 			coneGeometry: 600,
+			scale: [3, 0.2, 1.5],
+			rotation: [P, 0, 0],
+			position: [-1200, 1100, 1200]
+		}, {
+			coneGeometry: 600,
 			scale: [2, 0.5, 1],
 			rotation: [P, 0, 0],
 			position: [1200, 0, 0]
+		}, {
+			coneGeometry: 600,
+			scale: [2, 0.2, 2],
+			rotation: [P, 0, 0],
+			position: [1200, 1100, -1200]
 		}]
 	}
 };
