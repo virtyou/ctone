@@ -86,6 +86,15 @@ environments.one.beneath = {
 			climby: true,
 			position: [0, -600, -200],
 			dimensions: [400, 400, 2000]
+		}, {
+			position: [0, 400, 0],
+			dimensions: [1000, 200, 1000]
+		}, {
+			position: [-350, -200, -350],
+			dimensions: [300, 1000, 300]
+		}, {
+			position: [-700, -700, -700],
+			dimensions: [1000, 100, 1000]
 		}]
 	},
 	stala: {
@@ -94,6 +103,24 @@ environments.one.beneath = {
 			coneGeometry: 100,
 			rotation: [P, 0, 0],
 			position: [-200, -900, 800]
+		}, {
+			coneGeometry: 600,
+			rotation: [P, 0, 0],
+			position: [-1200, 600, -1200]
+		}, {
+			coneGeometry: 600,
+			rotation: [P, 0, 0],
+			position: [1200, 600, 1200]
+		}, {
+			coneGeometry: 600,
+			scale: [2, 0.2, 2],
+			rotation: [P, 0, 0],
+			position: [-1200, 180, 1200]
+		}, {
+			coneGeometry: 600,
+			scale: [2, 0.5, 1],
+			rotation: [P, 0, 0],
+			position: [1200, 0, 0]
 		}]
 	}
 };
