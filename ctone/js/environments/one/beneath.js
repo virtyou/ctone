@@ -128,8 +128,8 @@ environments.one.beneath = {
 			position: [-600, 200, 300],
 			dimensions: [800, 200, 400]
 		}, {
-			position: [700, -1150, 0],
-			dimensions: [200, 100, 200]
+			position: [700, -1175, 0],
+			dimensions: [100, 50, 100]
 		}]
 	},
 	stala: {
