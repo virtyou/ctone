@@ -30,8 +30,11 @@ environments.one.tombs = {
 			position: [100, -200, -600],
 			dimensions: [200, 800, 100]
 		}, {
-			position: [-50, -400, 550],
-			dimensions: [100, 400, 100]
+			position: [100, -150, 500],
+			dimensions: [200, 900, 200]
+		}, {
+			position: [100, 150, 800],
+			dimensions: [200, 100, 400]
 		}]
 	},
 	ramp: {
@@ -67,3 +70,5 @@ for (tx of [-700, -500, -300, -100])
 	coff([tx, 215, 450]);
 for (tx of [100, 300, 500, 700])
 	coff([tx, 315, -550]);
+for (tz of [650, 750, 850, 950])
+	coff([100, 215, tz]);
