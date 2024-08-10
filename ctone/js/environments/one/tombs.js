@@ -20,6 +20,12 @@ environments.one.tombs = {
 		}, {
 			position: [-200, 175, -800],
 			dimensions: [100, 50, 100]
+		}, {
+			position: [-400, 150, 450],
+			dimensions: [800, 100, 100]
+		}, {
+			position: [400, 250, -550],
+			dimensions: [800, 100, 100]
 		}]
 	},
 	ramp: {
@@ -41,11 +47,17 @@ environments.one.tombs = {
 	}
 };
 
-var tx, obz = environments.one.tombs.obstacle.parts;
-for (tx of [-900, -700, -500, -300, -100]) {
-	obz.push({
-		texture: "/maps/one/rock5.jpg",
-		position: [tx, 175, -550],
-		dimensions: [150, 50, 50]
-	})
-}
+var tx, coff = function(p) {
+	environments.one.tombs.obstacle.parts.push({
+		position: p,
+		dimensions: [150, 30, 50],
+		texture: "/maps/one/rock5.jpg"
+	});
+};
+
+for (tx of [-900, -700, -500, -300, -100])
+	coff([tx, 165, -550]);
+for (tx of [-700, -500, -300, -100])
+	coff([tx, 215, 450]);
+for (tx of [100, 300, 500, 700])
+	coff([tx, 315, -550]);
