@@ -9,8 +9,8 @@ environments.one.tombs = {
 			position: [-500, 0, 750],
 			dimensions: [1000, 400, 500]
 		}, {
-			position: [-500, 0, -800],
-			dimensions: [1000, 300, 400]
+			position: [-500, 0, -750],
+			dimensions: [1000, 300, 500]
 		}, {
 			position: [500, 0, -800],
 			dimensions: [1000, 600, 400]
@@ -40,3 +40,12 @@ environments.one.tombs = {
 		}]
 	}
 };
+
+var tx, obz = environments.one.tombs.obstacle.parts;
+for (tx of [-900, -700, -500, -300, -100]) {
+	obz.push({
+		texture: "/maps/one/rock5.jpg",
+		position: [tx, 175, -550],
+		dimensions: [150, 50, 50]
+	})
+}
