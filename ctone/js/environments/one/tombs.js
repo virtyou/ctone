@@ -15,6 +15,9 @@ environments.one.tombs = {
 			position: [500, 0, -800],
 			dimensions: [1000, 600, 400]
 		}, {
+			position: [0, -550, -75],
+			dimensions: [1600, 100, 950]
+		}, {
 			position: [-800, 175, -800],
 			dimensions: [100, 50, 100]
 		}, {
