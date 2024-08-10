@@ -9,11 +9,17 @@ environments.one.tombs = {
 			position: [-500, 0, 750],
 			dimensions: [1000, 400, 500]
 		}, {
-			position: [-500, 0, -750],
-			dimensions: [1000, 300, 500]
+			position: [-500, 0, -800],
+			dimensions: [1000, 300, 400]
 		}, {
 			position: [500, 0, -800],
 			dimensions: [1000, 600, 400]
+		}, {
+			position: [-800, 175, -800],
+			dimensions: [100, 50, 100]
+		}, {
+			position: [-200, 175, -800],
+			dimensions: [100, 50, 100]
 		}]
 	},
 	ramp: {
