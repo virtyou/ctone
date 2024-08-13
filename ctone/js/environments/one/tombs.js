@@ -52,9 +52,9 @@ environments.one.tombs = {
 			position: [-900, -200, -190]
 		}, {
 			planeGeometry: true,
-			scale: [2, 16, 1],
+			scale: [2, 16.5, 1],
 			rotation: [2.15, 0, 0],
-			position: [900, -150, 70]
+			position: [900, -150, 120]
 		}]
 	}
 };
