@@ -83,9 +83,13 @@ assets.fauna = zero.core.Fauna.audio = {};
 assets.person = zero.core.Person.audio = {};
 assets.particles = zero.core.Particles.audio = {};
 
+var audLink = function(collection, setname, audname) {
+	return "/audio/one/" + collection + "/" + setname + "/" + audname + ".mp3";
+};
+
 var audSet = function(collection, name, number, aset) {
 	for (var i = 1; i <= number; i++)
-		aset.push("/audio/one/" + collection + "/" + name + "/" + i + ".mp3");
+		aset.push(audLink(collection, name, i));
 };
 
 var setAud = function(collection, sound) {
@@ -104,3 +108,6 @@ var setAud = function(collection, sound) {
 for (var collection in audioMap)
 	for (var sound in audioMap[collection])
 		setAud(collection, sound);
+
+for (var pace of ["walk", "gallop"])
+	assets.fauna.horse[pace] = audLink("fauna", "horse", pace);
