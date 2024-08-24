@@ -4,25 +4,65 @@ environments.one.tower = {
 	obstacle: {
 		texture: "/maps/one/leaves.jpg",
 		parts: [{
-			position: [0, -1800, -2000],
-			dimensions: [8000, 400, 4000]
+			position: [0, -700, -2000],
+			dimensions: [8000, 200, 4000]
 		}, {
-			position: [0, -1400, -2400],
+			position: [0, -400, -2400],
 			dimensions: [4000, 400, 2000]
 		}, {
-			position: [0, -1250, 0],
+			position: [0, -250, 0],
 			dimensions: [2000, 1500, 2000]
+		}, {
+			position: [0, -1400, 1700],
+			dimensions: [8000, 400, 600]
 		}]
 	},
 	floor: {
 		texture: "/maps/one/leaves.jpg",
+		material: {
+			side: THREE.BackSide
+		},
 		parts: [{
 			planeGeometry: true,
-			position: [0, -2000, 2000],
-			scale: [80, 40, 1],
-			material: {
-				side: THREE.BackSide
-			}
+			position: [0, -2000, 3700],
+			scale: [80, 6, 1]
+		}, {
+			planeGeometry: true,
+			position: [0, -1600, 2500],
+			scale: [80, 10, 1]
+		}, {
+			planeGeometry: true,
+			position: [0, -800, 300],
+			scale: [80, 6, 1]
+		}]
+	},
+	ramp: {
+		texture: "/maps/one/leaves.jpg",
+		material: {
+			side: THREE.BackSide
+		},
+		parts: [{
+			planeGeometry: true,
+			scale: [80, 6, 1],
+			rotation: [2.3, 0, 0],
+			position: [0, -1800, 3200]
+		}, {
+			planeGeometry: true,
+			side: "left",
+			scale: [40, 6, 6],
+			rotation: [2.3, 0, 0],
+			position: [2000, -1400, 2200]
+		}, {
+			planeGeometry: true,
+			scale: [80, 10, 1],
+			rotation: [2, 0, 0],
+			position: [0, -1000, 1000]
+		}, {
+			planeGeometry: true,
+			side: "right",
+			scale: [10, 5, 5],
+			rotation: [2, 0, 0],
+			position: [-3500, -700, 230]
 		}]
 	}
 };
