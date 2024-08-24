@@ -7,17 +7,17 @@ environments.one.hill = {
 			position: [0, -700, -2000],
 			dimensions: [8000, 200, 4000]
 		}, {
-			position: [0, -400, -2400],
-			dimensions: [4000, 400, 2000]
+			position: [0, -300, -2400],
+			dimensions: [4000, 600, 2000]
 		}, {
-			position: [0, -450, 0],
-			dimensions: [2000, 1100, 2000]
+			position: [0, -400, 0],
+			dimensions: [2000, 1200, 2000]
 		}, {
 			position: [0, -1400, 1700],
 			dimensions: [8000, 400, 600]
 		}, {
-			position: [2100, -400, -2900],
-			dimensions: [200, 400, 1000]
+			position: [2100, -300, -3100],
+			dimensions: [200, 600, 600]
 		}]
 	},
 	floor: {
@@ -69,15 +69,15 @@ environments.one.hill = {
 		}, {
 			planeGeometry: true,
 			side: "right",
-			scale: [2, 10, 6],
+			scale: [2, 14, 6],
 			rotation: [2, 0, 0],
-			position: [2100, -400, -1950]
+			position: [2100, -300, -2150]
 		}, {
 			planeGeometry: true,
 			side: "both",
-			scale: [5, 5, 5],
-			rotation: [-2.2, 0, 0],
-			position: [0, -50, -1200],
+			scale: [4, 4.5, 4],
+			rotation: [-2.02, 0, 0],
+			position: [0, 100, -1200],
 			material: {
 				side: THREE.DoubleSide
 			}
