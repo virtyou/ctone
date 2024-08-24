@@ -40,6 +40,10 @@ var m, zbf = zero.base.fauna, zcf = zero.core.Fauna, ftz = templates.one.fbx = {
 		scale: [80, 80, 80],
 		stripset: "/models/one/fbx/castle/castle.fbx",
 		credit: "https://free3d.com/3d-model/fantasy-castle-40715.html"
+	},
+	watchtower: {
+		stripset: "/models/one/fbx/watchtower/wtower.fbx",
+		credit: "https://free3d.com/3d-model/watch-tower-made-of-wood-94934.html"
 	}
 };
 for (m in ftz)
