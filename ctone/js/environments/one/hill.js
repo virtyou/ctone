@@ -1,4 +1,4 @@
-environments.one.tower = {
+environments.one.hill = {
 	outside: "/maps/one/sky-day.jpg",
 	boxGeometry: [8000, 2000, 8000],
 	obstacle: {
