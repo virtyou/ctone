@@ -55,6 +55,39 @@ environments.one.beneath = {
 			scale: [18, 8, 1],
 			position: [-1000, -800, -100],
 			rotation: [0, P2, 0]
+		}, {
+			texture: "/maps/one/vines1.png",
+			planeGeometry: true,
+			climby: true,
+			scale: [2, 7, 1],
+			position: [199, -50, -1000],
+			rotation: [0, P2, 0],
+			material: {
+				transparent: true,
+				side: THREE.BackSide
+			}
+		}, {
+			texture: "/maps/one/vines2.png",
+			planeGeometry: true,
+			climby: true,
+			scale: [1, 5, 1],
+			position: [-999, 350, 950],
+			rotation: [0, P2, 0],
+			material: {
+				transparent: true,
+				side: THREE.FrontSide
+			}
+		}, {
+			texture: "/maps/one/vines3.png",
+			planeGeometry: true,
+			climby: true,
+			scale: [1, 4, 1],
+			position: [-201, -600, 700],
+			rotation: [0, P2, 0],
+			material: {
+				transparent: true,
+				side: THREE.BackSide
+			}
 		}]
 	},
 	floor: {
@@ -102,11 +135,9 @@ environments.one.beneath = {
 	obstacle: {
 		texture: "/maps/one/stonewall.jpg",
 		parts: [{
-			climby: true,
 			position: [700, -300, -1000],
 			dimensions: [1000, 1200, 400]
 		}, {
-			climby: true,
 			position: [0, -600, -200],
 			dimensions: [400, 400, 2000]
 		}, {
