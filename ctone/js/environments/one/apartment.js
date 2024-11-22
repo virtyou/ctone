@@ -1,5 +1,5 @@
 environments.one.apartment = {
-	texture: "/maps/one/cloth.jpg",
+	texture: "/maps/one/yellowcloth.jpg",
 	shell: {
 		dimensions: [150, 500, 800]
 	},
