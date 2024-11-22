@@ -21,7 +21,10 @@ environments.one.apartment = {
 			width: 120,
 			height: 160,
 			position: [0, -170, 300],
-			rotation: [0, Math.PI, 0]
+			rotation: [0, Math.PI, 0],
+			door: {
+				texture: "/maps/one/metaldoor.png"
+			}
 		}, {
 			name: "elevator0",
 			appliance: "Elevator",
