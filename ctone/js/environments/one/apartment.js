@@ -1,7 +1,7 @@
 environments.one.apartment = {
 	texture: "/maps/one/yellowcloth.jpg",
 	shell: {
-		dimensions: [150, 500, 800]
+		dimensions: [120, 500, 800]
 	},
 	electrical: {
 		circuits: {
@@ -13,7 +13,14 @@ environments.one.apartment = {
 			thing: "Panel",
 			name: "panel0",
 			lever: [{ circuit: "building" }],
-			position: [0, -200, 400],
+			position: [0, -150, 400],
+			rotation: [0, Math.PI, 0]
+		}, {
+			name: "gate0",
+			appliance: "Gate",
+			width: 120,
+			height: 160,
+			position: [0, -170, 300],
 			rotation: [0, Math.PI, 0]
 		}, {
 			name: "elevator0",
@@ -45,10 +52,10 @@ environments.one.apartment = {
 		texture: "/maps/one/rug4.jpg",
 		parts: [{
 			position: [0, -85, 60],
-			dimensions: [150, 10, 680]
+			dimensions: [120, 10, 680]
 		}, {
 			position: [0, 85, 60],
-			dimensions: [150, 10, 680]
+			dimensions: [120, 10, 680]
 		}]
 	}
 };
