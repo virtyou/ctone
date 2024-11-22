@@ -11,10 +11,12 @@ environments.one.apartment = {
 		},
 		appliances: [{
 			thing: "Panel",
+			name: "panel0",
 			lever: [{ circuit: "building" }],
 			position: [0, -200, 400],
 			rotation: [0, Math.PI, 0]
 		}, {
+			name: "elevator0",
 			appliance: "Elevator",
 			circuit: "building",
 			template: "templates.one.appliance.elevator",
