@@ -15,6 +15,18 @@ environments.one.apartment = {
 					position: [0, -150, 400],
 					rotation: [0, Math.PI, 0],
 					lever: [{ circuit: "building" }]
+				}, {
+					position: [60, -170, -250],
+					rotation: [0, -Math.PI / 2, 0],
+					button: [{ appliance: "elevator0", order: "bottom"}]
+				}, {
+					position: [60, 0, -250],
+					rotation: [0, -Math.PI / 2, 0],
+					button: [{ appliance: "elevator0", order: "obstacle0"}]
+				}, {
+					position: [60, 170, -250],
+					rotation: [0, -Math.PI / 2, 0],
+					button: [{ appliance: "elevator0", order: "obstacle1"}]
 				}]
 			},
 			gate: {
