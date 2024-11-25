@@ -1,5 +1,6 @@
 environments.one.apartment = {
 	texture: "/maps/one/yellowcloth.jpg",
+	shadows: true,
 	shell: {
 		dimensions: [120, 500, 800]
 	},
@@ -50,12 +51,15 @@ environments.one.apartment = {
 			bulb: {
 				circuit: "building",
 				parts: [{
+					intensity: 0.6,
 					position: [0, 245, 50],
 					rotation: [Math.PI, 0, 0]
 				}, {
+					intensity: 0.6,
 					position: [0, 75, 50],
 					rotation: [Math.PI, 0, 0]
 				}, {
+					intensity: 0.2,
 					position: [0, -95, 50],
 					rotation: [Math.PI, 0, 0]
 				}]
