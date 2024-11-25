@@ -1,6 +1,15 @@
 templates.one.audio = {};
 
 var audioMap = templates.one.audio.amap = {
+	appliance: {
+		button: "button",
+		elevator: "elevator",
+		lever: "lever",
+		slide: "slide",
+		squish: "squish",
+		swing: "swing",
+		switch: "switch"
+	},
 	pool: {
 		within: "within",
 		without: "without",
@@ -82,6 +91,7 @@ assets.fire = zero.core.Fire.audio = {};
 assets.fauna = zero.core.Fauna.audio = {};
 assets.person = zero.core.Person.audio = {};
 assets.particles = zero.core.Particles.audio = {};
+assets.appliance = zero.core.Appliance.audio = {};
 
 var audLink = function(collection, setname, audname) {
 	return "/audio/one/" + collection + "/" + setname + "/" + audname + ".mp3";
