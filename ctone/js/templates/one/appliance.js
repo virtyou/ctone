@@ -11,6 +11,9 @@ templates.one.appliance = {
 			material: {
 				transparent: true
 			}
+		},
+		floordoor: {
+			texture: "/maps/one/rusty.jpg"
 		}
 	}
 };
