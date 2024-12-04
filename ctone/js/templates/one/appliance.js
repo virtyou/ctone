@@ -32,5 +32,51 @@ templates.one.appliance = {
 				}
 			}
 		}
+	},
+	computer: {
+		tablet: {
+			parts: [{
+				name: "base",
+				position: [0, 0, -1],
+				boxGeometry: [16, 20, 1]
+			}]
+		},
+		lcd: {
+			screenPos: [0, 15, 12],
+			screenDims: [18, 18],
+			parts: [{
+				name: "base",
+				halfSphere: 8
+			}, {
+				name: "stem",
+				coneGeometry: true,
+				position: [0, 10, 0],
+				scale: [5, 5, 2]
+			}, {
+				name: "ball",
+				sphereGeometry: 3,
+				position: [0, 15, 0]
+			}, {
+				name: "arm",
+				coneGeometry: true,
+				position: [0, 15, 5],
+				rotation: [-Math.PI / 2, 0, 0],
+				scale: [10, 5, 2]
+			}, {
+				name: "monitor",
+				boxGeometry: [20, 20, 3],
+				position: [0, 15, 10]
+			}]
+		},
+		crt: {
+			parts: [{
+				name: "base",
+			}]
+		},
+		colorbox: {
+			parts: [{
+				name: "base",
+			}]
+		}
 	}
 };
