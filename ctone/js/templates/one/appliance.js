@@ -90,3 +90,5 @@ templates.one.appliance = {
 		}
 	}
 };
+
+zero.core.Appliance.templates = templates.one.appliance;
