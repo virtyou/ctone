@@ -69,13 +69,20 @@ templates.one.appliance = {
 			}]
 		},
 		crt: {
+			screenPos: [0, 15, 11],
+			screenDims: [15, 15],
 			parts: [{
 				name: "base",
-			}]
-		},
-		colorbox: {
-			parts: [{
-				name: "base",
+				boxGeometry: [30, 10, 30]
+			}, {
+				name: "back",
+				halfSphere: 8,
+				position: [0, 15, 0],
+				rotation: [-Math.PI / 2, 0, 0]
+			}, {
+				name: "monitor",
+				boxGeometry: [20, 20, 12],
+				position: [0, 15, 5]
 			}]
 		}
 	}
