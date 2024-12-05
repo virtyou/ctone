@@ -36,6 +36,8 @@ templates.one.appliance = {
 	computer: {
 		tablet: {
 			keyboard: false,
+			screenPos: [0, 0, 0],
+			screenDims: [14, 18],
 			parts: [{
 				name: "base",
 				position: [0, 0, -1],
@@ -43,6 +45,7 @@ templates.one.appliance = {
 			}]
 		},
 		lcd: {
+			keyboard: true,
 			screenPos: [0, 15, 12],
 			screenDims: [22, 16],
 			parts: [{
@@ -71,6 +74,7 @@ templates.one.appliance = {
 			}]
 		},
 		crt: {
+			keyboard: true,
 			screenPos: [0, 19, 11],
 			screenDims: [15, 15],
 			parts: [{
