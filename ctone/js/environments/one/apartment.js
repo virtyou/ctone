@@ -14,7 +14,7 @@ environments.one.apartment = {
 			elevator: {
 				parts: [{
 					circuit: "building",
-					position: [0, 0, 0],
+					position: [0, 0, -20],
 					template: "templates.one.appliance.elevator.spooky"
 				}]
 			}
@@ -27,11 +27,11 @@ environments.one.apartment = {
 		},
 		parts: [{
 			planeGeometry: true,
-			position: [0, -85, 400],
+			position: [0, -85, 150],
 			scale: [5, 2, 1]
 		}, {
 			planeGeometry: true,
-			position: [0, 85, 400],
+			position: [0, 85, 150],
 			scale: [5, 2, 1]
 		}]
 	},
