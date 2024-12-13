@@ -38,16 +38,16 @@ environments.one.apartment = {
 	obstacle: {
 		texture: "/maps/one/rug4.jpg",
 		parts: [{
-			position: [-200, -100, -100],
+			position: [-205, -140, -100],
+			dimensions: [90, 10, 300]
+		}, {
+			position: [205, -140, -100],
+			dimensions: [90, 10, 300]
+		}, {
+			position: [-200, 70, -100],
 			dimensions: [100, 10, 300]
 		}, {
-			position: [200, -100, -100],
-			dimensions: [100, 10, 300]
-		}, {
-			position: [-200, 100, -100],
-			dimensions: [100, 10, 300]
-		}, {
-			position: [200, 100, -100],
+			position: [200, 70, -100],
 			dimensions: [100, 10, 300]
 		}, {
 			position: [0, -270, -170],
@@ -58,6 +58,12 @@ environments.one.apartment = {
 		}, {
 			position: [0, 170, -170],
 			dimensions: [300, 2, 160]
+		}, {
+			position: [-155, 0, -100],
+			dimensions: [10, 600, 300]
+		}, {
+			position: [155, 0, -100],
+			dimensions: [10, 600, 300]
 		}]
 	},
 	stairs: {
