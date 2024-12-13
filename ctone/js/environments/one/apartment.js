@@ -49,6 +49,12 @@ environments.one.apartment = {
 		}, {
 			position: [200, 85, -100],
 			dimensions: [100, 10, 300]
+		}, {
+			position: [0, -50, -175],
+			dimensions: [300, 80, 150]
+		}, {
+			position: [0, 115, -175],
+			dimensions: [300, 50, 150]
 		}]
 	}
 };
