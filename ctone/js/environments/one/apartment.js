@@ -32,6 +32,27 @@ environments.one.apartment = {
 					position: [110, 150, 50],
 					template: "templates.one.appliance.gate.wood"
 				}]
+			},
+			bulb: {
+				circuit: "building",
+				parts: [{
+					invariance: 6,
+					intensity: 0.6,
+					position: [0, 295, 150],
+					rotation: [Math.PI, 0, 0]
+				}, {
+					flickRate: 3,
+					invariance: 4,
+					intensity: 0.6,
+					position: [0, 65, 150],
+					rotation: [Math.PI, 0, 0]
+				}, {
+					flickRate: 2,
+					invariance: 2,
+					intensity: 0.2,
+					position: [0, -145, 150],
+					rotation: [Math.PI, 0, 0]
+				}]
 			}
 		}
 	},
