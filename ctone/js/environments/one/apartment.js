@@ -17,6 +17,21 @@ environments.one.apartment = {
 					position: [0, 0, -20],
 					template: "templates.one.appliance.elevator.spooky"
 				}]
+			},
+			gate: {
+				parts: [{
+					position: [-110, -75, 50],
+					template: "templates.one.appliance.gate.wood"
+				}, {
+					position: [110, -75, 50],
+					template: "templates.one.appliance.gate.wood"
+				}, {
+					position: [-110, 135, 50],
+					template: "templates.one.appliance.gate.wood"
+				}, {
+					position: [110, 135, 50],
+					template: "templates.one.appliance.gate.wood"
+				}]
 			}
 		}
 	},
