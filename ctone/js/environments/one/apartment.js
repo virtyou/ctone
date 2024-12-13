@@ -50,11 +50,28 @@ environments.one.apartment = {
 			position: [200, 85, -100],
 			dimensions: [100, 10, 300]
 		}, {
+			position: [0, -210, -175],
+			dimensions: [300, 80, 150]
+		}, {
 			position: [0, -50, -175],
 			dimensions: [300, 80, 150]
 		}, {
 			position: [0, 115, -175],
 			dimensions: [300, 50, 150]
+		}]
+	},
+	stairs: {
+		texture: "/maps/one/bluefab.jpg",
+		parts: [{
+			position: [-110, 40, -35],
+			rotation: [0, Math.PI, 0]
+		}, {
+			position: [110, -40, -35]
+		}, {
+			position: [-110, -120, -35],
+			rotation: [0, Math.PI, 0]
+		}, {
+			position: [110, -200, -35]
 		}]
 	}
 };
