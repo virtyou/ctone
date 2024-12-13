@@ -21,7 +21,7 @@ templates.one.appliance = {
 	gate: {
 		wood: {
 			width: 80,
-			height: 120,
+			height: 160,
 			door: {
 				texture: "/maps/one/woodoor.jpg"
 			}

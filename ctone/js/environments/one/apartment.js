@@ -20,16 +20,16 @@ environments.one.apartment = {
 			},
 			gate: {
 				parts: [{
-					position: [-110, -75, 50],
+					position: [-110, -55, 50],
 					template: "templates.one.appliance.gate.wood"
 				}, {
-					position: [110, -75, 50],
+					position: [110, -55, 50],
 					template: "templates.one.appliance.gate.wood"
 				}, {
-					position: [-110, 135, 50],
+					position: [-110, 150, 50],
 					template: "templates.one.appliance.gate.wood"
 				}, {
-					position: [110, 135, 50],
+					position: [110, 150, 50],
 					template: "templates.one.appliance.gate.wood"
 				}]
 			}
@@ -59,6 +59,16 @@ environments.one.apartment = {
 			planeGeometry: true,
 			scale: [0.8, 1.3, 1],
 			position: [-110, 235, -90]
+		}, {
+			planeGeometry: true,
+			scale: [3, 0.65, 1],
+			position: [0, 270, 50],
+			state: "nobump"
+		}, {
+			planeGeometry: true,
+			scale: [3, 0.45, 1],
+			position: [0, 48, 51],
+			state: "nobump"
 		}]
 	},
 	obstacle: {
