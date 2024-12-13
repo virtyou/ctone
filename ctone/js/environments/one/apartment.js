@@ -13,24 +13,24 @@ environments.one.apartment = {
 		appliances: {
 			elevator: {
 				parts: [{
+					variety: "spooky",
 					circuit: "building",
-					position: [0, 0, -20],
-					template: "templates.one.appliance.elevator.spooky"
+					position: [0, 0, -20]
 				}]
 			},
 			gate: {
 				parts: [{
-					position: [-110, -55, 50],
-					template: "templates.one.appliance.gate.wood"
+					variety: "wood",
+					position: [-110, -55, 50]
 				}, {
-					position: [110, -55, 50],
-					template: "templates.one.appliance.gate.wood"
+					variety: "wood",
+					position: [110, -55, 50]
 				}, {
-					position: [-110, 150, 50],
-					template: "templates.one.appliance.gate.wood"
+					variety: "wood",
+					position: [-110, 150, 50]
 				}, {
-					position: [110, 150, 50],
-					template: "templates.one.appliance.gate.wood"
+					variety: "wood",
+					position: [110, 150, 50]
 				}]
 			},
 			bulb: {

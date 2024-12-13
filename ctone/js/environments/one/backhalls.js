@@ -32,18 +32,18 @@ environments.one.backhalls = {
 			},
 			gate: {
 				parts: [{
+					variety: "metal",
 					width: 120,
 					height: 160,
 					position: [0, -170, 300],
-					rotation: [0, Math.PI, 0],
-					template: "templates.one.appliance.gate.metal"
+					rotation: [0, Math.PI, 0]
 				}]
 			},
 			elevator: {
 				parts: [{
+					variety: "spooky",
 					circuit: "building",
-					position: [0, 0, -340],
-					template: "templates.one.appliance.elevator.spooky"
+					position: [0, 0, -340]
 				}]
 			},
 			bulb: {
