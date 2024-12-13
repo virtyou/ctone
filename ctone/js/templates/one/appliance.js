@@ -19,6 +19,13 @@ templates.one.appliance = {
 		}
 	},
 	gate: {
+		wood: {
+			width: 80,
+			height: 120,
+			door: {
+				texture: "/maps/one/woodoor.jpg"
+			}
+		},
 		metal: {
 			door: {
 				texture: "/maps/one/metaldoor.png"
