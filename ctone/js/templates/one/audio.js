@@ -8,7 +8,8 @@ var audioMap = templates.one.audio.amap = {
 		slide: "slide",
 		squish: "squish",
 		swing: "swing",
-		switch: "switch"
+		switch: "switch",
+		zap: 5
 	},
 	pool: {
 		within: "within",
