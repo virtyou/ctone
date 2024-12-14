@@ -18,7 +18,8 @@ var audioMap = templates.one.audio.amap = {
 		swim: 2
 	},
 	fire: {
-		crackle: "crackle"
+		crackle: "crackle",
+		lighter: "lighter"
 	},
 	particles: {
 		rain: {
