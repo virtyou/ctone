@@ -70,6 +70,7 @@ environments.one.backhalls = {
 		}
 	},
 	obstacle: {
+		stepper: "rug",
 		texture: "/maps/one/rug4.jpg",
 		parts: [{
 			position: [0, -85, 60],

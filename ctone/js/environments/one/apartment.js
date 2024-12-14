@@ -57,6 +57,7 @@ environments.one.apartment = {
 		}
 	},
 	floor: {
+		stepper: "rug",
 		texture: "/maps/one/rug4.jpg",
 		material: {
 			side: THREE.DoubleSide
@@ -93,6 +94,7 @@ environments.one.apartment = {
 		}]
 	},
 	obstacle: {
+		stepper: "rug",
 		texture: "/maps/one/rug4.jpg",
 		parts: [{
 			position: [-205, -140, -100],
@@ -126,6 +128,7 @@ environments.one.apartment = {
 		}]
 	},
 	stairs: {
+		stepper: "wood",
 		texture: "/maps/one/bluefab.jpg",
 		parts: [{
 			height: 15,

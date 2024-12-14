@@ -40,6 +40,9 @@ var audioMap = templates.one.audio.amap = {
 		glug: "glug",
 		splat: "splat",
 		whoosh: "whoosh",
+		wood: 4,
+		hard: 8,
+		rug: 11,
 		swim: {
 			number: 2,
 			collection: "pool"

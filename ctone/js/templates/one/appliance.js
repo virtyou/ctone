@@ -1,6 +1,7 @@
 templates.one.appliance = {
 	elevator: {
 		spooky: {
+			stepper: "hard",
 			walltex: "/maps/one/bluefab.jpg",
 			floortex: "/maps/one/bunny_teeth.jpg",
 			light: {
