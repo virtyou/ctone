@@ -64,7 +64,7 @@ environments.one.apartment = {
 		},
 		parts: [{
 			planeGeometry: true,
-			position: [0, -140, 150],
+			position: [0, -130, 150],
 			scale: [5, 2, 1]
 		}, {
 			planeGeometry: true,
@@ -97,10 +97,10 @@ environments.one.apartment = {
 		stepper: "rug",
 		texture: "/maps/one/rug4.jpg",
 		parts: [{
-			position: [-205, -140, -100],
+			position: [-205, -130, -100],
 			dimensions: [90, 10, 300]
 		}, {
-			position: [205, -140, -100],
+			position: [205, -130, -100],
 			dimensions: [90, 10, 300]
 		}, {
 			position: [-205, 70, -100],
@@ -145,8 +145,9 @@ environments.one.apartment = {
 			position: [-110, -190, -20],
 			rotation: [0, Math.PI, 0]
 		}, {
-			height: 8,
-			position: [110, -270, -20]
+			steps: 4,
+			height: 15,
+			position: [110, -270, -50]
 		}]
 	}
 };
