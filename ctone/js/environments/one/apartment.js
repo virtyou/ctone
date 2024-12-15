@@ -11,6 +11,21 @@ environments.one.apartment = {
 			}
 		},
 		appliances: {
+			panel: {
+				parts: [{
+					position: [0, -200, 250],
+					rotation: [0, Math.PI, 0],
+					switch: [{ circuit: "bulb2" }]
+				}, {
+					position: [0, -50, 250],
+					rotation: [0, Math.PI, 0],
+					button: [{ appliance: "elevator0", order: "floor0" }]
+				}, {
+					position: [0, 150, 250],
+					rotation: [0, Math.PI, 0],
+					button: [{ appliance: "elevator0", order: "floor1" }]
+				}]
+			},
 			elevator: {
 				parts: [{
 					variety: "spooky",
