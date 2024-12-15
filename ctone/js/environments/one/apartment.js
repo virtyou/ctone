@@ -36,11 +36,13 @@ environments.one.apartment = {
 			bulb: {
 				circuit: "building",
 				parts: [{
+					timeout: 10,
 					invariance: 6,
 					intensity: 0.6,
 					position: [0, 295, 150],
 					rotation: [Math.PI, 0, 0]
 				}, {
+					timeout: 10,
 					flickRate: 3,
 					invariance: 4,
 					intensity: 0.6,
@@ -65,11 +67,13 @@ environments.one.apartment = {
 		parts: [{
 			planeGeometry: true,
 			position: [0, -130, 150],
-			scale: [5, 2, 1]
+			scale: [5, 2, 1],
+			onupon: { circuit: "bulb1" }
 		}, {
 			planeGeometry: true,
 			position: [0, 70, 150],
-			scale: [5, 2, 1]
+			scale: [5, 2, 1],
+			onupon: { circuit: "bulb0" }
 		}]
 	},
 	wall: {
