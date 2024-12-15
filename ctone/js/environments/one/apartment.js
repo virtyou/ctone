@@ -69,7 +69,7 @@ environments.one.apartment = {
 					flickRate: 2,
 					invariance: 2,
 					intensity: 0.2,
-					position: [0, -145, 150],
+					position: [0, -135, 150],
 					rotation: [Math.PI, 0, 0]
 				}]
 			}
