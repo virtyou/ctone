@@ -1,6 +1,7 @@
 templates.one.appliance = {
 	elevator: {
 		spooky: {
+			stepper: "hard",
 			walltex: "/maps/one/bluefab.jpg",
 			floortex: "/maps/one/bunny_teeth.jpg",
 			light: {
@@ -19,6 +20,13 @@ templates.one.appliance = {
 		}
 	},
 	gate: {
+		wood: {
+			width: 80,
+			height: 160,
+			door: {
+				texture: "/maps/one/woodoor.jpg"
+			}
+		},
 		metal: {
 			door: {
 				texture: "/maps/one/metaldoor.png"
