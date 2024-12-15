@@ -2,6 +2,7 @@ templates.one.audio = {};
 
 var audioMap = templates.one.audio.amap = {
 	appliance: {
+		click: "click",
 		button: "button",
 		elevator: "elevator",
 		lever: "lever",

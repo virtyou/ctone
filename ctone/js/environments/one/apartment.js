@@ -51,12 +51,14 @@ environments.one.apartment = {
 			bulb: {
 				circuit: "building",
 				parts: [{
+					delay: 1000,
 					timeout: 10,
 					invariance: 6,
 					intensity: 0.6,
 					position: [0, 295, 150],
 					rotation: [Math.PI, 0, 0]
 				}, {
+					delay: 1000,
 					timeout: 10,
 					flickRate: 3,
 					invariance: 4,
