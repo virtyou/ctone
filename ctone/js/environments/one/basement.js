@@ -28,11 +28,11 @@ environments.one.basement = {
 				parts: [{
 					position: [150, -30, -100],
 					rotation: [0, P, 0],
-					template: "templates.one.appliance.gate.chain"
+					variety: "chain"
 				}, {
 					position: [100, -30, 350],
 					rotation: [0, P2, 0],
-					template: "templates.one.appliance.gate.chain"
+					variety: "chain"
 				}]
 			},
 			bulb: {
