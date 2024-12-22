@@ -16,7 +16,6 @@ environments.one.basement = {
 			panel: {
 				parts: [{
 					position: [160, 0, -400],
-					rotation: [0, P, 0],
 					lever: [{ circuit: "building" }]
 				}, {
 					position: [-200, 0, -200],
