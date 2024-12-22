@@ -46,6 +46,11 @@ environments.one.basement = {
 			}
 		}
 	},
+	clutter: {
+		parts: [{
+			position: [-100, 0, 350]
+		}]
+	},
 	wall: {
 		material: {
 			transparent: true,
