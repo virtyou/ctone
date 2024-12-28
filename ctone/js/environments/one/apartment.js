@@ -75,6 +75,11 @@ environments.one.apartment = {
 			}
 		}
 	},
+	curtain: {
+		parts: [{
+			position: [110, 295, -80]
+		}]
+	},
 	floor: {
 		stepper: "rug",
 		texture: "/maps/one/rug4.jpg",
