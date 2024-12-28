@@ -16,7 +16,6 @@ environments.one.basement = {
 			panel: {
 				parts: [{
 					position: [160, 0, -400],
-					rotation: [0, P, 0],
 					lever: [{ circuit: "building" }]
 				}, {
 					position: [-200, 0, -200],
@@ -28,11 +27,11 @@ environments.one.basement = {
 				parts: [{
 					position: [150, -30, -100],
 					rotation: [0, P, 0],
-					template: "templates.one.appliance.gate.chain"
+					variety: "chain"
 				}, {
 					position: [100, -30, 350],
 					rotation: [0, P2, 0],
-					template: "templates.one.appliance.gate.chain"
+					variety: "chain"
 				}]
 			},
 			bulb: {
@@ -45,6 +44,11 @@ environments.one.basement = {
 				}]
 			}
 		}
+	},
+	clutter: {
+		parts: [{
+			position: [-100, 0, 350]
+		}]
 	},
 	wall: {
 		material: {
