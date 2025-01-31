@@ -46,9 +46,14 @@ var bmat = {
 //	4: vgen("fzn:antisocial")
 };
 
-templates.one.ar = {
-	name: "one ar template",
+templates.one.ar.anchors = {
+	variety: "anchors",
+	name: "one ar anchors template",
 	lights: [{}], // single default ambient light
 //	markers: arstreams
 	markers: CT.merge(arshapes, arstreams)
+};
+templates.one.ar.location = {
+	variety: "location",
+	name: "one ar location template",
 };
