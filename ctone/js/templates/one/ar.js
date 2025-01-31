@@ -9,6 +9,12 @@ var vgen = function(v) {
 			rotation: [-Math.PI / 2, 0, 0]
 		}
 	};
+}, sgen = function(oz, color) {
+	return CT.merge(oz, {
+		material: CT.merge({
+			color: color
+		}, bmat)
+	});
 };
 
 var bmat = {
@@ -16,30 +22,10 @@ var bmat = {
 	transparent: true,
 	side: THREE.DoubleSide
 }, arshapes = { // hiro/kanji/0-7
-	0: {
-		torusKnotGeometry: true,
-		material: CT.merge({
-			color: 0xff0000
-		}, bmat)
-	},
-	1: {
-		coneGeometry: 1,
-		material: CT.merge({
-			color: 0x0088ff
-		}, bmat)
-	},
-	2: {
-		sphereGeometry: true,
-		material: CT.merge({
-			color: 0xff8800
-		}, bmat)
-	},
-	3: {
-		boxGeometry: true,
-		material: CT.merge({
-			color: 0xffff00
-		}, bmat)
-	}
+	0: sgen({ torusKnotGeometry: true }, 0xff0000),
+	1: sgen({ coneGeometry: 1 }, 0x0088ff),
+	2: sgen({ sphereGeometry: true }, 0xff8800),
+	3: sgen({ boxGeometry: true }, 0xffff00)
 }, arstreams = { // tl/fzn - TODO: figure out interference!
 	kanji: vgen("tlchan:tunes"),
 //	hiro: vgen("fzn:social"),
@@ -53,7 +39,15 @@ templates.one.ar.anchors = {
 //	markers: arstreams
 	markers: CT.merge(arshapes, arstreams)
 };
+
 templates.one.ar.location = {
 	variety: "location",
 	name: "one ar location template",
+	lights: [{}], // single default ambient light
+	things: [
+		sgen({ coneGeometry: 1, latitude: 0.001, longitude: 0 }, 0xff0000),
+		sgen({ boxGeometry: true, latitude: -0.001, longitude: 0 }, 0x00ff00),
+		sgen({ sphereGeometry: true, latitude: 0, longitude: 0.001 }, 0x0000ff),
+		sgen({ torusKnotGeometry: true, latitude: 0, longitude: -0.001 }, 0xff00ff)
+	]
 };
