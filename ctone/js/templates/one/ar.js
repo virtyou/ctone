@@ -45,9 +45,9 @@ templates.one.ar.location = {
 	name: "one ar location template",
 	lights: [{}], // single default ambient light
 	things: [
-		sgen({ coneGeometry: 1, latitude: 0.001, longitude: 0 }, 0xff0000),
-		sgen({ boxGeometry: true, latitude: -0.001, longitude: 0 }, 0x00ff00),
-		sgen({ sphereGeometry: true, latitude: 0, longitude: 0.001 }, 0x0000ff),
-		sgen({ torusKnotGeometry: true, latitude: 0, longitude: -0.001 }, 0xff00ff)
+		sgen({ coneGeometry: 1, latitude: 0.0001, longitude: 0 }, 0xff0000),
+		sgen({ boxGeometry: true, latitude: -0.0001, longitude: 0 }, 0x00ff00),
+		sgen({ sphereGeometry: true, latitude: 0, longitude: 0.0001 }, 0x0000ff),
+		sgen({ torusKnotGeometry: true, latitude: 0, longitude: -0.0001 }, 0xff00ff)
 	]
 };
