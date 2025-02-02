@@ -41,6 +41,7 @@ templates.one.ar.anchors = {
 };
 
 templates.one.ar.location = {
+	relative: true,
 	variety: "location",
 	name: "one ar location template",
 	lights: [{}], // single default ambient light
