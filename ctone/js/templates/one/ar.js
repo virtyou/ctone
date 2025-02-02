@@ -30,7 +30,7 @@ var bmat = {
 	kanji: vgen("tlchan:tunes"),
 //	hiro: vgen("fzn:social"),
 //	4: vgen("fzn:antisocial")
-}, gunit = 0.001;
+}, gunit = 0.00004, tsize = 1;
 
 templates.one.ar.anchors = {
 	variety: "anchors",
@@ -45,9 +45,9 @@ templates.one.ar.location = {
 	name: "one ar location template",
 	lights: [{}], // single default ambient light
 	things: [
-		sgen({ boxGeometry: 20, latitude: gunit, longitude: 0 }, 0xff0000),
-		sgen({ coneGeometry: 20, latitude: -gunit, longitude: 0 }, 0x00ff00),
-		sgen({ sphereGeometry: 20, latitude: 0, longitude: gunit }, 0x0000ff),
-		sgen({ torusKnotGeometry: true, scale: [20, 20, 20], latitude: 0, longitude: -gunit }, 0xff00ff)
+		sgen({ boxGeometry: tsize, latitude: gunit, longitude: 0 }, 0xff0000),
+		sgen({ coneGeometry: tsize, latitude: -gunit, longitude: 0 }, 0x00ff00),
+		sgen({ sphereGeometry: tsize, latitude: 0, longitude: gunit }, 0x0000ff),
+		sgen({ torusKnotGeometry: true, scale: [tsize, tsize, tsize], latitude: 0, longitude: -gunit }, 0xff00ff)
 	]
 };
