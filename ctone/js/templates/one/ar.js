@@ -4,9 +4,9 @@ var vgen = function(v) {
 		kind: "video",
 		autoplay: true,
 		planeGeometry: [2, 2],
-		rotation: [Math.PI / 2, 0, 0],
+		rotation: [Math.PI, 0, 0],
 		thringopts: {
-			rotation: [-Math.PI / 2, 0, 0]
+			rotation: [-Math.PI, 0, 0]
 		}
 	};
 }, sgen = function(oz, color) {
