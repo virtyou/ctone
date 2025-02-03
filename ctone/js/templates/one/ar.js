@@ -28,8 +28,9 @@ var bmat = {
 	2: sgen({ sphereGeometry: true }, 0xff8800),
 	3: sgen({ boxGeometry: true }, 0xffff00)
 }, arstreams = { // tl/fzn - TODO: figure out interference!
-	kanji: vgen("tlchan:tunes"),
-//	hiro: vgen("fzn:social"),
+	hiro: vgen("tlchan:tunes"),
+	kanji: { person: "random" },
+//	kanji: vgen("fzn:social"),
 //	4: vgen("fzn:antisocial")
 }, gunit = 0.00004, punit = gunit * 10, tsize = 1;
 
