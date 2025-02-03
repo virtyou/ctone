@@ -11,6 +11,7 @@ var vgen = function(v) {
 	};
 }, sgen = function(oz, color) {
 	return CT.merge(oz, {
+		kind: "shape",
 		material: CT.merge({
 			color: color
 		}, bmat)
@@ -30,7 +31,7 @@ var bmat = {
 	kanji: vgen("tlchan:tunes"),
 //	hiro: vgen("fzn:social"),
 //	4: vgen("fzn:antisocial")
-}, gunit = 0.00004, tsize = 1;
+}, gunit = 0.00004, punit = gunit * 10, tsize = 1;
 
 templates.one.ar.anchors = {
 	variety: "anchors",
@@ -49,6 +50,7 @@ templates.one.ar.location = {
 		sgen({ boxGeometry: tsize, latitude: gunit, longitude: 0 }, 0xff0000),
 		sgen({ coneGeometry: tsize, latitude: -gunit, longitude: 0 }, 0x00ff00),
 		sgen({ sphereGeometry: tsize, latitude: 0, longitude: gunit }, 0x0000ff),
-		sgen({ torusKnotGeometry: true, scale: [tsize, tsize, tsize], latitude: 0, longitude: -gunit }, 0xff00ff)
+		sgen({ torusKnotGeometry: true, scale: [tsize, tsize, tsize], latitude: 0, longitude: -gunit }, 0xff00ff),
+		{ person: "random", latitude: punit, longitude: punit }
 	]
 };
