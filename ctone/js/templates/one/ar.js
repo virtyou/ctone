@@ -2,7 +2,7 @@ var vgen = function(v) {
 	return {
 		video: v,
 		kind: "video",
-		autoplay: true,
+		autoplay: "tap",
 		planeGeometry: [2, 2],
 		rotation: [Math.PI, 0, 0],
 		thringopts: {
