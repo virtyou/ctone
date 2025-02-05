@@ -1,14 +1,10 @@
-var vgen = function(v) {
-	return {
+var vgen = function(v, oz) {
+	return CT.merge({
 		video: v,
 		kind: "video",
 		autoplay: "tap",
-		planeGeometry: [2, 2],
-		rotation: [Math.PI, 0, 0],
-		thringopts: {
-			rotation: [-Math.PI, 0, 0]
-		}
-	};
+		planeGeometry: [3, 3]
+	}, oz);
 }, sgen = function(oz, color) {
 	return CT.merge(oz, {
 		kind: "shape",
@@ -52,6 +48,7 @@ templates.one.ar.location = {
 		sgen({ coneGeometry: tsize, latitude: -gunit, longitude: 0 }, 0x00ff00),
 		sgen({ sphereGeometry: tsize, latitude: 0, longitude: gunit }, 0x0000ff),
 		sgen({ torusKnotGeometry: true, scale: [tsize, tsize, tsize], latitude: 0, longitude: -gunit }, 0xff00ff),
+		vgen("tlchan:tunes", { latitude: gunit, longitude: gunit }),
 		{ person: "random", latitude: punit, longitude: punit }
 	]
 };
