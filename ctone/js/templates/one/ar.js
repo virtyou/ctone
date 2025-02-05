@@ -28,7 +28,7 @@ var bmat = {
 	kanji: { person: "random" },
 //	kanji: vgen("fzn:social"),
 //	4: vgen("fzn:antisocial")
-}, gunit = 0.00004, punit = gunit * 10, tsize = 1;
+}, gunit = 0.00003, punit = gunit * 3, tsize = 1;
 
 templates.one.ar.anchors = {
 	variety: "anchors",
