@@ -30,25 +30,26 @@ var bmat = {
 //	4: vgen("fzn:antisocial")
 }, gunit = 0.00003, punit = gunit * 3, tsize = 1;
 
-templates.one.ar.anchors = {
-	variety: "anchors",
-	name: "one ar anchors template",
-	lights: [{}], // single default ambient light
-//	markers: arstreams
-	markers: CT.merge(arshapes, arstreams)
-};
-
-templates.one.ar.location = {
-	relative: true,
-	variety: "location",
-	name: "one ar location template",
-	lights: [{}], // single default ambient light
-	things: [
-		sgen({ boxGeometry: tsize, latitude: gunit, longitude: 0 }, 0xff0000),
-		sgen({ coneGeometry: tsize, latitude: -gunit, longitude: 0 }, 0x00ff00),
-		sgen({ sphereGeometry: tsize, latitude: 0, longitude: gunit }, 0x0000ff),
-		sgen({ torusKnotGeometry: true, scale: [tsize, tsize, tsize], latitude: 0, longitude: -gunit }, 0xff00ff),
-		vgen("tlchan:tunes", { latitude: gunit, longitude: gunit }),
-		{ person: "random", latitude: punit, longitude: punit }
-	]
+templates.one.ar = {
+	anchors: {
+		variety: "anchors",
+		name: "one ar anchors template",
+		lights: [{}], // single default ambient light
+	//	markers: arstreams
+		markers: CT.merge(arshapes, arstreams)
+	},
+	location: {
+		relative: true,
+		variety: "location",
+		name: "one ar location template",
+		lights: [{}], // single default ambient light
+		things: [
+			sgen({ boxGeometry: tsize, latitude: gunit, longitude: 0 }, 0xff0000),
+			sgen({ coneGeometry: tsize, latitude: -gunit, longitude: 0 }, 0x00ff00),
+			sgen({ sphereGeometry: tsize, latitude: 0, longitude: gunit }, 0x0000ff),
+			sgen({ torusKnotGeometry: true, scale: [tsize, tsize, tsize], latitude: 0, longitude: -gunit }, 0xff00ff),
+			vgen("tlchan:tunes", { latitude: gunit, longitude: gunit }),
+			{ person: "random", latitude: punit, longitude: punit }
+		]
+	}
 };
