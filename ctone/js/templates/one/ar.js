@@ -28,7 +28,7 @@ var bmat = {
 	kanji: { person: "random" },
 //	kanji: vgen("fzn:social"),
 //	4: vgen("fzn:antisocial")
-}, gunit = 0.00003, punit = gunit * 3, tsize = 1;
+}, gunit = 0.00004, tsize = 1;
 
 templates.one.ar = {
 	anchors: {
@@ -48,8 +48,8 @@ templates.one.ar = {
 			sgen({ coneGeometry: tsize, latitude: -gunit, longitude: 0 }, 0x00ff00),
 			sgen({ sphereGeometry: tsize, latitude: 0, longitude: gunit }, 0x0000ff),
 			sgen({ torusKnotGeometry: true, scale: [tsize, tsize, tsize], latitude: 0, longitude: -gunit }, 0xff00ff),
-			vgen("tlchan:tunes", { latitude: gunit, longitude: gunit }),
-			{ person: "random", latitude: punit, longitude: punit }
+			vgen("tlchan:tunes", { latitude: gunit, longitude: -gunit }),
+			{ person: "random", latitude: gunit, longitude: gunit }
 		]
 	}
 };
