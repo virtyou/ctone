@@ -42,6 +42,8 @@ templates.one.appliance = {
 		chain: {
 			door: {
 				texture: "/maps/one/chainlink4.png",
+				receiveShadow: false,
+				castShadow: false,
 				material: {
 					transparent: true
 				}
