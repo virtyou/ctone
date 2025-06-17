@@ -1,4 +1,11 @@
 templates.one.appliance = {
+	waterheater: {
+		rusty: {
+			tank: {
+				texture: "/maps/one/watheat.jpg"
+			}
+		}
+	},
 	elevator: {
 		spooky: {
 			stepper: "hard",

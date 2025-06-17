@@ -42,6 +42,14 @@ environments.one.basement = {
 					position: [0, 76, 0],
 					rotation: [P, 0, 0]
 				}]
+			},
+			waterheater: {
+				circuit: "building",
+				parts: [{
+					variety: "rusty",
+					position: [10, -20, 350],
+					rotation: [0, Math.PI, 0]
+				}]
 			}
 		}
 	},
