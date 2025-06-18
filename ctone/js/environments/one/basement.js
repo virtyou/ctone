@@ -38,9 +38,17 @@ environments.one.basement = {
 				circuit: "building",
 				parts: [{
 					invariance: 2,
-					intensity: 0.4,
+					intensity: 0.3,
 					position: [0, 76, 0],
 					rotation: [P, 0, 0]
+				}]
+			},
+			waterheater: {
+				circuit: "building",
+				parts: [{
+					variety: "rusty",
+					position: [10, -20, 350],
+					rotation: [0, Math.PI, 0]
 				}]
 			}
 		}
@@ -58,17 +66,20 @@ environments.one.basement = {
 		parts: [{
 			texture: "/maps/one/chainlink6.png",
 			planeGeometry: true,
+			noshad: true,
 			scale: [3, 1, 1],
 			rotation: [0, P2, 0],
 			position: [100, -30, -250]
 		}, {
 			texture: "/maps/one/chainlink6.png",
 			planeGeometry: true,
+			noshad: true,
 			scale: [3, 1, 1],
 			position: [-50, -30, 100]
 		}, {
 			texture: "/maps/one/chainlink5.png",
 			planeGeometry: true,
+			noshad: true,
 			scale: [2, 1, 1],
 			rotation: [0, P2, 0],
 			position: [100, -30, 200]

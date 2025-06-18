@@ -1,4 +1,11 @@
 templates.one.appliance = {
+	waterheater: {
+		rusty: {
+			tank: {
+				texture: "/maps/one/watheat.jpg"
+			}
+		}
+	},
 	elevator: {
 		spooky: {
 			stepper: "hard",
@@ -35,6 +42,8 @@ templates.one.appliance = {
 		chain: {
 			door: {
 				texture: "/maps/one/chainlink4.png",
+				receiveShadow: false,
+				castShadow: false,
 				material: {
 					transparent: true
 				}

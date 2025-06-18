@@ -10,6 +10,9 @@ var audioMap = templates.one.audio.amap = {
 		squish: "squish",
 		swing: "swing",
 		switch: "switch",
+		whoff: 2,
+		whon: 2,
+		drip: 3,
 		zap: 5
 	},
 	pool: {
@@ -45,6 +48,7 @@ var audioMap = templates.one.audio.amap = {
 		wood: 4,
 		hard: 8,
 		rug: 11,
+		pud: 9,
 		swim: {
 			number: 2,
 			collection: "pool"
