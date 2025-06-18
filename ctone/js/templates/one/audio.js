@@ -12,6 +12,7 @@ var audioMap = templates.one.audio.amap = {
 		switch: "switch",
 		whoff: 2,
 		whon: 2,
+		drip: 3,
 		zap: 5
 	},
 	pool: {
