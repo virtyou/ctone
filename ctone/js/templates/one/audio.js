@@ -47,6 +47,7 @@ var audioMap = templates.one.audio.amap = {
 		wood: 4,
 		hard: 8,
 		rug: 11,
+		pud: 9,
 		swim: {
 			number: 2,
 			collection: "pool"
