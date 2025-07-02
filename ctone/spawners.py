@@ -201,7 +201,7 @@ def parts(name, owner):
     return part(generators.body(opts), owner)
 #    return part(generators.body(opts, gear(name, owner)), owner)
 
-def person(name, owner=None, responses={}, voice="Joanna", admin=False, email_domain=None, body_generator=parts):
+def person(name, owner=None, responses={}, voice="af_heart", admin=False, email_domain=None, body_generator=parts):
     log("person: %s"%(name,))
     p = Person()
     p.owners = [owner or user(name, "%s@%s"%(name, email_domain), admin).key]
